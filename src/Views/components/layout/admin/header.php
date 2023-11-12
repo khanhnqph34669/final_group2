@@ -92,7 +92,7 @@
                             </div>
                             <div class="sb-sidenav-menu-heading">Yêu cầu</div>
                             <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-code-pull-request"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-person-circle-check"></i></div>
                                 Yêu cầu làm tác giả
                             </a>
                             <a class="nav-link" href="tables.html">
