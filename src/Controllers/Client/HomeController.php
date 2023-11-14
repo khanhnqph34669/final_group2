@@ -7,6 +7,6 @@ use Ductong\BaseMvc\Controller;
 class HomeController extends Controller
 {
     public function index() {
-        $this->render('client/index');
+        $this->renderClient('client/index');
     }
 }
