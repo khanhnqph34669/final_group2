@@ -4,22 +4,25 @@ namespace Ductong\BaseMvc;
 
 class Controller {
     protected function renderAuthor($view, $data = []) {
-        include_once 'src/Views/components/layout/author/header.php';
+        include_once 'Views/components/layout/author/header.php';
         extract($data);
 
         include "Views/$view.php";
-        include_once 'src/Views/components/layout/author/footer.php'; 
+        include_once 'Views/components/layout/author/footer.php'; 
     }
-
+    
     protected function renderAdmin($view, $data = []) {
         include_once 'Views/components/layout/admin/header.php';
-
+        
         extract($data);
 
-        include "Views/$view.php";
+        include "Views/admin/$view.php";
 
         include_once 'Views/components/layout/admin/footer.php';
     }
+    
+
+
 
     protected function renderClient($view, $data = []) {
         include_once 'Views/components/layout/client/header.php';

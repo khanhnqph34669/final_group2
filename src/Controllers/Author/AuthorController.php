@@ -10,4 +10,8 @@ class AuthorController extends Controller
     public function index() {
         $this->renderAuthor('author/index');
     }
+
+    public function list() {
+        $this->renderAuthor('author/Post/listpost');
+    }
 }
