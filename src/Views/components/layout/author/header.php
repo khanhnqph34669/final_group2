@@ -6,15 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title><?php echo $ten_file?></title>
+        <title><?php $data['title']?></title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-        <link href="src/Views/components/layout/author/css/styles.css" rel="stylesheet" />
+        <link href="../src/Views/components/css/cssAdmin/styles.css" rel="stylesheet"  type="text/css"/>
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="/author"><img class="logo-size" src="src/Views/components/layout/author/img/logoweb.png" alt="">Dashboard</a>
+            <a class="navbar-brand ps-3" href="/author"><img class="logo-size" src="../src/Views/components/layout/author/img/logoweb.png" alt="">Dashboard</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -49,8 +49,8 @@
                             </a>
                             <div class="sb-sidenav-menu-heading">Bài viết</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-list-ul"></i></div>
-                                Bài viết
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Layouts
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
