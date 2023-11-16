@@ -1,11 +1,11 @@
 <?php
-namespace Ductong\BaseMvc\PostModel;
+namespace Ductong\BaseMvc\Models;
 
 use Ductong\BaseMvc\Model;
 
-class post extends Model
+class Post extends Model
 {
     protected $table = 'posts';
-    protected $columns = ['Id', 'Title', 'Content'];
+    protected $columns = ['Id', 'Title', 'Content', 'ImageUrl', 'Status', 'Created_at', 'AuthorId','Updated_at'];
     
 }
