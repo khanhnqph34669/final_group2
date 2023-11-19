@@ -1144,3 +1144,14 @@ button.btn:hover {
   width: 350px;
   height: 280px;
 }
+/* --------------------------------------------------------------------------------------------------tintuc */
+.container-tintuc .tinchinh {
+  
+}
+.container-tintuc .tinchinh .tin img {
+  width: 300px;
+  height: 150px;
+}
+.container-tintuc .tinphu {
+  width: 28%;
+}
