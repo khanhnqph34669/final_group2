@@ -8,13 +8,13 @@
         <meta name="author" content="" />
         <title><?php $data['title']?></title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-        <link href="../src/Views/components/css/cssAdmin/styles.css" rel="stylesheet"  type="text/css"/>
+        <link href="../../src/Views/components/css/cssAdmin/styles.css" rel="stylesheet"  type="text/css"/>
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="/author"><img class="logo-size" src="../src/Views/components/layout/author/img/logoweb.png" alt="">Dashboard</a>
+            <a class="navbar-brand ps-3" href="/author"><img class="logo-size" src="../../src/Views/components/layout/author/img/logoweb.png" alt="">Dashboard</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -43,7 +43,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Bảng điều khiển</div>
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="/author">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -55,8 +55,8 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Danh sách bài viết</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Thêm bài viết mớii</a>
+                                    <a class="nav-link" href="/author/post">Danh sách bài viết</a>
+                                    <a class="nav-link" href="/author/post/create">Thêm bài viết mớii</a>
                                 </nav>
                             </div>
                             <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

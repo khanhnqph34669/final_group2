@@ -14,4 +14,8 @@ class AuthorController extends Controller
     public function list() {
         $this->renderAuthor('author/Post/listpost');
     }
+
+    public function create(){
+        $this->renderAuthor('author/Post/create');
+    }
 }
