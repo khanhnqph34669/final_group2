@@ -4,8 +4,7 @@
         <meta charset="utf-8">
         <title>Trang Chủ</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Bootstrap Ecommerce Template" name="keywords">
-        <meta content="Bootstrap Ecommerce Template Free Download" name="description">
+
 
         <!-- Favicon -->
         <link href="img/favicon.ico" rel="icon">
@@ -20,7 +19,7 @@
         <link href="lib/slick/slick-theme.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="src/Views/components/layout/client/css/style.css" rel="stylesheet">
+        <link href="src/Views/components/CSS/CssClient/css/style.css" rel="stylesheet">
     </head>
 
     <body>
