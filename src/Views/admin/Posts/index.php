@@ -23,7 +23,8 @@
                                                 <td><?= $post['Title'] ?></td>
                                                 <td><?= $post['Content'] ?></td>
                                                 <td><?= $post['ViewCount'] ?></td>
-                                                <td><?= $post['AuthorId'] ?></td>
+                                                <td><?= $post['author_Id'] ?></td>
+                                                <td><?= $post['']?></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
