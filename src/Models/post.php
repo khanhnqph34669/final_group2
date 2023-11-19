@@ -6,6 +6,6 @@ use Ductong\BaseMvc\Model;
 class Post extends Model
 {
     protected $table = 'posts';
-    protected $columns = ['Id', 'Title', 'Content', 'ImageUrl', 'Status', 'Created_at', 'AuthorId','Updated_at'];
+    protected $columns = ['Id', 'Title', 'Content', 'ImageUrl','Status','VoteCount','VoteAvg','ViewCount', 'Created_at','AuthorId'];
     
 }

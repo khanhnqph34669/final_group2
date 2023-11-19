@@ -11,29 +11,32 @@
                                     <thead>
                                         <tr>
                                             <th>Tiêu đề</th>
-                            
                                             <th>Nội dung</th>
+                                            <th>Lượt xem</th>
+                                            <th>Tác giả</th>
+
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Tiêu đề</th>
-                                
-                                            <th>Nội dung</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         <?php foreach ($posts as $post) : ?>
                                             <tr>
                                                 <td><?= $post['Title'] ?></td>
                                                 <td><?= $post['Content'] ?></td>
-                                                
-                                            
+                                                <td><?= $post['ViewCount'] ?></td>
+                                                <td><?= $post['AuthorId'] ?></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Tiêu đề</th>
+                                            <th>Nội dung</th>
+                                            <th>Lượt xem</th>
+                                            <th>Tác giả</th>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                 </main>

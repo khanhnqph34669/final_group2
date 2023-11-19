@@ -157,6 +157,20 @@ class Model
         $stmt->execute();
     }
 
+    public function getUserByEmail($email){
+        $sql = "SELECT * FROM {$this->table} WHERE Email = :email LIMIT 1";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindParam(':email', $email);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetch();
+    }
+
     public function __destruct()
     {
         $this->conn = null;
