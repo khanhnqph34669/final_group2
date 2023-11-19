@@ -1,11 +1,10 @@
 <?php 
-namespace Ductong\BaseMvc\UserModel;
+namespace Ductong\BaseMvc\Models;
 
 use Ductong\BaseMvc\Model;
 
-class user extends Model
+class users extends Model
 {
     protected $table = 'users';
-    protected $fillable = ['username', 'password', 'email', 'role'];
-    protected $columns = ['id', 'username', 'password', 'email', 'role', 'created_at', 'updated_at'];
+    protected $columns = ['Id', 'Name', 'Status', 'Email', 'Phone', 'Password', 'Address', 'roles_id'];
 }

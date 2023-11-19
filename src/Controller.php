@@ -2,10 +2,8 @@
 
 namespace Ductong\BaseMvc;
 
-class Controller
-{
-    protected function renderAuthor($view, $data = [])
-    {
+class Controller {
+    protected function renderAuthor($view, $data = []) {
         include_once 'Views/components/layout/author/header.php';
         extract($data);
 
