@@ -1145,13 +1145,16 @@ button.btn:hover {
   height: 280px;
 }
 /* --------------------------------------------------------------------------------------------------tintuc */
-.container-tintuc .tinchinh {
-  
+.tin {
+  display: flex;
 }
-.container-tintuc .tinchinh .tin img {
-  width: 300px;
-  height: 150px;
+.container-tintuc .tinchinh {
+  width: 70%;
+}
+.imgNews {
+  width: 350px;
 }
 .container-tintuc .tinphu {
   width: 28%;
 }
+.tieude
