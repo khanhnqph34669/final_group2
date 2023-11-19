@@ -11,11 +11,11 @@ class AuthorController extends Controller
         $this->renderAuthor('author/index');
     }
 
-    public function list() {
-        $this->renderAuthor('author/Post/listpost');
-    }
+    // public function list() {
+    //     $this->renderAuthor('author/post/listpost');
+    // }
 
-    public function create(){
-        $this->renderAuthor('author/Post/create');
-    }
+    // public function create(){
+    //     $this->renderAuthor('author/post/create');
+    // }
 }

@@ -11,13 +11,13 @@
      <div class="card-body">
      <form action="" method="post">
      <div class="form-group">
-     <input type="hidden" name="Id" id="Id" class="form-control">
+     <input type="hidden" name="Id" id="Id" class="form-control" value="<?= $category['Id']?>">
      </div>
      <div class="form-group">
      <label for="title">Title</label>
-     <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+     <input type="text" name="Title" id="Title" class="form-control" placeholder="Title" value="<?= $category['Title']?>">
      </div>
-     <div class="form-group">
+     <!-- <div class="form-group">
      <label for="content">Content</label>
      <textarea name="content" id="content" class="form-control" placeholder="Content"></textarea>
      </div>
@@ -31,7 +31,7 @@
      <div class="form-group">
      <label for="tags">Status</label>
      <input type="number" name="Status" id="Status" class="form-control">
-     </div> <br>
+     </div> <br> -->
      <input type="submit" name="btn_submit" id="btn_submit" value="Đăng bài" >
 
      </main>

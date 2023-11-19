@@ -55,7 +55,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="/author/post">Danh sách bài viết</a>
+                                    <a class="nav-link" href="/author/post/list">Danh sách bài viết</a>
                                     <a class="nav-link" href="/author/post/create">Thêm bài viết mớii</a>
                                 </nav>
                             </div>
