@@ -28,3 +28,9 @@ $router->addRoute('/admin/post/create', AdminController::class, 'createPost');
 //Routes for author
 $router->addRoute('/author', AuthorController::class, 'index');
 $router->addRoute('/author/post', AuthorController::class, 'list');
+
+//Routes for authenticator
+$router->addRoute('/login', AuthenticatorController::class, 'index');
+$router->addRoute('/login/submit', AuthenticatorController::class,'login');
+$router->addRoute('/register', AuthenticatorController::class, 'register');
+$router->addRoute('/logout', AuthenticatorController::class, 'logout');

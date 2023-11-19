@@ -19,7 +19,7 @@
         <link href="../../src/Views/components/layout/client/lib/slick/slick-theme.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="../../src/Views/components/CSS/CssClient/css/style.css" rel="stylesheet">
+        <link href="../src/Views/components/CSS/CssClient/css/style.css" rel="stylesheet">
     </head>
 
     <body>
