@@ -16,7 +16,7 @@ class Controller {
     }
     
     protected function renderAdmin($view, $data = []) {
-        include 'src/Views/components/layout/admin/header.php';
+        include_once 'Views/components/layout/admin/header.php';
         
         extract($data);
 
@@ -24,11 +24,11 @@ class Controller {
 
         include 'src/Views/components/layout/admin/footer.php';
     }
-    
     protected function renderClient($view, $data = []) {
         include_once 'Views/components/layout/client/header.php';
 
         extract($data);
+
         include "Views/$view.php";
         include_once 'Views/components/layout/client/footer.php';
     }

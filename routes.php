@@ -14,7 +14,11 @@ use Ductong\BaseMvc\Router;
 $router = new Router();
 //Routes for client
 $router->addRoute('/', HomeController::class, 'index');
-
+$router->addRoute('/client/chitiet', HomeController::class, 'chitiet');
+$router->addRoute('/client/tintuc', HomeController::class, 'tintuc');
+$router->addRoute('/client/form', HomeController::class, 'form');
+$router->addRoute('/client/dangky', HomeController::class, 'signup');
+$router->addRoute('/client/dangnhap', HomeController::class, 'signin');
 
 //Routes for admin
 $router->addRoute('/admin', AdminController::class, 'index');
@@ -32,5 +36,6 @@ $router->addRoute('/author/post/update', PostAuthorController::class,'update');
 
 //Routes for authenticator
 $router->addRoute('/login', AuthenticatorController::class, 'index');
-$router->addRoute('/login/submit', AuthenticatorController::class, 'login');
+$router->addRoute('/login/submit', AuthenticatorController::class,'login');
+$router->addRoute('/register', AuthenticatorController::class, 'register');
 $router->addRoute('/logout', AuthenticatorController::class, 'logout');

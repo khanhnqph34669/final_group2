@@ -15,8 +15,8 @@
         <!-- CSS Libraries -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="../src/Views/components/layout/client/lib/slick/slick.css" rel="stylesheet">
-        <link href="../src/Views/components/layout/client/lib/slick/slick-theme.css" rel="stylesheet">
+        <link href="../../src/Views/components/layout/client/lib/slick/slick.css" rel="stylesheet">
+        <link href="../../src/Views/components/layout/client/lib/slick/slick-theme.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
         <link href="../src/Views/components/CSS/CssClient/css/style.css" rel="stylesheet">
@@ -30,7 +30,7 @@
                     <div class="col-lg-3 col-md-4">
                         <div class="logo">
                             <a href="">
-                                <img src="../src/Views/components/layout/client/img/logoweb.png" alt="Logo">
+                                <img src="../../src/Views/components/layout/client/img/logoweb.png" alt="Logo">
                             </a>
                         </div>
                     </div>
