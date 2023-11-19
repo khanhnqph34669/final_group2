@@ -11,8 +11,24 @@ class HomeController extends Controller
         $this->renderClient('client/index');
     }
 
+    public function tintuc()
+    {
+        $this->renderClient('client/tintuc');
+    }
     public function chitiet()
     {
         $this->renderClient('client/chitiet');
+    }
+    public function signin()
+    {
+        $this->renderClient('client/dangnhap');
+    }
+    public function signup()
+    {
+        $this->renderClient('client/dangky');
+    }
+    public function form()
+    {
+        $this->renderClient('client/form');
     }
 }
