@@ -1060,13 +1060,87 @@ button.btn:hover {
   }
 }
 /* -------------------------------------------------------------------- view */
+.container_content .productbanner {
+  margin-top: 30px;
+
+  width: 100%;
+}
 .container_content .banner {
-  width: 70%;
+  width: 60%;
 }
 .container_content .banner img {
-  width: 300px;
-  height: 200px;
+  width: 100%;
 }
 .container_content .bannerphu {
   width: 28%;
+}
+.container_content .bannerphu img {
+  width: 100%;
+}
+.container_content .productbanner .nav ul {
+  margin-top: 20px;
+  list-style-type: none;
+}
+.container_content .productbanner .nav ul a {
+  font-size: 2vw;
+}
+.container_content .foryou .productforyou figcaption {
+  color: #303ec1;
+  font-size: 1vw;
+}
+.container_content .foryou .productforyou figure img {
+  width: 300px;
+  height: 230px;
+}
+.flex {
+  display: flex;
+  display: flex;
+  justify-content: space-around;
+}
+.ml20 {
+  margin-left: 20px;
+}
+.ml40 {
+  margin-left: 40px;
+}
+.space20 {
+  margin: 20px;
+}
+.mb30 {
+  margin-bottom: 30px;
+}
+.container_content .foryou form {
+  border-radius: 30px;
+  width: 360px;
+  height: 300px;
+  background-color: #d9d9d9;
+  margin: 0px 80px 40px 0px;
+}
+.container_content .foryou form .email {
+  border-radius: 13px;
+  height: 40px;
+  width: 90%;
+  border: 1px black solid;
+}
+.container_content .foryou form .email {
+  border-radius: 13px;
+  height: 40px;
+  width: 90%;
+  border: 1px black solid;
+}
+.container_content .foryou form .sbbutton {
+  text-align: center;
+  height: 40px;
+  border-radius: 13px;
+  border: none;
+  background-color: #8031b0;
+  color: white;
+}
+.container_content .category .productforyou figcaption {
+  color: #303ec1;
+  font-size: 1.3vw;
+}
+.container_content .category .productforyou figure img {
+  width: 350px;
+  height: 280px;
 }

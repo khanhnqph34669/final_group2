@@ -12,7 +12,7 @@ use Ductong\BaseMvc\Router;
 $router = new Router();
 //Routes for client
 $router->addRoute('/', HomeController::class, 'index');
-
+$router->addRoute('/client/chitiet', HomeController::class, 'chitiet');
 
 //Routes for admin
 $router->addRoute('/admin', AdminController::class, 'index');
