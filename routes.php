@@ -27,7 +27,7 @@ $router->addRoute('/admin/post/create', AdminController::class, 'createPost');
 
 
 //Routes for author
-$router->addRoute('/author', AuthorController::class, 'index');
+$router->addRoute('/author', AuthorController::class, 'login');
 // $router->addRoute('/author/post', AuthorController::class, 'list');
 $router->addRoute('/author/post/list', PostAuthorController::class,'listpost');
 $router->addRoute('/author/post/create', PostAuthorController::class,'create');

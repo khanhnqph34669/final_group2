@@ -9,7 +9,7 @@
           </ol>
           <div class="card mb-4">
           <div class="card-body">
-          <form action="" method="post">
+          <form action="create" method="post">
                <div class="form-group">
                <input type="hidden" name="Id" id="Id" class="form-control">
                </div>
