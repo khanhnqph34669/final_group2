@@ -17,7 +17,23 @@ class PostController extends Controller
     }
 
     public function create(){
-        
+        if(isset($_POST['submit-post'])){
+            $data = [
+                'Title' => $_POST['title'],
+                'Content' => $_POST['content'],
+                'author_Id' => $_POST['author'],
+                'categoryPost_id' => $_POST['category'],
+                'Status' => 3,
+
+            ];
+            $post = new Post();
+            $post->insert($data);
+            header('Location: /admin/post');
+        }
+        else{
+            header('Location: /admin/post/create');
+
+        }
     }
 
 }
