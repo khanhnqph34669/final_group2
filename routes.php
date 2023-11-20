@@ -20,17 +20,17 @@ $router->addRoute('/client/dangky', HomeController::class, 'signup');
 $router->addRoute('/client/dangnhap', HomeController::class, 'signin');
 
 //Routes for admin
-$router->addRoute('/admin', AdminController::class, 'index');
+$router->addRoute('/admin', AdminController::class, 'login');
 $router->addRoute('/admin/post', PostController::class, 'index');
 $router->addRoute('/admin/post/create', AdminController::class, 'createPost');
 
 
 //Routes for author
-$router->addRoute('/author', AuthorController::class, 'index');
+$router->addRoute('/author', AuthorController::class, 'login');
 $router->addRoute('/author/post', AuthorController::class, 'list');
 
 //Routes for authenticator
 $router->addRoute('/login', AuthenticatorController::class, 'index');
 $router->addRoute('/login/submit', AuthenticatorController::class,'login');
 $router->addRoute('/register', AuthenticatorController::class, 'register');
-$router->addRoute('/logout', AuthenticatorController::class, 'logout');
+$router->addRoute('/logout', AuthenticatorController::class, 'indexLogout');

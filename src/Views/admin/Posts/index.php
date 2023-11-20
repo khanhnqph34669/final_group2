@@ -14,7 +14,7 @@
                                             <th>Nội dung</th>
                                             <th>Lượt xem</th>
                                             <th>Tác giả</th>
-
+                                            <th>Ảnh bìa</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -24,7 +24,7 @@
                                                 <td><?= $post['Content'] ?></td>
                                                 <td><?= $post['ViewCount'] ?></td>
                                                 <td><?= $post['author_Id'] ?></td>
-                                                <td><?= $post['']?></td>
+                                                <td><img class="img-post" src="../../src/Views/Public/img/<?=$post['ImageUrl']?>" alt=""></td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
@@ -34,6 +34,7 @@
                                             <th>Nội dung</th>
                                             <th>Lượt xem</th>
                                             <th>Tác giả</th>
+                                            <th>Ảnh bìa</th>
                                         </tr>
                                     </tfoot>
                                 </table>
