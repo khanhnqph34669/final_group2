@@ -80,8 +80,32 @@
                         </div>
 
                     </div>
-                  <button class="nav-item nav-link active"><a href="/login">Login</a></button>
-                  <button class="nav-item nav-link active">Register</button>
+                    <?= 
+                    session_start();
+                    if(isset($_SESSION['user'])){
+                        if($_SESSION['roles'] == 1){
+                            $user = $_SESSION['user'];
+                            echo '<p class="name-user">'.$user.'</p>';
+                            echo '<a href="/admin" class="btn btn-outline-light ml-auto">Dashboard</a>';
+                        }else if($_SESSION['roles'] == 2){
+                            $user = $_SESSION['user'];
+                            echo '<p class="name-user">'.$user.'</p>';
+                            echo '<a href="/author" class="btn btn-outline-light ml-auto">Dashboard</a>';
+                        }
+                        else{
+                            $user = $_SESSION['user'];
+                            echo '<p class="name-user">'.$user.'</p>';
+                            echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';
+                        }
+
+                    }
+                    else{
+                        echo '<a href="/login" class="btn btn-outline-light ml-auto">Login</a>';
+                    }
+
+                     ?>
+                  <!-- <button class="nav-item nav-link active"><a href="/login">Login</a></button>
+                  <button class="nav-item nav-link active">Register</button> -->
                 </nav>
             </div>
         </div>

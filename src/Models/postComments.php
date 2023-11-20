@@ -6,6 +6,6 @@ use Ductong\BaseMvc\Model;
 class postComments extends Model
 {
     protected $table = 'postcomments';
-    protected $columns = ['PostId', 'UserId', 'Comment', 'created_at'];
+    protected $columns = ['PostId', 'UserId', 'Comment', 'CreateAt'];
 }
 ?>
