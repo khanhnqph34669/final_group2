@@ -1,41 +1,43 @@
 </div>
+
      <div id="layoutSidenav_content">
      <main>
-     <div class="container-fluid">
-     <h1 class="mt-4">Create Post</h1>
+     <div class="container-fluid px-4">
+     <h1 class="mt-4">Thêm bài viết mới</h1>
      <ol class="breadcrumb mb-4">
      <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-     <li class="breadcrumb-item active">Create Post</li>
+     <li class="breadcrumb-item active">Thêm bài viết mới</li>
      </ol>
      <div class="card mb-4">
      <div class="card-body">
-     <form action="/admin/posts/store" method="post">
+     <form action="/admin/post/push" method="post" enctype="multipart/form-data">
      <div class="form-group">
-     <label for="title">Title</label>
-     <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+     <label for="title">Tiêu đề</label>
+     <input type="text" class="form-control" id="title" name="title" placeholder="Tiêu đề bài viết">
+     </div>
+     <br>
+     <div class="form-group">
+     <label for="content">Nội dung</label>
+     <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+     </div>
+     <br>
+     <div class="form-group">
+     <label for="image">Ảnh bìa</label>
+     <input type="file" class="form-control" id="image" name="image">
      </div>
      <div class="form-group">
-     <label for="content">Content</label>
-     <textarea name="content" id="content" class="form-control" placeholder="Content"></textarea>
+     <label for="category">Danh mục bài viết</label>
+     <select class="form-control" id="category" name="category">
+     <?php foreach ($categories as $category) : ?>
+     <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+     <?php endforeach; ?>
+     </select>
      </div>
      <div class="form-group">
-     <label for="author">Author</label>
-     <input type="text" name="author" id="author" class="form-control" placeholder="Author">
+     <label for="author">Tác giả</label>
+     <input type="text" class="form-control" value="<?= $authors['Name'] ?>" readonly>
+     <input type="number" name="author"hidden value="<?= $authors['Id'] ?>">
      </div>
-     <div class="form-group">
-     <label for="category">Category</label>
-     <input type="text" name="category" id="category" class="form-control" placeholder="Category">
-     </div>
-     <div class="form-group">
-     <label for="image">Image</label>
-     <input type="text" name="image" id="image" class="form-control" placeholder="Image">
-     </div>
-     <div class="form-group">
-     <label for="status">Status</label>
-     <input type="text" name="status" id="status" class="form-control" placeholder="Status">
-     </div>
-     <div class="form-group">
-     <label for="tags">Tags</label>
-     <input type="text" name="tags" id="tags" class="form-control" placeholder="Tags">
-     </div>
+     <br>
+     <button type="submit" name="submit-post" class="btn btn-primary">Thêm bài viết</button>
      </main>

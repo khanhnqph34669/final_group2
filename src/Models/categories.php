@@ -3,12 +3,12 @@ namespace Ductong\BaseMvc\Models;
 
 use Ductong\BaseMvc\Model;
 
-class categroryPost extends Model
+class Categories extends Model
 {
-    protected $table = 'posts';
+    protected $table = 'category';
     protected $columns = [
-        'Id',
-        'Name',
+        'id',
+        'name',
         ];
     
 }
