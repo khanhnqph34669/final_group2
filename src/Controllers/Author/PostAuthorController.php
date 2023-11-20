@@ -20,9 +20,9 @@ class PostAuthorController extends Controller
                 'name' => $_POST['name'],
             ];
 
-            (new Model())->insert($data);
+            (new Post())->insert($data);
 
-            header('Location: /author/post');
+            header('Location: /author/Post');
         }
 
         $this->renderAuthor("Post/create");
@@ -35,13 +35,13 @@ class PostAuthorController extends Controller
             ];
 
             $conditions = [
-                ['Id', '=', $_GET['Id']],
+                ['id', '=', $_GET['id']],
             ];
 
-            (new Model())->update($data, $conditions);
+            (new Post())->update($data, $conditions);
         }
 
-        $category = (new Model())->findOne($_GET["Id"]);
+        $category = (new Post())->findOne($_GET["id"]);
 
         $this->renderAuthor("Post/update", ["category" => $category]);
     }
