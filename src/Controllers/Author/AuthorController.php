@@ -8,7 +8,7 @@ session_start();
 class AuthorController extends Controller
 {
     public function index() {
-        $this->renderAuthor('author/index');
+        $this->renderAuthor('index');
     }
 
     public function login(){
@@ -19,7 +19,7 @@ class AuthorController extends Controller
             $this->index();
         }
     }
-    public function list() {
-        $this->renderAuthor('author/Post/listpost');
-    }
+    // public function list() {
+    //     $this->renderAuthor('author/Post/listpost');
+    // }
 }

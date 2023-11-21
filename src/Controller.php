@@ -11,8 +11,8 @@ class Controller {
         include_once 'Views/components/layout/author/header.php';
         extract($data);
 
-        include "Views/$view.php";
-        include_once 'Views/components/layout/author/footer.php';
+        include "Views/author/$view.php";
+        include_once 'Views/components/layout/author/footer.php'; 
     }
     
     protected function renderAdmin($view, $data = []) {
