@@ -14,7 +14,9 @@
                                             <th>Nội dung</th>
                                             <th>Lượt xem</th>
                                             <th>Tác giả</th>
-                                            <th>Ảnh bìa</th>
+                                            
+                                            <th>Status</th>
+                                            <th>Thao tác</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -24,7 +26,26 @@
                                                 <td><?= $post['Content'] ?></td>
                                                 <td><?= $post['ViewCount'] ?></td>
                                                 <td><?= $post['author_Id'] ?></td>
-                                                <td><img class="img-post" src="../../src/Views/Public/img/<?=$post['ImageUrl']?>" alt=""></td>
+                                               
+                                                <td><?php
+                                                    if($post['Status']==3){
+                                                        echo 'Đã duyệt';
+                                                    }else if($post['Status']==2){
+                                                        echo 'Chờ duyệt';
+                                                    }else{
+                                                        echo 'Từ chối';
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <a href="/admin/post/edit/<?= $post['Id'] ?>" class="btn btn-primary">Sửa</a>
+                                                    <a href="/admin/post/delete/<?= $post['Id'] ?>" class="btn btn-danger">Xóa</a>
+                                                    <?php
+                                                        if($post['Status']==2){
+                                                            echo '<a href="/admin/post/accept/<?= $post[\'Id\'] ?>" class="btn btn-success">Duyệt</a>';
+                                                        }
+                                                    ?>
+                                                </td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
@@ -34,7 +55,9 @@
                                             <th>Nội dung</th>
                                             <th>Lượt xem</th>
                                             <th>Tác giả</th>
-                                            <th>Ảnh bìa</th>
+                                            
+                                            <th>Status</th>
+                                            <th>Thao tác</th>
                                         </tr>
                                     </tfoot>
                                 </table>

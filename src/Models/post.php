@@ -11,12 +11,10 @@ class Post extends Model
         'Content',
         'ImageUrl',
         'Status',
-        'VoteCount',
-        'VoteAvg',
-        'ViewCount',
         'CreateAt',
         'author_Id',
         'RejectContent',
-        'categoryPost_id'];
+        'categoryPost_id'
+    ];
     
 }
