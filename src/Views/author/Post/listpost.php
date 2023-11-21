@@ -13,8 +13,8 @@
                                             <th>STT</th>
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
-                                            <th>Ảnh bìa</th>
                                             <th>Lượt xem</th>
+                                            <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
                                         </tr>
                                     </thead>
@@ -24,8 +24,8 @@
                                                 <td><?= $post['Id'] ?></td>
                                                 <td><?= $post['Title'] ?></td>
                                                 <td><?= $post['Content'] ?></td>
-                                                <td><img class="img-post" src="../../src/Views/Public/img/<?=$post['ImageUrl']?>" alt=""></td>
                                                 <td><?= $post['ViewCount'] ?></td>
+                                                <td><?= $post['CreateAt'] ?></td>
                                                 <td>
                                                     <?php
                                                     if($post['Status'] == 3) {
@@ -46,8 +46,8 @@
                                         <th>STT</th>
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
-                                            <th>Ảnh bìa</th>
                                             <th>Lượt xem</th>
+                                            <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
                                             </tr>
                                     </tfoot>

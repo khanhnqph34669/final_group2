@@ -9,7 +9,7 @@
           </ol>
           <div class="card mb-4">
           <div class="card-body">
-          <form action="" method="post">
+          <form action="/author/post/create/submit" method="post">
                <div class="form-group">
                <label for="Title">Tiêu đề</label>
                <input type="text" name="Title" id="Title" class="form-control" placeholder="Title">
@@ -23,17 +23,17 @@
                <input type="file" name="ImageUrl" id="Image" class="form-control" placeholder="Image">
                </div>
                <div class="form-group">
-               <label for="CreateAt">Thời gian tạo</label>
-               <input type="datetime-local" name="CreateAt" id="CreateAt" class="form-control">
-               </div>
-               <div class="form-group">
                <input type="number" name="Status" id="Status" class="form-control" hidden value="2" readonly>
                </div> 
                <div class="form-group">
                <label for="categoryPost_id">Danh mục</label>
-               <input type="number" name="categoryPost_id" id="categoryPost_id" class="form-control">
+               <select class="form-control" id="category" name="category">
+                                        <?php foreach ($categories as $category) : ?>
+                                             <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+                                        <?php endforeach; ?>
+                                   </select>
                </div> 
-               <div class="form-group">
+               <!-- <div class="form-group">
                <label for="VoteCount">VoteCount</label>
                <input type="number" name="VoteCount" id="VoteCount" class="form-control">
                </div> 
@@ -44,9 +44,10 @@
                <div class="form-group">
                <label for="VoteAvg">VoteAvg</label>
                <input type="number" name="VoteAvg" id="VoteAvg" class="form-control">
-               </div> 
+               </div>  -->
                <div class="form-group">
-               <input type="number" class="form-control" name="author_Id" hidden value="2" readonly>
+               <!-- <input type="text" class="form-control" value="<?= $authors['Name'] ?>" readonly> -->
+               <input type="number" name="author_Id"  value="<?= $authors['Id'] ?>">
                </div> 
                <div class="form-group">
                <input type="hidden" name="RejectContent" id="RejectContent" class="form-control">

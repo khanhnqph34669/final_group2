@@ -31,7 +31,8 @@ $router->addRoute('/admin/post/push', PostController::class, 'create');
 $router->addRoute('/author', AuthorController::class, 'login');
 // $router->addRoute('/author/post', AuthorController::class, 'list');
 $router->addRoute('/author/post/list', PostAuthorController::class,'listpost');
-$router->addRoute('/author/post/create', PostAuthorController::class,'create');
+$router->addRoute('/author/post/create', AuthorController::class,'createPage');
+$router->addRoute('/author/post/create/submit', PostAuthorController::class,'create');
 $router->addRoute('/author/post/delete', PostAuthorController::class,'delete');
 $router->addRoute('/author/post/update', PostAuthorController::class,'update');
 

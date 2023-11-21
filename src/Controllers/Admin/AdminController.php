@@ -29,5 +29,4 @@ class AdminController extends Controller
         $this->renderAdmin('Posts/createPost',['categories'=>$categories,'authors'=>$authors]);
     }
 
-
 }
