@@ -85,12 +85,12 @@ session_start();
                 </div>
                 <?php
                 if (isset($_SESSION['user'])) {
-                    if($_SESSION['id']==1){
+                    if($_SESSION['roles']==1){
                         echo '<p class="name-user">'.$_SESSION['Name'].'</p>';
                         echo '<a href="/admin" class="btn btn-outline-light ml-auto mgr-10">Dashboard</a>';
                         echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';
                     }
-                    else if($_SESSION['id']==2){
+                    else if($_SESSION['roles']==2){
                         echo '<p class="name-user">'.$_SESSION['Name'].'</p>';
                         echo '<a href="/author" class="btn btn-outline-light ml-auto mgr-10">Dashboard</a>';
                         echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';          
