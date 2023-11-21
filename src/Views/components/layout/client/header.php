@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+?>
 <head>
     <meta charset="utf-8">
     <title>Trang Chủ</title>
@@ -82,12 +84,24 @@
 
                 </div>
                 <?php
-                    if(isset($_SESSION['user'])){
-                        echo '';
+                if (isset($_SESSION['user'])) {
+                    if($_SESSION['id']==1){
+                        echo '<p class="name-user">'.$_SESSION['Name'].'</p>';
+                        echo '<a href="/admin" class="btn btn-outline-light ml-auto mgr-10">Dashboard</a>';
+                        echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';
                     }
+                    else if($_SESSION['id']==2){
+                        echo '<p class="name-user">'.$_SESSION['Name'].'</p>';
+                        echo '<a href="/author" class="btn btn-outline-light ml-auto mgr-10">Dashboard</a>';
+                        echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';          
+                    }
+                    else{
+                        echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';
+                    }
+                } else {
+                    echo '<a href="/login" class="btn btn-outline-light ml-auto">Login</a>';
+                }
                 ?>
-                <!-- <button class="nav-item nav-link active"><a href="/login">Login</a></button>
-                <button class="nav-item nav-link active">Register</button> -->
             </nav>
         </div>
     </div>
