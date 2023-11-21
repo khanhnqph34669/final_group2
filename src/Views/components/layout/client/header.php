@@ -3,6 +3,7 @@
 <?php
 session_start();
 ?>
+
 <head>
     <meta charset="utf-8">
     <title>Trang Chủ</title>
@@ -78,29 +79,29 @@ session_start();
                                     <a href="#" class="dropdown-item">Sub Item 2</a>
                                 </div>
                             </div> -->
-                        <a href="/client/tintuc" class="nav-item nav-link">Single Page</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                        <a href="/client/tintuc" class="nav-item nav-link">Technology</a>
+                        <a href="contact.html" class="nav-item nav-link">News</a>
+                        <a href="contact.html" class="nav-item nav-link">Review</a>
+                        <a href="contact.html" class="nav-item nav-link">register for Author</a>
                     </div>
 
                 </div>
                 <?php
                 if (isset($_SESSION['user'])) {
-                    if($_SESSION['id']==1){
-                        echo '<p class="name-user">'.$_SESSION['Name'].'</p>';
+                    if ($_SESSION['id'] == 1) {
+                        echo '<p class="name-user">' . $_SESSION['Name'] . '</p>';
                         echo '<a href="/admin" class="btn btn-outline-light ml-auto mgr-10">Dashboard</a>';
                         echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';
-                    }
-                    else if($_SESSION['id']==2){
-                        echo '<p class="name-user">'.$_SESSION['Name'].'</p>';
+                    } else if ($_SESSION['id'] == 2) {
+                        echo '<p class="name-user">' . $_SESSION['Name'] . '</p>';
                         echo '<a href="/author" class="btn btn-outline-light ml-auto mgr-10">Dashboard</a>';
-                        echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';          
-                    }
-                    else{
-                        echo '<p class="name-user">'.$_SESSION['Name'].'</p>';
+                        echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';
+                    } else {
                         echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';
                     }
                 } else {
                     echo '<a href="/login" class="btn btn-outline-light ml-auto">Login</a>';
+                    echo '<a href="/sign-up" class="btn btn-outline-light ml-auto">Sign Up</a>';
                 }
                 ?>
             </nav>

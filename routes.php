@@ -38,5 +38,5 @@ $router->addRoute('/author/post/update', PostAuthorController::class,'update');
 //Routes for authenticator
 $router->addRoute('/login', AuthenticatorController::class, 'index');
 $router->addRoute('/login/submit', AuthenticatorController::class,'login');
-$router->addRoute('/register', AuthenticatorController::class, 'register');
+$router->addRoute('/sign-up', AuthenticatorController::class, 'signUp');
 $router->addRoute('/logout', AuthenticatorController::class, 'indexLogout');

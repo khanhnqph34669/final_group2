@@ -77,4 +77,8 @@ class AuthenticatorController extends Controller
         $this->logout();
         header('Location: /');
     }
+
+    public function signUp(){
+        $this->render('signUp');
+    }
 }
