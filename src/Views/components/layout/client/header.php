@@ -96,6 +96,7 @@ session_start();
                         echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';          
                     }
                     else{
+                        echo '<p class="name-user">'.$_SESSION['Name'].'</p>';
                         echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';
                     }
                 } else {
