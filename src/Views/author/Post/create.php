@@ -46,10 +46,6 @@
                <input type="number" name="VoteAvg" id="VoteAvg" class="form-control">
                </div>  -->
                <div class="form-group">
-               <!-- <input type="text" class="form-control" value="<?= $authors['Name'] ?>" readonly> -->
-               <input type="number" name="author_Id"  value="<?= $authors['Id'] ?>">
-               </div> 
-               <div class="form-group">
                <input type="hidden" name="RejectContent" id="RejectContent" class="form-control">
                </div> 
                <input type="submit" name="btn-submit" id="btn-submit" class="btn btn-info mt-3" value="Đăng bài" >

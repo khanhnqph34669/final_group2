@@ -28,7 +28,7 @@ class PostAuthorController extends Controller
                 'ImageUrl'=> '',
                 'Status'=>2,
                 'CreateAt'=>date('Y-m-d H:i:s'),
-                'author_Id'=>$_POST['Author'],
+                'author_Id'=>2,
                 'RejectContent'=>'',
                 'categoryPost_id'=>$_POST['CategoryPost_id']
             ];
@@ -41,46 +41,11 @@ class PostAuthorController extends Controller
     }
 
     public function update(){
-        if (isset($_POST["btn-submit"])) { 
-            $data = [
-                'Id'=> $_POST["Id"],
-                'Title' => $_POST['Title'],
-                'Content' => $_POST['Content'],
-                'ImageUrl' => $_POST['ImageUrl'],
-                'CreateAt' => $_POST['CreateAt'],
-                'Status' => $_POST['Status'],
-                'categoryPost_id' => $_POST['categoryPost_id'],
-                'RejectContent' => $_POST['RejectContent'],
-                'author_Id' => $_POST['author_Id'],
-                'ViewCount' => $_POST['ViewCount'],
-                'VoteAvg' => $_POST['VoteAvg'],
-                'VoteCount' => $_POST['VoteCount']
-                
-            ];
-
-            $conditions = [
-                ['id', '=', $_GET['id']],
-            ];
-            $post = new Post();
-            $posts = $post->all(); 
-            $post->update($data, $conditions);
-        }
-            $post = new Post();
-            $posts = $post->all();
-            $category = $post->findOne($_GET["id"]);
-
-        $this->renderAuthor("Post/update", ["category" => $category,'posts'=>$posts]);
+        
     }
 
     public function delete(){
-        $conditions = [
-            ['id', '=', $_GET['id']],
-        ];
-        $post = new Post();
-        $posts = $post->all();
-        (new $post())->delete($conditions);
-
-        header('Location: /author/Post/delete');
+    
     }
 
 }

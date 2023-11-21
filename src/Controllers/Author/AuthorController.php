@@ -12,13 +12,7 @@ class AuthorController extends Controller
     public function index() {
         $this->renderAuthor('index');
     }
-    public function createPage(){
-        $category = new Categories();
-        $categories = $category->all();
-        $author = new users();
-        $authors = $author->findOne($_SESSION['id']);
-        $this->renderAuthor("Post/create",['categories'=>$categories,'authors'=>$authors]);
-    }
+    
 
     public function login(){
         if (!isset($_SESSION['user']) || $_SESSION['roles'] !== 2){
@@ -27,6 +21,14 @@ class AuthorController extends Controller
         else{
             $this->index();
         }
+    }
+
+    public function createPage(){
+        $category = new Categories();
+        $categories = $category->all();
+        $author = new users();
+        $tacgia = $author->findOne($_SESSION['id']);
+        $this->renderAuthor("Post/create",['categories'=>$categories,'authors'=>$tacgia]);
     }
     // public function list() {
     //     $this->renderAuthor('author/Post/listpost');
