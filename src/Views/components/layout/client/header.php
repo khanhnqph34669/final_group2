@@ -81,8 +81,13 @@
                     </div>
 
                 </div>
-                <button class="nav-item nav-link active"><a href="/login">Login</a></button>
-                <button class="nav-item nav-link active">Register</button>
+                <?php
+                    if(isset($_SESSION['user'])){
+                        echo '';
+                    }
+                ?>
+                <!-- <button class="nav-item nav-link active"><a href="/login">Login</a></button>
+                <button class="nav-item nav-link active">Register</button> -->
             </nav>
         </div>
     </div>

@@ -13,7 +13,7 @@ class AuthenticatorController extends Controller
         if (isset($_COOKIE['admin'])) {
             $this->renderAdmin('index');
         } elseif (isset($_COOKIE['client'])) {
-            $this->render('index');
+            $this->renderClient('index');
         } elseif (isset($_COOKIE['author'])) {
             $this->renderAuthor('author');
         } else {
@@ -51,7 +51,8 @@ class AuthenticatorController extends Controller
                             $_SESSION['user'] = $user;
                             $_SESSION['roles'] = $result['roles_id'];
                             $_SESSION['Name'] = $result['Name'];
-                            $this->renderClient('index');
+                            $_SESSION['id'] = $result['id'];    
+                            header('Location: /');
                             break;
                     }
                 } else {
