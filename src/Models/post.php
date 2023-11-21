@@ -7,7 +7,6 @@ class Post extends Model
 {
     protected $table = 'posts';
     protected $columns = [
-        'Id',
         'Title',
         'Content',
         'ImageUrl',

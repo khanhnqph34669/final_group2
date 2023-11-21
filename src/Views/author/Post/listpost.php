@@ -13,12 +13,9 @@
                                             <th>STT</th>
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
+                                            <th>Ảnh bìa</th>
                                             <th>Lượt xem</th>
-                                            <th>Ngày tạo</th>
                                             <th>Trạng thái</th>
-                                            <th></th>
-                                            <th></th>
-
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -27,11 +24,19 @@
                                                 <td><?= $post['Id'] ?></td>
                                                 <td><?= $post['Title'] ?></td>
                                                 <td><?= $post['Content'] ?></td>
+                                                <td><img class="img-post" src="../../src/Views/Public/img/<?=$post['ImageUrl']?>" alt=""></td>
                                                 <td><?= $post['ViewCount'] ?></td>
-                                                <td><?= $post['CreateAt'] ?></td>
-                                                <td><?= $post['Status'] ?></td>
-                                                <td><a href="update">Sửa lại</a></td>
-                                                <td><a href="#">Xóa bài</a></td>
+                                                <td>
+                                                    <?php
+                                                    if($post['Status'] == 3) {
+                                                        echo 'Đã duyệt';
+                                                    } else if($post['Status'] == 2) {
+                                                        echo 'Chờ duyệt';
+                                                    } else{
+                                                        echo 'Từ chối';
+                                                    }
+                                                    ?>
+                                                </td>
 
                                             </tr>
                                         <?php endforeach; ?>
@@ -41,12 +46,10 @@
                                         <th>STT</th>
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
+                                            <th>Ảnh bìa</th>
                                             <th>Lượt xem</th>
-                                            <th>Ngày tạo</th>
                                             <th>Trạng thái</th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
+                                            </tr>
                                     </tfoot>
                                 </table>
                             </div>
