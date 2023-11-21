@@ -51,7 +51,7 @@ class AuthenticatorController extends Controller
                             $_SESSION['user'] = $user;
                             $_SESSION['roles'] = $result['roles_id'];
                             $_SESSION['Name'] = $result['Name'];
-                            $this->renderClient('index');
+                            $this->renderClient('Client/index');
                             break;
                     }
                 } else {

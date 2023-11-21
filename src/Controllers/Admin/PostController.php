@@ -35,6 +35,7 @@ class PostController extends Controller
                 'RejectContent'=>'',
                 'categoryPost_id'=>$_POST['categoryPost_id']
             ];
+            if()
             (new Post())->insert($data);
             header('Location: /admin/post');
         } else {
