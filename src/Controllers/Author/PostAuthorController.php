@@ -14,21 +14,40 @@ class PostAuthorController extends Controller
     public function listpost(){
         $post = new Post();
         $posts = $post->all(); 
-        $postStatus = new PostStatus();
-        $poststatus = $postStatus->all();
-        $this->renderAuthor('Post/listpost',['posts'=>$posts,'postStatus'=>$postStatus]);
+        $category = new Categories();
+        $categories = $category->all();
+        $author = new users();
+        $authors = $author->all();
+        $this->renderAuthor('Post/listpost',['posts'=>$posts,'categories'=>$categories,'authors'=>$authors]);
     }
 
 
     public function create(){
         if (isset($_POST["btn-submit"])) { 
+            $data['ImageUrl'] = null;
+            $img = $_FILES['ImageUrl'] ?? null;
+            if ($img) {
+
+                // Đường dẫn lưu DB vì thư mục upload cùng cấp với index.php
+                // Khi lưu vào DB, chú ý là trước uploads có dấu /
+                $pathSaveDB = '../Views/Public/img/' . $img['name'];
+
+                // Đường dẫn upload có thêm __DIR__ . '/../../../'
+                // vì File ProductController của mình đang cách thư mục uploads 3 cấp
+                // Nên sẽ thấy có 3 lần ../
+                // __DIR__ là 2 const mặc định của PHP để lấy ra đường dẫn thư mục hiện tại của ProductController 
+                $pathUpload = __DIR__ . '../../../Views/Public/img/' . $img['name'];
+
+                if (move_uploaded_file($img['tmp_name'], $pathUpload)) { 
+                    $data['ImageUrl'] = $pathSaveDB;
+                } 
             $data = [
                 'Title'=>$_POST['Title'],
                 'Content'=>$_POST['Content'],
-                'ImageUrl'=> '',
                 'Status'=>2,
+                'ImageUrl'=>$img['name'],
                 'CreateAt'=>date('Y-m-d H:i:s'),
-                'author_Id'=>2,
+                'author_Id'=>$_POST['author_Id'],
                 'RejectContent'=>'',
                 'categoryPost_id'=>$_POST['CategoryPost_id']
             ];
@@ -40,13 +59,6 @@ class PostAuthorController extends Controller
         }
     }
 
-    public function update(){
-        
     }
-
-    public function delete(){
-    
-    }
-
 }
 ?>

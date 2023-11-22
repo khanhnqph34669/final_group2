@@ -27,10 +27,8 @@ class AuthorController extends Controller
         $category = new Categories();
         $categories = $category->all();
         $author = new users();
-        $tacgia = $author->findOne($_SESSION['id']);
-        $this->renderAuthor("Post/create",['categories'=>$categories,'authors'=>$tacgia]);
+        $authors = $author->findOne($_SESSION['id']);
+        $this->renderAuthor('post/create',['categories'=>$categories,'authors'=>$authors]);
     }
-    // public function list() {
-    //     $this->renderAuthor('author/Post/listpost');
-    // }
+    
 }

@@ -15,6 +15,7 @@
                                             <th>Nội dung</th>
                                             <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -35,18 +36,23 @@
                                                     }
                                                     ?>
                                                 </td>
+                                                <td>
+                                                    <a href="#">Xóa</a>
+                                                    <a href="#">Sửa</a>
+                                                </td>
 
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                        <th>STT</th>
+                                            <th>STT</th>
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
                                             <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
-                                            </tr>
+                                            <th></th>
+                                        </tr>
                                     </tfoot>
                                 </table>
                             </div>
