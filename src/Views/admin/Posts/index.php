@@ -13,8 +13,8 @@
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
                                             <th>Lượt xem</th>
+                                            <th>Ảnh bìa</th>
                                             <th>Tác giả</th>
-                                            
                                             <th>Status</th>
                                             <th>Thao tác</th>
                                         </tr>
@@ -22,10 +22,18 @@
                                     <tbody>
                                         <?php foreach ($posts as $post) : ?>
                                             <tr>
-                                                <td><?= $post['Title'] ?></td>
+                                                <td class="we"><?=$post['Title'] ?></td>
                                                 <td><?= $post['Content'] ?></td>
                                                 <td><?= $post['ViewCount'] ?></td>
-                                                <td><?= $post['author_Id'] ?></td>
+                                                <td><img class="img-thumbnail-cr"src="../<?=$post['ImageUrl']?>" alt=""></td>
+                                                <td><?php
+                                                    foreach ($authors as $author) {
+                                                        if($author['Id']==$post['author_Id']){
+                                                            echo $author['Name'];
+                                                        }
+                                                    } 
+                                                
+                                                ?></td>
                                                
                                                 <td><?php
                                                     if($post['Status']==3){
@@ -54,8 +62,8 @@
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
                                             <th>Lượt xem</th>
+                                            <th>Ảnh bìa</th>
                                             <th>Tác giả</th>
-                                            
                                             <th>Status</th>
                                             <th>Thao tác</th>
                                         </tr>

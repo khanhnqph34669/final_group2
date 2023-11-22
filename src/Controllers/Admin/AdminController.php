@@ -5,7 +5,7 @@ namespace Ductong\BaseMvc\Controllers\Admin;
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\Categories;
 use Ductong\BaseMvc\Models\users;
-session_start();
+
 class AdminController extends Controller
 {
     public function index() {

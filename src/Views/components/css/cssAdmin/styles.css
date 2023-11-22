@@ -643,7 +643,12 @@ progress {
   max-width: 100%;
   height: auto;
 }
-
+.img-thumbnail-cr{
+  width: 200px;
+  border-radius: 10px;
+  margin-left: 40px;
+  margin-right: auto;
+}
 .figure {
   display: inline-block;
 }
@@ -11708,4 +11713,3 @@ body {
   width: 100px;
   height: 100px;
 }
-
