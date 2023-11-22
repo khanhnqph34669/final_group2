@@ -13,6 +13,7 @@
                                             <th>STT</th>
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
+                                            <th>Ảnh</th>
                                             <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
                                             <th></th>
@@ -24,6 +25,7 @@
                                                 <td><?= $post['Id'] ?></td>
                                                 <td><?= $post['Title'] ?></td>
                                                 <td><?= $post['Content'] ?></td>
+                                                <td><img class="img-thumbnail-cr"src="/Public/img/<?=$post['ImageUrl']?>" alt=""></td>
                                                 <td><?= $post['CreateAt'] ?></td>
                                                 <td>
                                                     <?php
@@ -37,8 +39,10 @@
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <a href="#">Xóa</a>
-                                                    <a href="#">Sửa</a>
+                                                    <form action="/author/post/delete?id=<?= $post['Id'] ?>" method="post">
+                                                        <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm">Xóa</button>
+                                                    </form>
+                                                    <a href="update?id=<?= $post['Id'] ?>"><button type="button" class="btn btn-primary btn-sm">Sửa</button></a>
                                                 </td>
 
                                             </tr>
@@ -49,6 +53,7 @@
                                             <th>STT</th>
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
+                                            <th>Ảnh</th>
                                             <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
                                             <th></th>

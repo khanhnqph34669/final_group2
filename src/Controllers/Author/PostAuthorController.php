@@ -30,13 +30,13 @@ class PostAuthorController extends Controller
 
                 // Đường dẫn lưu DB vì thư mục upload cùng cấp với index.php
                 // Khi lưu vào DB, chú ý là trước uploads có dấu /
-                $pathSaveDB = '../Views/Public/img/' . $img['name'];
+                $pathSaveDB = '../Public/img/' . $img['name'];
 
                 // Đường dẫn upload có thêm __DIR__ . '/../../../'
                 // vì File ProductController của mình đang cách thư mục uploads 3 cấp
                 // Nên sẽ thấy có 3 lần ../
                 // __DIR__ là 2 const mặc định của PHP để lấy ra đường dẫn thư mục hiện tại của ProductController 
-                $pathUpload = __DIR__ . '../../../Views/Public/img/' . $img['name'];
+                $pathUpload = __DIR__ . '../../../../Public/img/' . $img['name'];
 
                 if (move_uploaded_file($img['tmp_name'], $pathUpload)) { 
                     $data['ImageUrl'] = $pathSaveDB;
@@ -58,7 +58,33 @@ class PostAuthorController extends Controller
 
         }
     }
+    }
+    public function delete() {
+        $conditions = [
+            ['id', '=', $_GET['id']],
+        ];
 
+        (new Post())->delete($conditions);
+
+        header('Location: /author/post/list');
+    }
+
+    public function update() {
+        if (isset($_POST["btn-submit"])) { 
+            $data = [
+                'name' => $_POST['name'],
+            ];
+
+            $conditions = [
+                ['id', '=', $_GET['id']],
+            ];
+
+            (new Post())->update($data, $conditions);
+        }
+
+        $category = (new Post())->findOne($_GET["id"]);
+
+        $this->renderAuthor("author/post/update", ["category" => $category]);
     }
 }
 ?>
