@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-session_start();
 ?>
 
 <head>
@@ -82,19 +81,18 @@ session_start();
                         <a href="/client/tintuc" class="nav-item nav-link">Technology</a>
                         <a href="contact.html" class="nav-item nav-link">News</a>
                         <a href="contact.html" class="nav-item nav-link">Review</a>
-                        <a href="contact.html" class="nav-item nav-link">register for Author</a>
+                        <a href="client/tacgia" class="nav-item nav-link">register for Author</a>
                     </div>
 
                 </div>
                 <?php
                 if (isset($_SESSION['user'])) {
-                    if($_SESSION['roles']==1){
-                        echo '<p class="name-user">'.$_SESSION['Name'].'</p>';
+                    if ($_SESSION['roles'] == 1) {
+                        echo '<p class="name-user">' . $_SESSION['Name'] . '</p>';
                         echo '<a href="/admin" class="btn btn-outline-light ml-auto mgr-10">Dashboard</a>';
                         echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';
-                    }
-                    else if($_SESSION['roles']==2){
-                        echo '<p class="name-user">'.$_SESSION['Name'].'</p>';
+                    } else if ($_SESSION['roles'] == 2) {
+                        echo '<p class="name-user">' . $_SESSION['Name'] . '</p>';
                         echo '<a href="/author" class="btn btn-outline-light ml-auto mgr-10">Dashboard</a>';
                         echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';
                     } else {

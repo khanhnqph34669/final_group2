@@ -19,16 +19,13 @@ class HomeController extends Controller
     {
         $this->renderClient('client/chitiet');
     }
-    public function signin()
-    {
-        $this->renderClient('client/dangnhap');
-    }
-    public function signup()
-    {
-        $this->renderClient('client/dangky');
-    }
+
     public function form()
     {
         $this->renderClient('client/form');
+    }
+    public function tacgia()
+    {
+        $this->renderClient('client/tacgia');
     }
 }

@@ -1184,8 +1184,7 @@ button.btn:hover {
   width: 300px;
 }
 
-
-.name-user{
+.name-user {
   color: #fff;
   font-size: 20px;
   font-weight: 600;
@@ -1194,6 +1193,6 @@ button.btn:hover {
   margin-top: 10px;
 }
 
-.mg-10{
+.mg-10 {
   margin-right: 100px !important;
 }

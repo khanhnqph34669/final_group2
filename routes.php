@@ -19,6 +19,8 @@ $router->addRoute('/client/tintuc', HomeController::class, 'tintuc');
 $router->addRoute('/client/form', HomeController::class, 'form');
 $router->addRoute('/client/dangky', HomeController::class, 'signup');
 $router->addRoute('/client/dangnhap', HomeController::class, 'signin');
+$router->addRoute('/client/tacgia', HomeController::class, 'tacgia');
+
 
 //Routes for admin
 $router->addRoute('/admin', AdminController::class, 'login');
@@ -30,13 +32,13 @@ $router->addRoute('/admin/post/push', PostController::class, 'create');
 //Routes for author
 $router->addRoute('/author', AuthorController::class, 'login');
 // $router->addRoute('/author/post', AuthorController::class, 'list');
-$router->addRoute('/author/post/list', PostAuthorController::class,'listpost');
-$router->addRoute('/author/post/create', PostAuthorController::class,'create');
-$router->addRoute('/author/post/delete', PostAuthorController::class,'delete');
-$router->addRoute('/author/post/update', PostAuthorController::class,'update');
+$router->addRoute('/author/post/list', PostAuthorController::class, 'listpost');
+$router->addRoute('/author/post/create', PostAuthorController::class, 'create');
+$router->addRoute('/author/post/delete', PostAuthorController::class, 'delete');
+$router->addRoute('/author/post/update', PostAuthorController::class, 'update');
 
 //Routes for authenticator
 $router->addRoute('/login', AuthenticatorController::class, 'index');
-$router->addRoute('/login/submit', AuthenticatorController::class,'login');
+$router->addRoute('/login/submit', AuthenticatorController::class, 'login');
 $router->addRoute('/sign-up', AuthenticatorController::class, 'signUp');
 $router->addRoute('/logout', AuthenticatorController::class, 'indexLogout');
