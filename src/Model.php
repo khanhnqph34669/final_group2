@@ -171,6 +171,71 @@ class Model
         return $stmt->fetch();
     }
 
+    public function findPost($id)
+    {
+        $sql = "SELECT * FROM {$this->table} WHERE author_Id = :id";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindParam(':id', $id);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+        
+    }
+
+    public function findPostByStatus($status)
+    {
+        $sql = "SELECT * FROM {$this->table} WHERE Status = :status";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindParam(':status', $status);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+        
+    }
+
+    public function findPostEditStatus($idPost,$status)
+    {
+        $sql = "SELECT * FROM {$this->table} WHERE id = :idPost AND Status = :status";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindParam(':idPost', $idPost);
+        $stmt->bindParam(':status', $status);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetch();
+
+    }
+
+    public function findComment($idPost)
+{
+    $sql = "SELECT * FROM {$this->table} WHERE PostId = :idPost";
+
+    $stmt = $this->conn->prepare($sql);
+
+    $stmt->bindParam(':idPost', $idPost);
+
+    $stmt->execute();
+
+    $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+    return $stmt->fetchAll();
+}
+
+
     public function __destruct()
     {
         $this->conn = null;

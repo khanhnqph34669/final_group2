@@ -5,7 +5,7 @@ namespace Ductong\BaseMvc\Controllers;
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\users;
 
-session_start();
+
 class AuthenticatorController extends Controller
 {
     public function index()

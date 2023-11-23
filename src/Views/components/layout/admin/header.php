@@ -60,6 +60,7 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="/admin/post">Danh sách</a>
+                                    <a class="nav-link" href="/admin/post/myPost">Bài viết của bạn</a>
                                     <a class="nav-link" href="/admin/post/create">Thêm bài viết mới</a>
                                 </nav>
                             </div>
@@ -94,7 +95,7 @@
                                     </div> -->
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Yêu cầu</div>
+                            <div class="sb-sidenav-menu-heading">Khác</div>
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-person-circle-check"></i></div>
                                 Yêu cầu làm tác giả
@@ -103,8 +104,14 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-folder-tree"></i></div>
                                 Yêu cầu duyệt bài
                             </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
+                                Quản lý người dùng
+                            </a>
                         </div>
+                        
                     </div>
+                    
                     
         
         

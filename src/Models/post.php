@@ -16,5 +16,7 @@ class Post extends Model
         'RejectContent',
         'categoryPost_id'
     ];
+
+    
     
 }

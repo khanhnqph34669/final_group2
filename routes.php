@@ -23,8 +23,13 @@ $router->addRoute('/client/dangnhap', HomeController::class, 'signin');
 //Routes for admin
 $router->addRoute('/admin', AdminController::class, 'login');
 $router->addRoute('/admin/post', PostController::class, 'index');
+$router->addRoute('/admin/post/myPost', PostController::class, 'myPost');
 $router->addRoute('/admin/post/create', AdminController::class, 'createPost');
 $router->addRoute('/admin/post/push', PostController::class, 'create');
+$router->addRoute('/admin/post/accept', PostController::class, 'accept');
+$router->addRoute('/admin/post/reject', PostController::class, 'reject');
+$router->addRoute('/admin/post/delete', PostController::class, 'delete');
+$router->addRoute('/admin/post/edit', PostController::class, 'update');
 
 
 //Routes for author
