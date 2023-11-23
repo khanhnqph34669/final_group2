@@ -25,8 +25,11 @@ $router->addRoute('/client/tacgia', HomeController::class, 'tacgia');
 //Routes for admin
 $router->addRoute('/admin', AdminController::class, 'login');
 $router->addRoute('/admin/post', PostController::class, 'index');
+$router->addRoute('/admin/post/myPost', PostController::class, 'myPost');
 $router->addRoute('/admin/post/create', AdminController::class, 'createPost');
 $router->addRoute('/admin/post/push', PostController::class, 'create');
+$router->addRoute('/admin/post/delete', PostController::class, 'delete');
+$router->addRoute('/admin/post/edit', PostController::class, 'update');
 
 
 //Routes for author
