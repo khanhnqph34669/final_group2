@@ -34,15 +34,6 @@ class PostController extends Controller
             if ($_POST['title'] != null && $_POST['content'] != null && $_FILES["image"]["name"] != null) {
                 $target_dir = "Public/img/";
                 $target_file = $target_dir . basename($_FILES["image"]["name"]);
-    {
-        if (isset($_POST['submit-post'])) {
-            if ($_POST['title'] != null && $_POST['content'] != null && $_FILES["image"]["name"] != null) {
-                $target_dir = "Public/img/";
-                $target_file = $target_dir . basename($_FILES["image"]["name"]);
-
-                if ($_FILES["image"]["name"] != null) {
-                    // Thay đổi tên file để tránh trùng lặp
-                    $target_file = $target_dir . basename($_FILES["image"]["name"]);
                 if ($_FILES["image"]["name"] != null) {
                     // Thay đổi tên file để tránh trùng lặp
                     $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -88,6 +79,8 @@ class PostController extends Controller
             }
         }
     }
+}
+
 
 
     public function update()
@@ -199,3 +192,6 @@ class PostController extends Controller
 
     
 }
+
+
+

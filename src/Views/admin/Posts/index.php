@@ -47,7 +47,6 @@
                                                 </td>
                                                 <td>
                                                 <?php
-                                                <?php
                                                         if($post['Status']==2){
                                                             echo '<a href="/admin/post/accept?id=' . $post['Id'] . '" class="btn btn-success">Duyệt</a>';
                                                             echo '<button onclick="confirmReject('. $post['Id'] .')" class="btn btn-danger">Từ chối</button>';
