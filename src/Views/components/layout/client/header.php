@@ -79,9 +79,10 @@
                                 </div>
                             </div> -->
                         <a href="/client/tintuc" class="nav-item nav-link">Technology</a>
-                        <a href="contact.html" class="nav-item nav-link">News</a>
-                        <a href="contact.html" class="nav-item nav-link">Review</a>
-                        <a href="client/tacgia" class="nav-item nav-link">register for Author</a>
+                        <a href="/client/tintuc" class="nav-item nav-link">News</a>
+                        <a href="/client/tintuc" class="nav-item nav-link">Tips</a>
+                        <a href="/client/tintuc" class="nav-item nav-link">Review</a>
+                        <a href="/client/tacgia" class="nav-item nav-link">register for Author</a>
                     </div>
 
                 </div>
@@ -96,6 +97,7 @@
                         echo '<a href="/author" class="btn btn-outline-light ml-auto mgr-10">Dashboard</a>';
                         echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';
                     } else {
+                        echo '<p class="name-user">' . $_SESSION['Name'] . '</p>';
                         echo '<a href="/logout" class="btn btn-outline-light ml-auto">Logout</a>';
                     }
                 } else {

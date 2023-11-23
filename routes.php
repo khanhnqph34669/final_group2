@@ -15,7 +15,7 @@ $router = new Router();
 //Routes for client
 $router->addRoute('/', HomeController::class, 'index');
 $router->addRoute('/client/chitiet', HomeController::class, 'chitiet');
-$router->addRoute('/client/tintuc', HomeController::class, 'tintuc');
+$router->addRoute('/client/tintuc', HomeController::class, 'getAllPost');
 $router->addRoute('/client/form', HomeController::class, 'form');
 $router->addRoute('/client/dangky', HomeController::class, 'signup');
 $router->addRoute('/client/dangnhap', HomeController::class, 'signin');

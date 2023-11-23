@@ -1,33 +1,21 @@
 <div class="container-tintuc">
     <div class="noidungtt">
         <div class="tinchinh space20">
-            <a href="/client/chitiet">
-                <div class="tin space20">
-                    <img class="imgNews" src="../src/Views/components/layout/client/img/image1.png" alt="">
-                    <div class="tieude">
-                        <h3>Không cần mang theo giấy phép lái xe, đăng ký xe…nếu đã được tích hợp vào Thẻ căn cước </h3>
-                        <p>Ngày 20/11/2023</p>
+            <?php foreach ($posts as $post) : ?>
+
+                <a href="/client/chitiet">
+                    <div class="tin tintin space20">
+                        <img class="imgNews" src="../<?= $post['ImageUrl'] ?>" alt="">
+
+                        <div class="tieude">
+                            <h3><?= $post['Title'] ?></h3>
+                            <p><?= $post['Content'] ?></p>
+                            <a href="/client/post/preview?id=<?= $post['Id'] ?>" class="btn btn-info space20">Xem trước</a>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="tin space20">
-                    <img class="imgNews" src="../src/Views/components/layout/client/img/image1.png" alt="">
-                    <div class="tieude">
-                        <h3>Không cần mang theo giấy phép lái xe, đăng ký xe…nếu đã được tích hợp vào Thẻ căn cước </h3>
-                        <p>Ngày 20/11/2023</p>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="tin space20">
-                    <img class="imgNews" src="../src/Views/components/layout/client/img/image1.png" alt="">
-                    <div class="tieude">
-                        <h3>Không cần mang theo giấy phép lái xe, đăng ký xe…nếu đã được tích hợp vào Thẻ căn cước </h3>
-                        <p>Ngày 20/11/2023</p>
-                    </div>
-                </div>
-            </a>
+                </a>
+
+            <?php endforeach ?>
         </div>
         <div class="alltinphu">
             <div class="tinphu space20">

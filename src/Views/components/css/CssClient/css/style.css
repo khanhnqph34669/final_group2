@@ -1148,6 +1148,22 @@ button.btn:hover {
 .tin {
   display: flex;
 }
+.tintin {
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
+.tin img{
+  border-radius: 30px;
+}
+
+.tin h3{
+  margin-left: 10px;
+}
+.tin p{
+  margin-left: 10px;
+
+}
 .tinchinh {
   width: 70%;
 }
