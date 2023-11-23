@@ -24,6 +24,7 @@ $router->addRoute('/client/dangnhap', HomeController::class, 'signin');
 $router->addRoute('/admin', AdminController::class, 'login');
 $router->addRoute('/admin/post', PostController::class, 'index');
 $router->addRoute('/admin/post/myPost', PostController::class, 'myPost');
+$router->addRoute('/admin/post/myPost', PostController::class, 'myPost');
 $router->addRoute('/admin/post/create', AdminController::class, 'createPost');
 $router->addRoute('/admin/post/push', PostController::class, 'create');
 $router->addRoute('/admin/post/accept', PostController::class, 'accept');
