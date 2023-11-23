@@ -25,7 +25,7 @@
                                                 <td><?= $post['Id'] ?></td>
                                                 <td><?= $post['Title'] ?></td>
                                                 <td><?= $post['Content'] ?></td>
-                                                <td><img class="img-thumbnail-cr"src="/Public/img/<?=$post['ImageUrl']?>" alt=""></td>
+                                                <td><img class="img-thumbnail-cr"src="../<?=$post['ImageUrl']?>" alt=""></td>
                                                 <td><?= $post['CreateAt'] ?></td>
                                                 <td>
                                                     <?php

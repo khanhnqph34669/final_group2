@@ -45,7 +45,7 @@ class PostAuthorController extends Controller
                 'Title'=>$_POST['Title'],
                 'Content'=>$_POST['Content'],
                 'Status'=>2,
-                'ImageUrl'=>$img['name'],
+                'ImageUrl'=>$pathSaveDB,
                 'CreateAt'=>date('Y-m-d H:i:s'),
                 'author_Id'=>$_POST['author_Id'],
                 'RejectContent'=>'',
