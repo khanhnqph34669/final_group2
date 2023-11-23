@@ -27,9 +27,9 @@
                               </div>
                               <div class="form-group">
                                    <label for="category">Danh mục bài viết</label>
-                                   <select class="form-control" id="category" name="category">
+                                   <select class="form-control" id="category" name="categoryPost_id">
                                         <?php foreach ($categories as $category) : ?>
-                                             <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+                                             <option name="category" value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
                                         <?php endforeach; ?>
                                    </select>
                               </div>

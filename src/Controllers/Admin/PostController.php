@@ -37,18 +37,6 @@ class PostController extends Controller
                 if ($_FILES["image"]["name"] != null) {
                     // Thay đổi tên file để tránh trùng lặp
                     $target_file = $target_dir . basename($_FILES["image"]["name"]);
-
-                    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-                        $data = [
-                            'Title' => $_POST['title'],
-                            'Content' => $_POST['content'],
-                            'ImageUrl' => $target_file,
-                            'Status' => 3,
-                            'CreateAt' => date('Y-m-d H:i:s'),
-                            'author_Id' => $_POST['author'],
-                            'RejectContent' => '',
-                            'categoryPost_id' => $_POST['categoryPost_id']
-                        ];
                     if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
                         $data = [
                             'Title' => $_POST['title'],
@@ -79,7 +67,7 @@ class PostController extends Controller
             }
         }
     }
-}
+
 
 
 
