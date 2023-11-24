@@ -4,7 +4,6 @@ namespace Ductong\BaseMvc\Controllers\Author;
 
 use Ductong\BaseMvc\Controller;
 
-session_start();
 class AuthorController extends Controller
 {
     public function index() {
