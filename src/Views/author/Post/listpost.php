@@ -21,8 +21,8 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach ($posts as $post) : ?>
-                                            <tr>
                                             <?php if($post['author_Id']==$_SESSION['id']) : ?>
+                                            <tr>
                                                 <td><?= $post['Id'] ?></td>
                                                 <td><?= $post['Title'] ?></td>
                                                 <td><?= $post['Content'] ?></td>
@@ -45,8 +45,8 @@
                                                     </form>
                                                     <a href="/author/post/update?id=<?= $post['Id'] ?>"><button type="button" class="btn btn-primary btn-sm">Sửa</button></a>
                                                 </td>
-                                            <?php endif; ?>
                                             </tr>
+                                            <?php endif; ?>
                                         <?php endforeach; ?>
                                     </tbody>
                                     <tfoot>
