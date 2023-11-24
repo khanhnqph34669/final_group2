@@ -22,6 +22,7 @@
                                     <tbody>
                                         <?php foreach ($posts as $post) : ?>
                                             <tr>
+                                            <?php if($post['author_Id']==$_SESSION['id']) : ?>
                                                 <td><?= $post['Id'] ?></td>
                                                 <td><?= $post['Title'] ?></td>
                                                 <td><?= $post['Content'] ?></td>
@@ -42,9 +43,9 @@
                                                     <form action="/author/post/delete?id=<?= $post['Id'] ?>" method="post">
                                                         <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm">Xóa</button>
                                                     </form>
-                                                    <a href="update?id=<?= $post['Id'] ?>"><button type="button" class="btn btn-primary btn-sm">Sửa</button></a>
+                                                    <a href="/author/post/update?id=<?= $post['Id'] ?>"><button type="button" class="btn btn-primary btn-sm">Sửa</button></a>
                                                 </td>
-
+                                            <?php endif; ?>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>

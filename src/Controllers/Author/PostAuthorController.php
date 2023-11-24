@@ -17,7 +17,7 @@ class PostAuthorController extends Controller
         $category = new Categories();
         $categories = $category->all();
         $author = new users();
-        $authors = $author->all();
+        $authors = $author->findOne($_SESSION['id']);
         $this->renderAuthor('Post/listpost',['posts'=>$posts,'categories'=>$categories,'authors'=>$authors]);
     }
 
@@ -71,20 +71,49 @@ class PostAuthorController extends Controller
 
     public function update() {
         if (isset($_POST["btn-submit"])) { 
+            
+            // $img = $_FILES['ImageUrl'];
+            // $pathSaveDB = '../Public/img/' . $img['name'];
             $data = [
-                'name' => $_POST['name'],
+                'Title'=>$_POST['Title'],
+                'Content'=>$_POST['Content'],
+                'Status'=>2,
+                // 'ImageUrl'=>$pathSaveDB,
+                'CreateAt'=>date('Y-m-d H:i:s'),
+                'author_Id'=>$_POST['author_Id'],
+                'RejectContent'=>'',
+                'categoryPost_id'=>$_POST['CategoryPost_id']
             ];
 
+            
             $conditions = [
                 ['id', '=', $_GET['id']],
             ];
+            $data['ImageUrl'] = $_POST['img_current'];
+            $img = $_FILES['ImageUrl'] ?? null;
+            $flag = false;
+            if ($img) {
 
-            (new Post())->update($data, $conditions);
+                $pathSaveDB = '../Public/img/' . $img['name'];
+                $pathUpload = __DIR__ . '../../../../Public/img/' . $img['name'];
+
+                if (move_uploaded_file($img['tmp_name'], $pathUpload)) { 
+                    $data['ImageUrl'] = $pathSaveDB;
+                    $flag = true;
+                } 
+            }
+                (new Post())->update($data, $conditions);
         }
 
-        $category = (new Post())->findOne($_GET["id"]);
+        $post = (new Post())->findOne($_GET["id"]);
+        $author = new users();
+        $authors = $author->findOne($_SESSION['id']);
+        $category = new Categories();
+        $categories = $category->all();
+        
 
-        $this->renderAuthor("author/post/update", ["category" => $category]);
+        $this->renderAuthor("Post/update", ["post" => $post,'categories'=>$categories,'authors'=>$authors]);
     }
 }
+
 ?>
