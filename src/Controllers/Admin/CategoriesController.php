@@ -31,7 +31,23 @@ class CategoriesController extends Controller
                 header('Location: /admin/category/create');
             }
         } else {
-            $this->renderAdmin('Categories/create');
+            $this->renderAdmin('Categories/createCategory');
+        }
+    }
+
+    public function createPush() {
+        if (isset($_POST['submit-category'])) {
+            if ($_POST['name'] != null) {
+                $data = [
+                    'name' => $_POST['name'],
+                ];
+                (new Categories())->insert($data);
+                header('Location: /admin/category');
+            } else {
+                header('Location: /admin/category/create');
+            }
+        } else {
+            $this->renderAdmin('Categories/createCategory');
         }
     }
 }

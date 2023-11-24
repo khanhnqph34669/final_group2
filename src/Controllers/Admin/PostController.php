@@ -178,6 +178,28 @@ class PostController extends Controller
         header('Location: /admin/post');
     }
 
+
+    public function decline()
+    {
+        $oldData = new Post();
+        $oldData = $oldData->findPostEditStatus($_GET['id'],2);
+        $data = [
+            'Title' => $oldData['Title'],
+            'Content' => $oldData['Content'],
+            'ImageUrl' => $oldData['ImageUrl'],
+            'Status' => 1,
+            'CreateAt' => $oldData['CreateAt'],
+            'author_Id' => $oldData['author_Id'],
+            'RejectContent' => $_GET['reason'],
+            'categoryPost_id' => $oldData['categoryPost_id']
+        ];
+        $conditions = [
+            ['id', '=', $_GET['id']],
+        ];
+        (new Post())->update($data, $conditions);
+        header('Location: /admin/post');
+    }
+
     
 }
 

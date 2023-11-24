@@ -44,7 +44,6 @@ class AdminController extends Controller
     public function category() {
         $category = new Categories();
         $categories = $category->all();
-    
         $checkPost = new Post();
         $checkPosts = [];
     

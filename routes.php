@@ -26,11 +26,12 @@ $router->addRoute('/admin/post/myPost', PostController::class, 'myPost');
 $router->addRoute('/admin/post/create', AdminController::class, 'createPost');
 $router->addRoute('/admin/post/push', PostController::class, 'create');
 $router->addRoute('/admin/post/accept', PostController::class, 'accept');
-$router->addRoute('/admin/post/reject', PostController::class, 'reject');
+$router->addRoute('/admin/post/reject', PostController::class, 'decline');
 $router->addRoute('/admin/post/delete', PostController::class, 'delete');
 $router->addRoute('/admin/post/edit', PostController::class, 'update');
 $router->addRoute('/admin/category', AdminController::class, 'category');
 $router->addRoute('/admin/category/create', CategoriesController::class, 'create');
+$router->addRoute('/admin/category/push', CategoriesController::class,'createPush');
 $router->addRoute('/admin/category/delete', CategoriesController::class, 'deleteCategory');
 
 
