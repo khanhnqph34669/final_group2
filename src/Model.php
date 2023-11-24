@@ -157,7 +157,8 @@ class Model
         $stmt->execute();
     }
 
-    public function getUserByEmail($email){
+    public function getUserByEmail($email)
+    {
         $sql = "SELECT * FROM {$this->table} WHERE Email = :email LIMIT 1";
 
         $stmt = $this->conn->prepare($sql);
@@ -170,6 +171,81 @@ class Model
 
         return $stmt->fetch();
     }
+
+    public function findPost($id)
+    {
+        $sql = "SELECT * FROM {$this->table} WHERE author_Id = :id";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindParam(':id', $id);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+    }
+
+    public function findPostByStatus($status)
+    {
+        $sql = "SELECT * FROM {$this->table} WHERE Status = :status";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindParam(':status', $status);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+    }
+
+    public function findPostEditStatus($idPost, $status)
+    {
+        $sql = "SELECT * FROM {$this->table} WHERE id = :idPost AND Status = :status";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindParam(':idPost', $idPost);
+        $stmt->bindParam(':status', $status);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetch();
+    }
+
+    public function findComment($idPost)
+    {
+        $sql = "SELECT * FROM {$this->table} WHERE PostId = :idPost";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindParam(':idPost', $idPost);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+    }
+
+
+    //Viết hàm check xem còn bài viết có id theo category đó không
+    public function countPostsByCategory($categoryId) {
+        $sql = "SELECT COUNT(*) as postCount FROM {$this->table} WHERE categoryPost_id = :categoryId";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':categoryId', $categoryId);
+        $stmt->execute();
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+    
+        return $result['postCount'];
+    }
+    
+
 
     public function __destruct()
     {

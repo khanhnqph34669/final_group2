@@ -60,6 +60,7 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="/admin/post">Danh sách</a>
+                                    <a class="nav-link" href="/admin/post/myPost">Bài viết của bạn</a>
                                     <a class="nav-link" href="/admin/post/create">Thêm bài viết mới</a>
                                 </nav>
                             </div>
@@ -70,31 +71,11 @@
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Danh sách
-                                        <!-- <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
-                                    </a>
-                                    <!-- <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div> -->
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Thêm danh mục mới
-                                        <!-- <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
-                                    </a>
-                                    <!-- <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
-                                        </nav>
-                                    </div> -->
+                                <a class="nav-link" href="/admin/category/create">Thêm danh mục</a>
+                                <a class="nav-link" href="/admin/category">Danh sách danh mục</a>
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Yêu cầu</div>
+                            <div class="sb-sidenav-menu-heading">Khác</div>
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-person-circle-check"></i></div>
                                 Yêu cầu làm tác giả
@@ -103,8 +84,14 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-folder-tree"></i></div>
                                 Yêu cầu duyệt bài
                             </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
+                                Quản lý người dùng
+                            </a>
                         </div>
+                        
                     </div>
+                    
                     
         
         

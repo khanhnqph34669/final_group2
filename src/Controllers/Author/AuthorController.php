@@ -7,7 +7,6 @@ use Ductong\BaseMvc\Models\Categories;
 use Ductong\BaseMvc\Models\users;
 use Ductong\BaseMvc\Models\Post;
 
-session_start();
 class AuthorController extends Controller
 {
     public function index() {
