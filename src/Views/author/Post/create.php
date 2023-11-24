@@ -12,11 +12,11 @@
           <form action="/author/post/create/submit" method="post" enctype="multipart/form-data">
                <div class="form-group">
                <label for="Title">Tiêu đề</label>
-               <input type="text" name="Title" id="Title" class="form-control" placeholder="Title">
+               <input type="text" name="Title" id="Title" class="form-control" placeholder="Title" required>
                </div>
                <div class="form-group">
                <label for="Content">Nội dung</label>
-               <textarea name="Content" id="Content" class="form-control" placeholder="Content"></textarea>
+               <textarea name="Content" id="Content" class="form-control" placeholder="Content" required></textarea>
                </div>
                <div class="form-group">
                <label for="Image">Ảnh</label>
