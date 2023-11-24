@@ -60,7 +60,7 @@
                                                         }
                                                         else{
                                                             echo '<a href="/admin/post/edit?id=' . $post['Id'] . '" class="btn btn-primary">Sửa</a>';
-                                                            echo '<a href="/admin/post/delete?id=' . $post['Id'] . '" class="btn btn-danger">Xóa</a>';
+                                                            echo '<a href="/admin/mypost/delete?id=' . $post['Id'] . '" class="btn btn-danger">Xóa</a>';
                                                         }
                                                     ?>
                                                     <!-- <a href="/admin/post/edit?id=<?= $post['Id'] ?>" class="btn btn-primary">Sửa</a>

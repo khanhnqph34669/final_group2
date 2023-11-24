@@ -1,6 +1,16 @@
 </div>
             <div id="layoutSidenav_content">
                 <main>
+                <div class="container-fluid px-4">
+               <h1 class="mt-4">Danh sách bài viết </h1>
+               <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Danh sách bài viết</li>
+               </ol> 
+                      <div class="card-body">
+                             <a href="/admin/post/create" class="btn btn-success">Thêm bài viết mới</a>
+                      </div>
+                      <hr>
                 <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
@@ -16,6 +26,7 @@
                                             <th>Ảnh bìa</th>
                                             <th>Tác giả</th>
                                             <th>Status</th>
+                                            <th>Lượt bình luận</th>
                                             <th>Thao tác</th>
                                         </tr>
                                     </thead>
@@ -45,6 +56,7 @@
                                                     }
                                                     ?>
                                                 </td>
+                                                <td></td>
                                                 <td>
                                                 <?php
                                                         if($post['Status']==2){
@@ -54,7 +66,10 @@
                                                         }
                                                         else{
                                                             echo '<a href="/admin/post/edit?id=' . $post['Id'] . '" class="btn btn-primary">Sửa</a>';
+                                                            echo ' ';
                                                             echo '<button onclick="confirmDelete('. $post['Id'] .')" class="btn btn-danger">Xóa</button>';
+                                                            echo ' ';
+                                                            echo '<a href="/client/post/preview?id=' . $post['Id'] . '" class="btn btn-info" target="_blank">Xem trước</a>';
                                                         }
                                                     ?>
                                                     <!-- <a href="/admin/post/edit?id=<?= $post['Id'] ?>" class="btn btn-primary">Sửa</a>
@@ -74,6 +89,7 @@
                                             <th>Ảnh bìa</th>
                                             <th>Tác giả</th>
                                             <th>Status</th>
+                                            <th>Lượt bình luận</th>
                                             <th>Thao tác</th>
                                         </tr>
                                     </tfoot>

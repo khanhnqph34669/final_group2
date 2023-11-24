@@ -17,6 +17,8 @@ class PostController extends Controller
         $posts = $post->all();
         $author = new users();
         $authors = $author->all();
+        $categories = new Categories();
+        $category = $categories->all();
         $this->renderAdmin('Posts/index', ['posts' => $posts, 'authors' => $authors]);
     }
     public function myPost()
@@ -26,6 +28,39 @@ class PostController extends Controller
         $author = new users();
         $authors = $author->all();
         $this->renderAdmin('Posts/myPost', ['posts' => $posts, 'authors' => $authors]);
+    }
+
+
+    public function deleteMyPost()
+    {
+        if (isset($_GET['id'])) {
+            $postId = $_GET['id'];
+    
+            
+            $conditionsPost = [
+                ['id', '=', $postId],
+            ];
+    
+            // Kiểm tra nếu có bình luận, xóa bình luận trước
+            $comment = new postComments();
+            $comments = $comment->findComment($postId);
+    
+            if (!empty($comments)) {
+                // Tạo điều kiện để xóa bình luận
+                $conditionsComment = [
+                    ['PostId', '=', $postId],
+                ];
+    
+                $comment->delete($conditionsComment);
+            }
+    
+            // Xóa bài viết
+            $post = new Post();
+            $post->delete($conditionsPost);
+    
+            header('Location: /admin/post/myPost');
+            exit();
+        }
     }
 
     public function create()

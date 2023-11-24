@@ -7,6 +7,8 @@ use Ductong\BaseMvc\Controllers\Author\PostAuthorController;
 use Ductong\BaseMvc\Controllers\Admin\PostController;
 use Ductong\BaseMvc\Controllers\AuthenticatorController;
 use Ductong\BaseMvc\Controllers\Admin\CategoriesController;
+use Ductong\BaseMvc\Controllers\Admin\RequestController;
+use Ductong\BaseMvc\Controllers\Admin\UserController;
 use Ductong\BaseMvc\Router;
 
 $router = new Router();
@@ -22,7 +24,6 @@ $router->addRoute('/client/dangnhap', HomeController::class, 'signin');
 $router->addRoute('/admin', AdminController::class, 'login');
 $router->addRoute('/admin/post', PostController::class, 'index');
 $router->addRoute('/admin/post/myPost', PostController::class, 'myPost');
-$router->addRoute('/admin/post/myPost', PostController::class, 'myPost');
 $router->addRoute('/admin/post/create', AdminController::class, 'createPost');
 $router->addRoute('/admin/post/push', PostController::class, 'create');
 $router->addRoute('/admin/post/accept', PostController::class, 'accept');
@@ -30,9 +31,15 @@ $router->addRoute('/admin/post/reject', PostController::class, 'decline');
 $router->addRoute('/admin/post/delete', PostController::class, 'delete');
 $router->addRoute('/admin/post/edit', PostController::class, 'update');
 $router->addRoute('/admin/category', AdminController::class, 'category');
+$router->addRoute('/admin/mypost/delete', PostController::class,'deleteMyPost');
 $router->addRoute('/admin/category/create', CategoriesController::class, 'create');
 $router->addRoute('/admin/category/push', CategoriesController::class,'createPush');
 $router->addRoute('/admin/category/delete', CategoriesController::class, 'deleteCategory');
+$router->addRoute('/admin/request', RequestController::class, 'index');
+$router->addRoute('/admin/user', UserController::class,'index');
+$router->addRoute('/admin/user/create', UserController::class,'createPage');
+$router->addRoute('/admin/user/delete', UserController::class,'delete');
+$router->addRoute('/admin/user/edit', UserController::class,'update');
 
 
 
