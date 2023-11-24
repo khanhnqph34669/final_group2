@@ -41,4 +41,23 @@ class AdminController extends Controller
     }
 
 
+    public function category() {
+        $category = new Categories();
+        $categories = $category->all();
+        $checkPost = new Post();
+        $checkPosts = [];
+    
+        foreach ($categories as $category) {
+            $categoryId = $category['id'];
+            $postCount = $checkPost->countPostsByCategory($categoryId);
+            $checkPosts[$categoryId] = $postCount;
+        }
+    
+        $this->renderAdmin('Categories/index', ['categories' => $categories, 'checkPosts' => $checkPosts]);
+    }
+
+    
+
+    
+
 }

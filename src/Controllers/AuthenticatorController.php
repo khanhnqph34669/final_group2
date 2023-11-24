@@ -5,15 +5,16 @@ namespace Ductong\BaseMvc\Controllers;
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\users;
 
+
 class AuthenticatorController extends Controller
 {
     public function index()
     {
-        if (isset($_COOKIE['admin'])) {
+        if (isset($_SESSION['roles'])==1) {
             $this->renderAdmin('index');
-        } elseif (isset($_COOKIE['client'])) {
-            $this->renderClient('index');
-        } elseif (isset($_COOKIE['author'])) {
+        } elseif (isset($_SESSION['roles'])==3) {
+            $this->render('index');
+        } elseif (isset($_SESSION['roles'])==2) {
             $this->renderAuthor('author');
         } else {
             $this->render('login');

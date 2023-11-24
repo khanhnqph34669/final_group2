@@ -7,7 +7,6 @@ class Categories extends Model
 {
     protected $table = 'category';
     protected $columns = [
-        'id',
         'name',
         ];
     

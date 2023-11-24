@@ -1,6 +1,12 @@
 </div>
             <div id="layoutSidenav_content">
                 <main>
+                <div class="container-fluid px-4">
+            <h1 class="mt-4">Bài viết của bạn</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                <li class="breadcrumb-item active">Bài viết của bạn</li>
+            </ol>
                 <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
@@ -25,7 +31,7 @@
                                                 <td class="we"><?=$post['Title'] ?></td>
                                                 <td><?= $post['Content'] ?></td>
                                                 <td><?= $post['ViewCount'] ?></td>
-                                                <td><img class="img-thumbnail-cr"src="../<?=$post['ImageUrl']?>" alt=""></td>
+                                                <td><img class="img-thumbnail-cr"src="../../<?=$post['ImageUrl']?>" alt=""></td>
                                                 <td><?php
                                                     foreach ($authors as $author) {
                                                         if($author['Id']==$post['author_Id']){
@@ -54,7 +60,7 @@
                                                         }
                                                         else{
                                                             echo '<a href="/admin/post/edit?id=' . $post['Id'] . '" class="btn btn-primary">Sửa</a>';
-                                                            echo '<a href="/admin/post/delete?id=' . $post['Id'] . '" class="btn btn-danger">Xóa</a>';
+                                                            echo '<a href="/admin/mypost/delete?id=' . $post['Id'] . '" class="btn btn-danger">Xóa</a>';
                                                         }
                                                     ?>
                                                     <!-- <a href="/admin/post/edit?id=<?= $post['Id'] ?>" class="btn btn-primary">Sửa</a>
