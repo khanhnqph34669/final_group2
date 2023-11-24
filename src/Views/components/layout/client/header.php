@@ -76,10 +76,10 @@
                                     <a href="#" class="dropdown-item">Sub Item 2</a>
                                 </div>
                             </div> -->
-                        <a href="/client/tintuc" class="nav-item nav-link">Technology</a>
-                        <a href="/client/tintuc" class="nav-item nav-link">News</a>
-                        <a href="/client/tintuc" class="nav-item nav-link">Tips</a>
-                        <a href="/client/tintuc" class="nav-item nav-link">Review</a>
+                        <a href="/client/technology" class="nav-item nav-link">Technology</a>
+                        <a href="/client/news" class="nav-item nav-link">News</a>
+                        <a href="/client/tips" class="nav-item nav-link">Tips</a>
+                        <a href="/client/review" class="nav-item nav-link">Review</a>
                         <a href="/client/tacgia" class="nav-item nav-link">register for Author</a>
                     </div>
 

@@ -12,7 +12,7 @@ class HomeController extends Controller
         $this->renderClient('client/index');
     }
 
-    
+
     public function chitiet()
     {
         $this->renderClient('client/chitiet');
@@ -26,9 +26,10 @@ class HomeController extends Controller
     {
         $this->renderClient('client/tacgia');
     }
-    public function getAllPost(){
+    public function getAllPost()
+    {
         $post = new Post();
         $posts = $post->all();
-        $this->renderClient('/client/tintuc',['posts'=>$posts]);
+        $this->renderClient('/client/technology', ['posts' => $posts]);
     }
 }
