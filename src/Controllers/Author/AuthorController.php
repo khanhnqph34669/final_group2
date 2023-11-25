@@ -3,12 +3,16 @@ namespace Ductong\BaseMvc\Controllers\Author;
 
 
 use Ductong\BaseMvc\Controller;
+use Ductong\BaseMvc\Models\Categories;
+use Ductong\BaseMvc\Models\users;
+use Ductong\BaseMvc\Models\Post;
 
 class AuthorController extends Controller
 {
     public function index() {
         $this->renderAuthor('index');
     }
+    
 
     public function login(){
         if (!isset($_SESSION['user']) || $_SESSION['roles'] !== 2){
@@ -18,7 +22,13 @@ class AuthorController extends Controller
             $this->index();
         }
     }
-    // public function list() {
-    //     $this->renderAuthor('author/Post/listpost');
-    // }
+
+    public function createPage(){
+        $category = new Categories();
+        $categories = $category->all();
+        $author = new users();
+        $authors = $author->findOne($_SESSION['id']);
+        $this->renderAuthor('post/create',['categories'=>$categories,'authors'=>$authors]);
+    }
+    
 }

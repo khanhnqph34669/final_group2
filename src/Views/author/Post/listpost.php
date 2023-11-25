@@ -13,19 +13,23 @@
                                             <th>STT</th>
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
-                                            <th>Ảnh bìa</th>
-                                            <th>Lượt xem</th>
+                                            <th>Ảnh</th>
+                                            <th>Danh mục</th>
+                                            <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach ($posts as $post) : ?>
+                                            <?php if($post['author_Id']==$_SESSION['id']) : ?>
                                             <tr>
                                                 <td><?= $post['Id'] ?></td>
                                                 <td><?= $post['Title'] ?></td>
                                                 <td><?= $post['Content'] ?></td>
-                                                <td><img class="img-post" src="../../src/Views/Public/img/<?=$post['ImageUrl']?>" alt=""></td>
-                                                <td><?= $post['ViewCount'] ?></td>
+                                                <td><img class="img-thumbnail-cr"src="../<?=$post['ImageUrl']?>" alt=""></td>
+                                                <td></td>
+                                                <td><?= $post['CreateAt'] ?></td>
                                                 <td>
                                                     <?php
                                                     if($post['Status'] == 3) {
@@ -37,19 +41,27 @@
                                                     }
                                                     ?>
                                                 </td>
-
+                                                <td>
+                                                    <form action="/author/post/delete?id=<?= $post['Id'] ?>" method="post">
+                                                        <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm">Xóa</button>
+                                                    </form>
+                                                    <a href="/author/post/update?id=<?= $post['Id'] ?>"><button type="button" class="btn btn-primary btn-sm">Sửa</button></a>
+                                                </td>
                                             </tr>
+                                            <?php endif; ?>
                                         <?php endforeach; ?>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                        <th>STT</th>
+                                            <th>STT</th>
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
-                                            <th>Ảnh bìa</th>
-                                            <th>Lượt xem</th>
+                                            <th>Ảnh</th>
+                                            <th>Danh mục</th>
+                                            <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
-                                            </tr>
+                                            <th></th>
+                                        </tr>
                                     </tfoot>
                                 </table>
                             </div>
