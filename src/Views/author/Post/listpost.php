@@ -14,6 +14,7 @@
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
                                             <th>Ảnh</th>
+                                            <th>Danh mục</th>
                                             <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
                                             <th></th>
@@ -27,6 +28,7 @@
                                                 <td><?= $post['Title'] ?></td>
                                                 <td><?= $post['Content'] ?></td>
                                                 <td><img class="img-thumbnail-cr"src="../<?=$post['ImageUrl']?>" alt=""></td>
+                                                <td></td>
                                                 <td><?= $post['CreateAt'] ?></td>
                                                 <td>
                                                     <?php
@@ -55,6 +57,7 @@
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
                                             <th>Ảnh</th>
+                                            <th>Danh mục</th>
                                             <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
                                             <th></th>
