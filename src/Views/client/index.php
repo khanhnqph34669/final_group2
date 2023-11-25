@@ -1,7 +1,7 @@
 <div class="container_content">
     <div class="productbanner flex mb30">
         <div class="banner">
-            <img src="src/Views/components/layout/client/img/banner.png" alt="">
+            <img src="../src/Views/components/layout/client/img/banner.png" alt="">
         </div>
         <div class="bannerphu">
             <img src="src/Views/components/layout/client/img/banner1.png" alt="">
@@ -22,24 +22,24 @@
         <div class="foryou1 flex">
             <div class="productforyou">
                 <a href="">
-                    <figure><img src="src/Views/components/layout/client/img/product1.png" alt=""></figure>
+                    <figure><img src="../src/Views/components/layout/client/img/product1.png" alt=""></figure>
                     <figcaption>Article name</figcaption>
                 </a>
             </div>
             <div class="productforyou">
                 <a href="">
-                    <figure><img src="src/Views/components/layout/client/img/product1.png" alt=""></figure>
+                    <figure><img src="../src/Views/components/layout/client/img/product1.png" alt=""></figure>
                     <figcaption>Article name</figcaption>
                 </a>
             </div>
             <div class="productforyou">
                 <a href="">
-                    <figure><img src="src/Views/components/layout/client/img/product1.png" alt=""></figure>
+                    <figure><img src="../src/Views/components/layout/client/img/product1.png" alt=""></figure>
                     <figcaption>Article name</figcaption>
                 </a>
             </div>
             <form action="" method="post">
-                <img class="ml40" src="src/Views/components/layout/client/img/group220.png" alt="">
+                <img class="ml40" src="../src/Views/components/layout/client/img/group220.png" alt="">
                 <div class="subscribe ml20">
                     <h4>Subscribe</h4>
                     <p>Please follow us</p>

@@ -51,7 +51,8 @@ class AuthenticatorController extends Controller
                             $_SESSION['user'] = $user;
                             $_SESSION['roles'] = $result['roles_id'];
                             $_SESSION['Name'] = $result['Name'];
-                            $this->renderClient('Client/index');
+                            $_SESSION['id'] = $result['id'];    
+                            header('Location: /');
                             break;
                     }
                 } else {
@@ -75,5 +76,9 @@ class AuthenticatorController extends Controller
     public function indexLogout(){ 
         $this->logout();
         header('Location: /');
+    }
+
+    public function signUp(){
+        $this->render('signUp');
     }
 }
