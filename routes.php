@@ -15,10 +15,15 @@ $router = new Router();
 //Routes for client
 $router->addRoute('/', HomeController::class, 'index');
 $router->addRoute('/client/chitiet', HomeController::class, 'chitiet');
-$router->addRoute('/client/tintuc', HomeController::class, 'tintuc');
+$router->addRoute('/client/technology', HomeController::class, 'getAllPost');
+$router->addRoute('/client/review', HomeController::class, 'getAllPost');
+$router->addRoute('/client/tips', HomeController::class, 'getAllPost');
+$router->addRoute('/client/news', HomeController::class, 'getAllPost');
 $router->addRoute('/client/form', HomeController::class, 'form');
 $router->addRoute('/client/dangky', HomeController::class, 'signup');
 $router->addRoute('/client/dangnhap', HomeController::class, 'signin');
+$router->addRoute('/client/tacgia', HomeController::class, 'tacgia');
+
 
 //Routes for admin
 $router->addRoute('/admin', AdminController::class, 'login');
@@ -31,15 +36,15 @@ $router->addRoute('/admin/post/reject', PostController::class, 'decline');
 $router->addRoute('/admin/post/delete', PostController::class, 'delete');
 $router->addRoute('/admin/post/edit', PostController::class, 'update');
 $router->addRoute('/admin/category', AdminController::class, 'category');
-$router->addRoute('/admin/mypost/delete', PostController::class,'deleteMyPost');
+$router->addRoute('/admin/mypost/delete', PostController::class, 'deleteMyPost');
 $router->addRoute('/admin/category/create', CategoriesController::class, 'create');
-$router->addRoute('/admin/category/push', CategoriesController::class,'createPush');
+$router->addRoute('/admin/category/push', CategoriesController::class, 'createPush');
 $router->addRoute('/admin/category/delete', CategoriesController::class, 'deleteCategory');
 $router->addRoute('/admin/request', RequestController::class, 'index');
-$router->addRoute('/admin/user', UserController::class,'index');
-$router->addRoute('/admin/user/create', UserController::class,'createPage');
-$router->addRoute('/admin/user/delete', UserController::class,'delete');
-$router->addRoute('/admin/user/edit', UserController::class,'update');
+$router->addRoute('/admin/user', UserController::class, 'index');
+$router->addRoute('/admin/user/create', UserController::class, 'createPage');
+$router->addRoute('/admin/user/delete', UserController::class, 'delete');
+$router->addRoute('/admin/user/edit', UserController::class, 'update');
 
 
 
@@ -53,6 +58,6 @@ $router->addRoute('/author/post/update', PostAuthorController::class,'update');
 
 //Routes for authenticator
 $router->addRoute('/login', AuthenticatorController::class, 'index');
-$router->addRoute('/login/submit', AuthenticatorController::class,'login');
-$router->addRoute('/register', AuthenticatorController::class, 'register');
+$router->addRoute('/login/submit', AuthenticatorController::class, 'login');
+$router->addRoute('/sign-up', AuthenticatorController::class, 'signUp');
 $router->addRoute('/logout', AuthenticatorController::class, 'indexLogout');
