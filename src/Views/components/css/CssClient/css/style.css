@@ -34,7 +34,7 @@ h4,
 h5,
 h6 {
   color: #353535;
-  margin: 0 0 15px 0;
+  margin: 0 0 10px 0;
   padding: 0;
 }
 
@@ -1153,23 +1153,22 @@ button.btn:hover {
   border-radius: 30px;
 }
 
-.tin img{
+.tin img {
   border-radius: 30px;
 }
 
-.tin h3{
+.tin h3 {
   margin-left: 10px;
 }
-.tin p{
+.tin p {
   margin-left: 10px;
-
 }
 .tinchinh {
   width: 70%;
 }
 .imgNews {
-  width: 300px;
-  height: 170px;
+  width: 330px;
+  height: 200px;
 }
 .imgNews1 {
   width: 200px;
@@ -1199,7 +1198,12 @@ button.btn:hover {
 .tieude1 {
   width: 300px;
 }
-
+.tieude p {
+  margin-left: 10px;
+  white-space: nowrap;
+  max-width: 50rem;
+  overflow: hidden;
+}
 .name-user {
   color: #fff;
   font-size: 20px;
