@@ -57,8 +57,8 @@ class CategoriesController extends Controller
             $folderPath = 'src/Views/client/';
             $fileName = urlencode($categoryD['name']); // Sử dụng urlencode để mã hóa tên file
             $fileToDelete = $folderPath . $fileName .  '.php';
-                var_dump($fileToDelete);
-                die();
+                    // var_dump($fileToDelete);
+                    // die();
             if (file_exists($fileToDelete)) {
                 unlink($fileToDelete);
             } 
