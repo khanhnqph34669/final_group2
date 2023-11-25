@@ -76,7 +76,7 @@
                                 </nav>
                             </div>
                             <div class="sb-sidenav-menu-heading">Khác</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="/admin/request">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-person-circle-check"></i></div>
                                 Yêu cầu làm tác giả
                             </a>
@@ -84,7 +84,7 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-folder-tree"></i></div>
                                 Yêu cầu duyệt bài
                             </a>
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="/admin/user">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
                                 Quản lý người dùng
                             </a>
