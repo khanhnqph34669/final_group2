@@ -26,7 +26,7 @@
                   </h3>
                 </div>
                 <div class="card-body">
-                  <form action="a">
+                  <form action="" method="post">
                     <div class="row mb-3">
                       <div class="col-md-6 ">
                         <!-- <div class="form-floating mb-3">
@@ -36,30 +36,30 @@
                       </div> -->
                       </div>
                       <div class="form-floating mb-3">
-                        <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
+                        <input class="form-control" id="inputEmail" type="email" name="Email" placeholder="name@example.com" required />
                         <label for="inputEmail">Email address</label>
                       </div>
                       <div class="form-floating mb-3">
-                        <input class="form-control" id="inputEmail" type="text" placeholder="name@example.com" />
+                        <input class="form-control" id="inputEmail" type="text" name="FullName" placeholder="name@example.com" required />
                         <label for="inputName">User Name</label>
                       </div>
                       <div class="row mb-3">
                         <div class="col-md-6">
                           <div class="form-floating mb-3 mb-md-0">
-                            <input class="form-control" id="inputPassword" type="password" placeholder="Create a password" />
+                            <input class="form-control" id="inputPassword" type="password" name="Password" placeholder="Create a password" />
                             <label for="inputPassword">Password</label>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-floating mb-3 mb-md-0">
-                            <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" />
+                            <input class="form-control" id="inputPasswordConfirm" type="password" name="Confirmpassword" placeholder="Confirm password" required />
                             <label for="inputPasswordConfirm">Confirm Password</label>
                           </div>
                         </div>
                       </div>
                       <div class="mt-4 mb-0">
                         <div class="d-grid">
-                          <button type="submit" class="btn btn-primary btn-block">Create Account</a>
+                          <button type="submit" name="submit" class="btn btn-primary btn-block">Create Account</a>
                         </div>
                       </div>
                   </form>

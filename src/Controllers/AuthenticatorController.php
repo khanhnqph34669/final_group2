@@ -79,6 +79,24 @@ class AuthenticatorController extends Controller
     }
 
     public function signUp(){
+        if(isset($_POST['submit'])){
+            $data = [
+                'Name'=> $_POST['FullName'],
+                'Email'=> $_POST['Email'],
+                'Password'=> $_POST['Password'],
+                'Status'=> 1,
+                'Phone'=> 0,
+                'Address'=> '',
+                'roles_id'=>3
+            ];
+            if($_POST['Confirmpassword']==$_POST['Password']){
+                $user = new users();
+                $user->insert($data);
+                header('Location: login');
+            } else {
+
+            }
+        }
         $this->render('signUp');
     }
 }

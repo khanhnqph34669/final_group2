@@ -20,7 +20,7 @@ $router->addRoute('/client/review', HomeController::class, 'getAllPost');
 $router->addRoute('/client/tips', HomeController::class, 'getAllPost');
 $router->addRoute('/client/news', HomeController::class, 'getAllPost');
 $router->addRoute('/client/form', HomeController::class, 'form');
-$router->addRoute('/client/dangky', HomeController::class, 'signup');
+$router->addRoute('/client/dangky', AuthenticatorController::class, 'signUp');
 $router->addRoute('/client/dangnhap', HomeController::class, 'signin');
 $router->addRoute('/client/tacgia', HomeController::class, 'tacgia');
 
