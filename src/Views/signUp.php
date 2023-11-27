@@ -63,6 +63,12 @@
                         </div>
                       </div>
                   </form>
+                  <?php
+                    if (isset($error)) {
+                      echo $error;
+                    }
+                  ?>
+                
                 </div>
                 <div class="card-footer text-center py-3">
                   <div class="small">

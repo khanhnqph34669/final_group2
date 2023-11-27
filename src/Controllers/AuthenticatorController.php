@@ -93,8 +93,9 @@ class AuthenticatorController extends Controller
                 $user = new users();
                 $user->insert($data);
                 header('Location: login');
+                
             } else {
-
+                return $this->render('signUp', ['error' => 'Mật khẩu không trùng']);
             }
         }
         $this->render('signUp');
