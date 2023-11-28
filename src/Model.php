@@ -244,6 +244,25 @@ class Model
     
         return $result['postCount'];
     }
+
+
+    public function getAllPostsByCategory($categoryId) {
+        $sql = "SELECT * FROM {$this->table} WHERE categoryPost_id = :categoryId";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':categoryId', $categoryId);
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetchAll();
+    }
+
+    public function getNamePath($id) {
+        $sql = "SELECT * FROM {$this->table} WHERE id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetch();
+    }
     
 
 

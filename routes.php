@@ -21,8 +21,9 @@ $router->addRoute('/client/tips', HomeController::class, 'getAllPost');
 $router->addRoute('/client/news', HomeController::class, 'getAllPost');
 $router->addRoute('/client/form', HomeController::class, 'form');
 $router->addRoute('/client/dangky', AuthenticatorController::class, 'signUp');
+$router->addRoute('/client/category', HomeController::class, 'getAllPostById');
 $router->addRoute('/client/dangnhap', HomeController::class, 'signin');
-$router->addRoute('/client/tacgia', HomeController::class, 'tacgia');
+
 
 
 //Routes for admin
