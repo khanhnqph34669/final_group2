@@ -16,7 +16,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: #353535;
+  color: #ffffff;
   outline: none;
   text-decoration: none;
 }
@@ -1065,9 +1065,51 @@ button.btn:hover {
 
   width: 100%;
 }
-.container_content .banner {
-  width: 60%;
+
+.postNews{
+  position: relative;
 }
+
+.postNews .titlePost{
+  position: absolute;
+  display: flex;
+  top: 500px;
+  background-color: #00000044;
+  left: 2;
+  z-index: 100;
+  padding: 10px;
+  width: 100%;
+}
+
+.inforPost{
+  display: flex;
+  margin-left: -300px;
+  position: relative;
+  top: 60px;
+}
+
+.inforPost p{
+  color: white;
+  margin-right: 40px;
+}
+
+.titlePost h1{
+  color: white;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.postNews .imagePost{
+  width: 70rem;
+  height: 40rem;
+  object-fit: cover;
+}
+
+.titlePost{
+
+}
+
+
 .container_content .banner img {
   width: 100%;
 }
@@ -1230,14 +1272,15 @@ button.btn:hover {
 }
 
 .articles-container {
+  margin-top: 90px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .article {
-  width: 300px;
-  margin: 10px;
+  width: 350px;
+  margin: 20px;
   border: 1px solid #ccc;
   padding: 10px;
 }
@@ -1278,3 +1321,72 @@ button.btn:hover {
 .article-date {
   color: #ccc;
 }
+
+.preview{
+  color: #000000;
+}
+
+.fix-content {
+  max-height: 150px; /* Điều chỉnh chiều cao tối đa mà bạn muốn hiển thị ban đầu */
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+
+.das{
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  display: flex;
+  border-radius: 10px;
+}
+
+
+.user-menu {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  margin-top: -25px !important;
+  top: 100%;
+  min-width: 170px;
+  border-radius: 10px !important;
+  background-color: #111111;
+}
+
+.dropdown-toggle  {
+  position: relative;
+  background-color: rgba(67, 66, 65, 0.2) !important;
+  color: white !important;
+}
+
+.tro{
+  border-radius: 10px !important;
+  width: 15px; 
+  height: 35px;
+  position: absolute;
+}
+
+.NoPost{
+  font-size: 50px;
+}
+
+
+.TitleCategory{
+  float: left;
+  padding-bottom: 10px;
+  font-size: 30px;
+}
+
+
+
+

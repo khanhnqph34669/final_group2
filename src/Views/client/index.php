@@ -1,7 +1,16 @@
 <div class="container_content">
     <div class="productbanner flex mb30">
-        <div class="banner">
-            <img src="../src/Views/components/layout/client/img/banner.png" alt="">
+        <div class="postNews">
+            <img class="imagePost" src="../src/Views/components/layout/client/img/banner.png" alt="">
+            <div class="titlePost">
+                <h1>Article name</h1>
+                <br>
+                <div class="inforPost">
+                <p>Article content</p>
+                <p>Create At</p>
+                </div>
+            </div>
+            
         </div>
         <div class="bannerphu">
             <img src="src/Views/components/layout/client/img/banner1.png" alt="">

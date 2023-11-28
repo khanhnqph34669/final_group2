@@ -4,26 +4,26 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h3 class="title">Useful Links</h3>
+                            <h3 class="title">Ở đây</h3>
                             <ul>
-                                <li><a href="#">Pellentesque</a></li>
-                                <li><a href="#">Aliquam</a></li>
-                                <li><a href="#">Fusce placerat</a></li>
-                                <li><a href="#">Nulla hendrerit</a></li>
-                                <li><a href="#">Maecenas</a></li>
+                                <li><a href="#">chưa</a></li>
+                                <li><a href="#">biết</a></li>
+                                <li><a href="#">để</a></li>
+                                <li><a href="#">gì</a></li>
+                                <li><a href="#">vào</a></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h3 class="title">Quick Links</h3>
+                            <h3 class="title">Chỗ</h3>
                             <ul>
-                                <li><a href="#">Posuere egestas</a></li>
-                                <li><a href="#">Sollicitudin</a></li>
-                                <li><a href="#">Luctus non</a></li>
-                                <li><a href="#">Duis tincidunt</a></li>
-                                <li><a href="#">Elementum</a></li>
+                                <li><a href="#">này</a></li>
+                                <li><a href="#">cũng</a></li>
+                                <li><a href="#">như</a></li>
+                                <li><a href="#">vậy</a></li>
+                                <li><a href="#">:)</a></li>
                             </ul>
                         </div>
                     </div>
@@ -32,8 +32,8 @@
                         <div class="footer-widget">
                             <h3 class="title">Get in Touch</h3>
                             <div class="contact-info">
-                                <p><i class="fa fa-map-marker"></i>123 Terry Lane, New York, USA</p>
-                                <p><i class="fa fa-envelope"></i>email@example.com</p>
+                                <p><i class="fa fa-map-marker"></i>Cao đẳng FPT Polytechnic</p>
+                                <p><i class="fa fa-envelope"></i>final_group2@fpt.edu.vn</p>
                                 <p><i class="fa fa-phone"></i>+123-456-7890</p>
                                 <div class="social">
                                     <a href=""><i class="fab fa-twitter"></i></a>
@@ -48,11 +48,11 @@
                     
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h3 class="title">Newsletter</h3>
+                            <h3 class="title">Nhận thông báo từ email</h3>
                             <div class="newsletter">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed porta dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra inceptos
-                                </p>
+                                    Đăng ký để nhận thông báo từ email của chúng tôi        
+                            </p>
                                 <form>
                                     <input class="form-control" type="email" placeholder="Your email here">
                                     <button class="btn">Submit</button>
@@ -71,12 +71,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 copyright">
-                        <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
+                        <p>Copyright &copy; <a href="/">Tech News</a>. All Rights Reserved</p>
                     </div>
 
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                     <div class="col-md-6 template-by">
-                        <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                        <p>Template By <a href="/">Tech News</a></p>
                     </div>
                 </div>
             </div>
@@ -93,6 +93,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <script src="../src/Views/components/layout/client/lib/easing/easing.min.js"></script>
         <script src="../src/Views/components/layout/client/lib/slick/slick.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
 
         <!-- Template Javascript -->
