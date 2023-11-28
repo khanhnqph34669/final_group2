@@ -68,19 +68,12 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav m-auto">
                         <a href="/" class="nav-item nav-link active">Home</a>
-
-                        <!-- <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                                <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">Sub Item 1</a>
-                                    <a href="#" class="dropdown-item">Sub Item 2</a>
-                                </div>
-                            </div> -->
-                        <a href="/client/technology" class="nav-item nav-link">Technology</a>
-                        <a href="/client/news" class="nav-item nav-link">News</a>
-                        <a href="/client/tips" class="nav-item nav-link">Tips</a>
-                        <a href="/client/review" class="nav-item nav-link">Review</a>
-                        <a href="/client/tacgia" class="nav-item nav-link">register for Author</a>
+                           <?php 
+                            foreach ($data['categories'] as $category) {
+                                echo '<a href="/client/category?id='.$category['id'].'" class="nav-item nav-link">'.$category['name'].'</a>';
+                            }
+                            ?>
+                           ?>
                     </div>
 
                 </div>
