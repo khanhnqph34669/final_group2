@@ -3,7 +3,9 @@
 namespace Ductong\BaseMvc;
 
 use Ductong\BaseMvc\Controller\HomeController;
+use Ductong\BaseMvc\Controllers\AuthenticatorController;
 use Ductong\BaseMvc\Models\Categories;
+
 
 class Controller {
     protected function render($view, $data = []) {
@@ -11,6 +13,7 @@ class Controller {
         include "Views/$view.php";
     }
     protected function renderAuthor($view, $data = []) {
+        $this->checkLogin();
         include_once 'Views/components/layout/author/header.php';
         extract($data);
 
@@ -18,7 +21,14 @@ class Controller {
         include_once 'Views/components/layout/author/footer.php'; 
     }
     
+    protected function checkLogin() {
+        if (!isset($_SESSION['user'])) {
+            header('Location: /auth/login');
+        }
+    }
+
     protected function renderAdmin($view, $data = []) {
+        $this->checkLogin();
         include_once 'Views/components/layout/admin/header.php';
         
         extract($data);

@@ -4,19 +4,21 @@
           foreach ($categories as $category) {
             $id = $_GET['id'];
             if ($category['id'] == $id) {
-              echo $category['name'];
+              echo '<p class="TitleCategory">'.$category['name'].'</p>';
             }
           }
       
       ?></h2>
     </div>
-
     <div class="articles-container">
       <?php if (count($posts) == 0) : ?>
         <div class="article">
           <div class="article-content">
             <div class="article-title">
-              <h2>Không có bài viết nào</h2>
+              <div class="err">
+              <h2 class="NoPost">Không có bài viết nào</h2>
+              <p>Xin lỗi vì sự bất tiện này . Bạn có thể quay về  <a href="/">trang chủ tại đây !</a></a></p>
+              </div>
             </div>
           </div>
         </div>
@@ -26,11 +28,13 @@
           <figure class="article-photo">
             <a href="#"><img src="../<?php echo $post['ImageUrl']; ?>" alt="Image Alt" class="image-thumb" /></a>
           </figure>
-          <div class="article-content">
-            <div class="article-category"><?php echo $post['Title']; ?></div>
-            <div class="article-title">
-              <h2><a href="/client/post/preview?id=<?php echo $post['Id']; ?>"><?php echo $post['Content']; ?></a></h2>
+          <div class="article-title">
+            <div class="article-category"><h2><a href="/client/post/preview?id=<?php echo $post['Id']; ?>"><?php echo $post['Title']; ?></a></h2></div>
+            <div class="article-content">
+              <p class="fix-content"><?php echo $post['Content']; ?></p><p>...</p>
             </div>
+            
+            <button class="btn btn-info"><a class="preview" href="/client/post/preview?id=<?php echo $post['Id']; ?>">Đọc thêm</a></button>
             <footer class="article-footer">
               <span class="article-author">Tác giả:
                 <?php
@@ -47,6 +51,6 @@
           </div>
         </div>
       <?php endforeach; ?>
-
+          
     </div>
   </div>
