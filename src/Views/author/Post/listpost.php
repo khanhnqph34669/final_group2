@@ -76,3 +76,20 @@
                         </div>
                     </div> 
                 </main>
+<script>
+    function confirmDelete(postId) {
+        Swal.fire({
+            title: 'Bạn chắc chắn muốn xoá bài viết?',
+            text: 'Hành động này sẽ xoá vĩnh viễn bài viết.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Đồng ý',
+            cancelButtonText: 'Huỷ',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Nếu người dùng đồng ý, chuyển đến đường dẫn xoá bài viết
+                window.location.href = '/author/post/delete?id=' + postId;
+            }
+        });
+    }
+</script>
