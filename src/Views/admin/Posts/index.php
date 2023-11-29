@@ -22,7 +22,6 @@
                                         <tr>
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
-                                            <th>Lượt xem</th>
                                             <th>Ảnh bìa</th>
                                             <th>Tác giả</th>
                                             <th>Status</th>
@@ -35,7 +34,7 @@
                                             <tr>
                                                 <td class="we"><?=$post['Title'] ?></td>
                                                 <td><?= $post['Content'] ?></td>
-                                                <td><?= $post['ViewCount'] ?></td>
+                                                
                                                 <td><img class="img-thumbnail-cr"src="../<?=$post['ImageUrl']?>" alt=""></td>
                                                 <td><?php 
                                                     foreach ($authors as $author) {
@@ -85,7 +84,6 @@
                                         <tr>
                                             <th>Tiêu đề</th>
                                             <th>Nội dung</th>
-                                            <th>Lượt xem</th>
                                             <th>Ảnh bìa</th>
                                             <th>Tác giả</th>
                                             <th>Status</th>

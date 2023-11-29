@@ -23,6 +23,9 @@ $router->addRoute('/client/form', HomeController::class, 'form');
 $router->addRoute('/client/dangky', AuthenticatorController::class, 'signUp');
 $router->addRoute('/client/category', HomeController::class, 'getAllPostById');
 $router->addRoute('/client/dangnhap', HomeController::class, 'signin');
+$router->addRoute('/client/contact', HomeController::class, 'contact');
+// $routes->addRoute('/client/post/preview',HomeController::class,'preview');
+$router->addRoute('/client/post/preview', HomeController::class, 'preview');
 
 
 

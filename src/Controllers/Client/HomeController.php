@@ -40,4 +40,18 @@ class HomeController extends Controller
         $categories = $category->all();
         $this->renderClient('client/category', ['posts' => $posts, 'categories' => $categories, 'authors' => $authors]);
     }
+
+    public function contact()
+    {
+        $this->renderClient('client/contact');
+    }
+
+    public function preview(){
+        $id = $_GET['id'];
+        $post = new Post();
+        $posts = $post->findOne($id);
+        $author = new users();
+        $authors = $author->all();
+        $this->renderClient('client/detailPost', ['posts' => $posts, 'authors' => $authors]);
+    }
 }
