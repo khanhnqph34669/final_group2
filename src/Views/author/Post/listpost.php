@@ -12,23 +12,31 @@
                                         <tr>
                                             <th>STT</th>
                                             <th>Tiêu đề</th>
-                                            <th>Nội dung</th>
                                             <th>Ảnh</th>
+                                            <th>Nội dung</th>
+
                                             <th>Danh mục</th>
                                             <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
-                                            <th></th>
+                                            <th>Hành động</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach ($posts as $post) : ?>
                                             <?php if($post['author_Id']==$_SESSION['id']) : ?>
                                             <tr>
-                                                <td><?= $post['Id'] ?></td>
+                                                 <td><?= $post['Id'] ?></td>
                                                 <td><?= $post['Title'] ?></td>
-                                                <td><?= $post['Content'] ?></td>
                                                 <td><img class="img-thumbnail-cr"src="../<?=$post['ImageUrl']?>" alt=""></td>
-                                                <td></td>
+                                                <td><?= $post['Content'] ?></td>
+
+                                                <td><?php
+                                                    foreach ($categories as $category) {
+                                                        if($category['id']==$post['categoryPost_id']){
+                                                            echo $category['name'];
+                                                        }
+                                                    }
+                                                    ?></td>
                                                 <td><?= $post['CreateAt'] ?></td>
                                                 <td>
                                                     <?php

@@ -2,8 +2,6 @@
 
 namespace Ductong\BaseMvc;
 
-use Ductong\BaseMvc\Controller\HomeController;
-use Ductong\BaseMvc\Controllers\AuthenticatorController;
 use Ductong\BaseMvc\Models\Categories;
 
 

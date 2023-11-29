@@ -18,6 +18,9 @@ $router->addRoute('/client/chitiet', HomeController::class, 'chitiet');
 $router->addRoute('/client/category', HomeController::class, 'getAllPostById');
 $router->addRoute('/client/dangky', HomeController::class, 'signup');
 $router->addRoute('/client/dangnhap', HomeController::class, 'signin');
+$router->addRoute('/client/contact', HomeController::class, 'contact');
+// $routes->addRoute('/client/post/preview',HomeController::class,'preview');
+$router->addRoute('/client/post/preview', HomeController::class, 'preview');
 
 
 
