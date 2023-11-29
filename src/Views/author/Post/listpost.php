@@ -14,7 +14,6 @@
                                             <th>Tiêu đề</th>
                                             <th>Ảnh</th>
                                             <th>Nội dung</th>
-
                                             <th>Danh mục</th>
                                             <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
@@ -50,9 +49,7 @@
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <form action="/author/post/delete?id=<?= $post['Id'] ?>" method="post">
-                                                        <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm">Xóa</button>
-                                                    </form>
+                                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete(<?= $post['Id'] ?>)">Xoá</button>
                                                     <a href="/author/post/update?id=<?= $post['Id'] ?>"><button type="button" class="btn btn-primary btn-sm">Sửa</button></a>
                                                 </td>
                                             </tr>
