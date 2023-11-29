@@ -51,6 +51,7 @@
                                                 <td>
                                                     <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete(<?= $post['Id'] ?>)">Xoá</button>
                                                     <a href="/author/post/update?id=<?= $post['Id'] ?>"><button type="button" class="btn btn-primary btn-sm">Sửa</button></a>
+                                                    
                                                 </td>
                                             </tr>
                                             <?php endif; ?>
