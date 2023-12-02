@@ -1071,21 +1071,23 @@ button.btn:hover {
 }
 
 .postNews .titlePost {
+  overflow: hidden;
   position: absolute;
-  display: flex;
-  top: 500px;
+  /* display: flex; */
+  top: 530px;
   background-color: #00000044;
   left: 2;
   z-index: 100;
   padding: 10px;
   width: 100%;
+  height: 108px;
 }
 
 .inforPost {
-  display: flex;
-  margin-left: -300px;
+  /* display: flex; */
+  /* margin-left: -300px; */
   position: relative;
-  top: 60px;
+  top: 0px;
 }
 
 .inforPost p {
