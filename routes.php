@@ -26,6 +26,7 @@ $router->addRoute('/client/dangnhap', HomeController::class, 'signin');
 $router->addRoute('/client/contact', HomeController::class, 'contact');
 // $routes->addRoute('/client/post/preview',HomeController::class,'preview');
 $router->addRoute('/client/post/preview', HomeController::class, 'preview');
+$router->addRoute('/client/comment', HomeController::class, 'comment');
 
 
 
