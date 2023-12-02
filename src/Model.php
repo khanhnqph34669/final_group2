@@ -246,8 +246,19 @@ class Model
     }
 
 
+    // public function getAllPostsByCategory($categoryId) {
+    //     $sql = "SELECT * FROM {$this->table} WHERE categoryPost_id = :categoryId";
+    //     $stmt = $this->conn->prepare($sql);
+    //     $stmt->bindParam(':categoryId', $categoryId);
+    //     $stmt->execute();
+    //     $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+    //     return $stmt->fetchAll();
+    // }
+
+
+    //lấy tất cả bài viết theo category và id status bằng 3
     public function getAllPostsByCategory($categoryId) {
-        $sql = "SELECT * FROM {$this->table} WHERE categoryPost_id = :categoryId";
+        $sql = "SELECT * FROM {$this->table} WHERE categoryPost_id = :categoryId AND Status = 3";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':categoryId', $categoryId);
         $stmt->execute();
@@ -262,6 +273,23 @@ class Model
         $stmt->execute();
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
         return $stmt->fetch();
+    }
+
+    public function getCommentById($idPost){
+        $sql = "SELECT * FROM {$this->table} WHERE PostId = :idPost";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':idPost', $idPost);
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetchAll();
+    }  
+
+    public function getRandomPost(){
+        $sql = "SELECT * FROM {$this->table} ORDER BY RAND() LIMIT 3";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetchAll();
     }
     
 
