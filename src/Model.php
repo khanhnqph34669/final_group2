@@ -291,6 +291,11 @@ class Model
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
         return $stmt->fetchAll();
     }
+
+    // HÀM LẤY 1 USER THEO SESSION ID
+    public function getOneUser($id){
+        $sql = "";
+    } 
     
 
 

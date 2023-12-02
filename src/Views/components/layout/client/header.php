@@ -146,7 +146,7 @@
                                 <div class="dropdown-menu" aria-labelledby="userDropdown">';
                                     echo '<a class="dropdown-item" href="/logout">Logout</a>';
                                     echo '<a class="dropdown-item" href="/client/profile">Profile</a>';
-                                    echo '<a class="dropdown-item" href="/client/myPost">Đăng ký làm tác giả</a>';
+                                    echo '<a class="dropdown-item" href="/client/form">Đăng ký làm tác giả</a>';
                                     echo '
                                 </div>
                                 ';
