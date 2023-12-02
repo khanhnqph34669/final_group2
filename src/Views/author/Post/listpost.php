@@ -12,23 +12,30 @@
                                         <tr>
                                             <th>STT</th>
                                             <th>Tiêu đề</th>
-                                            <th>Nội dung</th>
                                             <th>Ảnh</th>
+                                            <th>Nội dung</th>
                                             <th>Danh mục</th>
                                             <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
-                                            <th></th>
+                                            <th>Hành động</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach ($posts as $post) : ?>
                                             <?php if($post['author_Id']==$_SESSION['id']) : ?>
                                             <tr>
-                                                <td><?= $post['Id'] ?></td>
+                                                 <td><?= $post['Id'] ?></td>
                                                 <td><?= $post['Title'] ?></td>
-                                                <td><?= $post['Content'] ?></td>
                                                 <td><img class="img-thumbnail-cr"src="../<?=$post['ImageUrl']?>" alt=""></td>
-                                                <td></td>
+                                                <td><?= $post['Content'] ?></td>
+
+                                                <td><?php
+                                                    foreach ($categories as $category) {
+                                                        if($category['id']==$post['categoryPost_id']){
+                                                            echo $category['name'];
+                                                        }
+                                                    }
+                                                    ?></td>
                                                 <td><?= $post['CreateAt'] ?></td>
                                                 <td>
                                                     <?php
@@ -42,10 +49,9 @@
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <form action="/author/post/delete?id=<?= $post['Id'] ?>" method="post">
-                                                        <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm">Xóa</button>
-                                                    </form>
+                                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete(<?= $post['Id'] ?>)">Xoá</button>
                                                     <a href="/author/post/update?id=<?= $post['Id'] ?>"><button type="button" class="btn btn-primary btn-sm">Sửa</button></a>
+                                                    
                                                 </td>
                                             </tr>
                                             <?php endif; ?>
@@ -68,3 +74,20 @@
                         </div>
                     </div> 
                 </main>
+<script>
+    function confirmDelete(postId) {
+        Swal.fire({
+            title: 'Bạn chắc chắn muốn xoá bài viết?',
+            text: 'Hành động này sẽ xoá vĩnh viễn bài viết.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Đồng ý',
+            cancelButtonText: 'Huỷ',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Nếu người dùng đồng ý, chuyển đến đường dẫn xoá bài viết
+                window.location.href = '/author/post/delete?id=' + postId;
+            }
+        });
+    }
+</script>

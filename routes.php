@@ -15,9 +15,17 @@ $router = new Router();
 //Routes for client
 $router->addRoute('/', HomeController::class, 'index');
 $router->addRoute('/client/chitiet', HomeController::class, 'chitiet');
+$router->addRoute('/client/technology', HomeController::class, 'getAllPost');
+$router->addRoute('/client/review', HomeController::class, 'getAllPost');
+$router->addRoute('/client/tips', HomeController::class, 'getAllPost');
+$router->addRoute('/client/news', HomeController::class, 'getAllPost');
+$router->addRoute('/client/form', HomeController::class, 'form');
+$router->addRoute('/client/dangky', AuthenticatorController::class, 'signUp');
 $router->addRoute('/client/category', HomeController::class, 'getAllPostById');
-$router->addRoute('/client/dangky', HomeController::class, 'signup');
 $router->addRoute('/client/dangnhap', HomeController::class, 'signin');
+$router->addRoute('/client/contact', HomeController::class, 'contact');
+// $routes->addRoute('/client/post/preview',HomeController::class,'preview');
+$router->addRoute('/client/post/preview', HomeController::class, 'preview');
 
 
 

@@ -11587,7 +11587,7 @@ body {
 .datatable-pagination .active a,
 .datatable-pagination .active a:focus,
 .datatable-pagination .active a:hover {
-  background-color: #0d6efd;
+  background-color: #2d6efd;
 }
 
 .datatable-pagination .ellipsis a,
@@ -11717,3 +11717,17 @@ body {
   height: 100px;
 }
 
+.Home{
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+
+
+#clock {
+  font-size: 1.5em;
+  margin-top: 30px;
+  color: red;
+  box-shadow: #0d6efd;
+  padding-left: 60px;
+}
