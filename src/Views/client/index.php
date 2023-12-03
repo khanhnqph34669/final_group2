@@ -5,7 +5,9 @@
             <div class="titlePost">
                 <div class="inforPost">
                 <h2 class="title-link"><?= $newpost['Title'] ?></h2>
-                <h3></h3>
+                    <div class="inforauthor">
+                        
+                    </div>
                     <p><?= $newpost['Content'] ?></p>
                     <!-- <p>Create At</p> -->
                 </div>
