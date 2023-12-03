@@ -66,6 +66,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="/author/post/list">Danh sách bài viết</a>
                                     <a class="nav-link" href="/author/post/create">Thêm bài viết mớii</a>
+                                    <a class="nav-link" href="/author/postReject">Bài viết bị từ chối</a>
                                 </nav>
                             </div>
                             <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

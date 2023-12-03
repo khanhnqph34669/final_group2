@@ -62,6 +62,7 @@ $router->addRoute('/author/post/create', AuthorController::class,'createPage');
 $router->addRoute('/author/post/create/submit', PostAuthorController::class,'create');
 $router->addRoute('/author/post/delete', PostAuthorController::class,'delete');
 $router->addRoute('/author/post/update', PostAuthorController::class,'update');
+$router->addRoute('/author/postReject', PostAuthorController::class,'postReject');
 
 //Routes for authenticator
 $router->addRoute('/login', AuthenticatorController::class, 'index');
