@@ -25,7 +25,7 @@
                                             <th>Ảnh bìa</th>
                                             <th>Tác giả</th>
                                             <th>Status</th>
-                                            <th>Lượt bình luận</th>
+                                            <th>Lý do từ chối</th>
                                             <th>Thao tác</th>
                                         </tr>
                                     </thead>
@@ -55,7 +55,7 @@
                                                     }
                                                     ?>
                                                 </td>
-                                                <td></td>
+                                                <td><?=$post['RejectContent']?></td>
                                                 <td>
                                                 <?php
                                                         if($post['Status']==2){
@@ -87,7 +87,7 @@
                                             <th>Ảnh bìa</th>
                                             <th>Tác giả</th>
                                             <th>Status</th>
-                                            <th>Lượt bình luận</th>
+                                            <th>Lý do từ chối</th>
                                             <th>Thao tác</th>
                                         </tr>
                                     </tfoot>

@@ -42,10 +42,10 @@
                 else{
                     echo "<div class='input-comment'>
                     <h3>Viết bình luận</h3>
-                    <form action='' method='post'>
+                    <form action='/login' method='post'>
                         <input type='hidden' name='post_Id' value='".$posts['Id']."'>
                         <input type='text' name='comment' placeholder='Bạn cần đăng nhập để bình luận...' readonly>
-                        <input type='submit' name='submit' value='Gửi'>
+                        <input type='submit' name='submit' value='Đăng nhập'>
                     </form>
                 </div>";
                 }
@@ -87,6 +87,8 @@
         display: grid;
         grid-template-columns: 5% 55% 5% 30% 5%;
         align-items: center;
+        padding: 10px;
+        padding-bottom: 1550px;
     }
 
     .title{
