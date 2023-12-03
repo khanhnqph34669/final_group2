@@ -8,6 +8,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="../../public/img/favicon.ico">
     <link href="../../src/Views/components/css/cssAdmin/styles.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>

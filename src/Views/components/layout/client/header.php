@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <?php 
-        if(isset($category['name'])){
-            echo '<title>'.$category['name'].'</title>';
-    }else{
-    echo '<title>Blog</title>';
+    <title>TechNews<?php
+    if(isset($category['name'])){
+        echo ' - '.$category['name'];
     }
-    ?>
+
+    ?></title>
+    <link rel="icon" type="image/x-icon" href="../../public/img/favicon.ico">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 

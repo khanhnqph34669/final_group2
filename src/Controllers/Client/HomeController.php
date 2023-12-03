@@ -22,6 +22,11 @@ class HomeController extends Controller
         $this->renderClient('client/index',['posts'=>$post, 'users'=>$users, 'randomthreecate'=>$randomthreecate,'randompost'=>$randompost,'categories'=>$categories,'newpost'=>$newpost]);
     }
 
+    public function notfound()
+    {
+        header("HTTP/1.0 404 Not Found");
+        $this->render('client/404');
+    }
     public function chitiet()
     {
         $this->renderClient('client/chitiet');
@@ -29,9 +34,21 @@ class HomeController extends Controller
 
     public function form()
     {
-        $user = new users();
-        $users = $user->findOne($_SESSION['roles']);
-        $this->renderClient('client/form',['users' => $users]);
+        if(isset($_SESSION['roles'])){
+            if($_SESSION['roles'] == 1){
+                header('Location: /admin');
+            }
+            elseif($_SESSION['roles'] == 2){
+                header('Location: /author');
+            }
+            elseif($_SESSION['roles'] == 3){
+                $id = $_SESSION['id'];
+            $user = new users();
+            $users = $user->findOne($id);
+            $this->renderClient('client/form',['users' => $users]);
+            }
+        }
+        
     }
 
     public function tacgia()
@@ -46,8 +63,11 @@ class HomeController extends Controller
                 'Password'=> $_POST['Password'],
                 'Address'=> $_POST['Address'],
                 'roles_id'=>2,
+                'PathPortFolio'=> $_FILES['PathPortFolio']['name'],
             ];
         }
+        $user = new users();
+        $user->insert($data);
 
         $this->renderClient('client/index');
     }

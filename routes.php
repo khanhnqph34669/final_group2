@@ -67,3 +67,9 @@ $router->addRoute('/login', AuthenticatorController::class, 'index');
 $router->addRoute('/login/submit', AuthenticatorController::class, 'login');
 $router->addRoute('/sign-up', AuthenticatorController::class, 'signUp');
 $router->addRoute('/logout', AuthenticatorController::class, 'indexLogout');
+
+
+
+// Xử lý trường hợp không khớp với bất kỳ đường dẫn nào
+
+$router->setFallback(HomeController::class, 'notFound');

@@ -87,7 +87,8 @@ class AuthenticatorController extends Controller
                 'Status'=> 1,
                 'Phone'=> 0,
                 'Address'=> '',
-                'roles_id'=>3
+                'roles_id'=>3,
+                'PathPortFolio'=> '',
             ];
             if($_POST['Confirmpassword']==$_POST['Password']){
                 $user = new users();
