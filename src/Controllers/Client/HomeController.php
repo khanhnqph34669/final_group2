@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function form()
     {
         $user = new users();
-        $users = $user->findOne($_SESSION['roles']);
+        $users = $user->findOne($_SESSION['id']);
         $this->renderClient('client/form',['users' => $users]);
     }
 
@@ -49,7 +49,7 @@ class HomeController extends Controller
             ];
         }
 
-        $this->renderClient('client/index');
+        header('Location:/');
     }
     public function getAllPostById()
     {
