@@ -292,6 +292,13 @@ class Model
         return $stmt->fetchAll();
     }
 
+
+    // HÀM LẤY 1 USER THEO SESSION ID
+    public function getOneUser($id){
+        $sql = "";
+    } 
+    
+
     //Hàm lấy ra bài viết mới nhất
     public function getNewPost(){
         $sql = "SELECT * FROM {$this->table} ORDER BY id DESC LIMIT 1";
@@ -308,6 +315,7 @@ class Model
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
         return $stmt->fetchAll();
     }
+
 
 
     public function __destruct()

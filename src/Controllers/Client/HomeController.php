@@ -29,12 +29,27 @@ class HomeController extends Controller
 
     public function form()
     {
-        $this->renderClient('client/form');
+        $user = new users();
+        $users = $user->findOne($_SESSION['roles']);
+        $this->renderClient('client/form',['users' => $users]);
     }
 
     public function tacgia()
     {
-        $this->renderClient('client/tacgia');
+        if(isset($_POST['submit'])){
+            $data = [
+                'Id'=> $_POST['Id'],
+                'Name'=> $_POST['Name'],
+                'Status'=>2,
+                'Email'=> $_POST['Email'],
+                'Phone'=> $_POST['Phone'],
+                'Password'=> $_POST['Password'],
+                'Address'=> $_POST['Address'],
+                'roles_id'=>2,
+            ];
+        }
+
+        $this->renderClient('client/index');
     }
     public function getAllPostById()
     {
@@ -53,6 +68,7 @@ class HomeController extends Controller
 
     public function contact()
     {
+        
         $this->renderClient('client/contact');
     }
 
@@ -83,5 +99,10 @@ class HomeController extends Controller
         $comment->insert($data);
         header('Location: /client/post/preview?id='.$_POST['post_Id']);
     }
+
 }
+
+    public function request(){
+        
+    }
 }
