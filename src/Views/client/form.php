@@ -3,8 +3,8 @@
 <div class="container-form center">
 	<div class="row">
 		<div class="col-md-12">
-			<h1 class="white">Custom File Upload</h1>
-			<p class="white">In this example, submit is allowed only in case the user uploads a valid image file.</p>
+			<h1 class="white">Đăng ký làm tác giả</h1>
+			<p class="white">Bạn muốn chia sẻ thông tin , muốn trở thành nhà sáng tạo content, hãy liên hệ với chúng tôi theo form sau.</p>
 		</div>
 	</div>
 	
@@ -13,13 +13,13 @@
 			<div class="col-md-6 col-md-offset-3 center">
 				<div class="btn-container">
 					<!--the three icons: default, ok file (img), error file (not an img)-->
-					<h1 class="imgupload"><i class="fa fa-file-image-o"></i></h1>
+					<h1 class="imgupload"><i class="fa-solid fa-file"></i></h1>
 					<h1 class="imgupload ok"><i class="fa fa-check"></i></h1>
 					<h1 class="imgupload stop"><i class="fa fa-times"></i></h1>
-					<!--this field changes dinamically displaying the filename we are trying to upload-->
-					<p id="namefile">Only pics allowed! (txt)</p>
+					
+					<p id="namefile">Gửi hồ sơ của bạn cho chúng tôi</p>
 					<!--our custom btn which which stays under the actual one-->
-					<button type="button" id="btnup" class="btn btn-primary btn-lg">Browse for your pic!</button>
+					<button type="button" id="btnup" class="btn btn-primary btn-lg">Bấm vào đây để chọn file!</button>
 					<!--this is the actual file input, is set with opacity=0 beacause we wanna see our custom one-->
 					<input type="file" value="" name="fileup" id="fileup">
 					<input type="text" hidden value="<?= $users['Id']?>">
