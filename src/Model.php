@@ -292,11 +292,30 @@ class Model
         return $stmt->fetchAll();
     }
 
+
     // HÀM LẤY 1 USER THEO SESSION ID
     public function getOneUser($id){
         $sql = "";
     } 
     
+
+    //Hàm lấy ra bài viết mới nhất
+    public function getNewPost(){
+        $sql = "SELECT * FROM {$this->table} ORDER BY id DESC LIMIT 1";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetch();
+    }
+    //Hàm lấy ra 3 categories random
+    public function getRandomCategory(){
+        $sql = "SELECT * FROM {$this->table} ORDER BY RAND() LIMIT 4";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetchAll();
+    }
+
 
 
     public function __destruct()

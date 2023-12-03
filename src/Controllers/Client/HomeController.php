@@ -12,7 +12,14 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $this->renderClient('client/index');
+        $post = new Post();
+        $category = new Categories();
+        $users = new users();   
+        $newpost = $post->getNewPost();
+        $categories = $category->all();
+        $randomthreecate = $category->getRandomCategory();
+        $randompost = $post->getRandomPost();
+        $this->renderClient('client/index',['posts'=>$post, 'users'=>$users, 'randomthreecate'=>$randomthreecate,'randompost'=>$randompost,'categories'=>$categories,'newpost'=>$newpost]);
     }
 
     public function chitiet()
