@@ -34,7 +34,7 @@ h4,
 h5,
 h6 {
   color: #353535;
-  margin: 0 0 15px 0;
+  margin: 0 0 10px 0;
   padding: 0;
 }
 
@@ -1066,49 +1066,49 @@ button.btn:hover {
   width: 100%;
 }
 
-.postNews{
+.postNews {
   position: relative;
 }
 
-.postNews .titlePost{
+.postNews .titlePost {
+  overflow: hidden;
   position: absolute;
-  display: flex;
-  top: 500px;
+  /* display: flex; */
+  top: 530px;
   background-color: #00000044;
   left: 2;
   z-index: 100;
   padding: 10px;
   width: 100%;
+  height: 108px;
 }
 
-.inforPost{
-  display: flex;
-  margin-left: -300px;
+.inforPost {
+  /* display: flex; */
+  /* margin-left: -300px; */
   position: relative;
-  top: 60px;
+  top: 0px;
 }
 
-.inforPost p{
+.inforPost p {
   color: white;
   margin-right: 40px;
 }
 
-.titlePost h1{
+.titlePost h1 {
   color: white;
   font-size: 50px;
   font-weight: 700;
 }
 
-.postNews .imagePost{
+.postNews .imagePost {
   width: 70rem;
   height: 40rem;
   object-fit: cover;
 }
 
-.titlePost{
-
+.titlePo  st {
 }
-
 
 .container_content .banner img {
   width: 100%;
@@ -1119,12 +1119,17 @@ button.btn:hover {
 .container_content .bannerphu img {
   width: 100%;
 }
-.container_content .productbanner .nav ul {
-  margin-top: 20px;
-  list-style-type: none;
+.title-category{
+  color: #8031b0 !important;
+  text-decoration: none;
+  list-style: none;
+  margin-top: 10px;
+  font-size: 23px;
+  font-weight: 400;
 }
-.container_content .productbanner .nav ul a {
-  font-size: 2vw;
+
+.title-link{
+  color: #8031b0 !important;
 }
 .container_content .foryou .productforyou figcaption {
   color: #303ec1;
@@ -1134,6 +1139,7 @@ button.btn:hover {
   width: 300px;
   height: 230px;
 }
+
 .flex {
   display: flex;
   display: flex;
@@ -1195,23 +1201,22 @@ button.btn:hover {
   border-radius: 30px;
 }
 
-.tin img{
+.tin img {
   border-radius: 30px;
 }
 
-.tin h3{
+.tin h3 {
   margin-left: 10px;
 }
-.tin p{
+.tin p {
   margin-left: 10px;
-
 }
 .tinchinh {
   width: 70%;
 }
 .imgNews {
-  width: 300px;
-  height: 170px;
+  width: 330px;
+  height: 200px;
 }
 .imgNews1 {
   width: 200px;
@@ -1241,7 +1246,12 @@ button.btn:hover {
 .tieude1 {
   width: 300px;
 }
-
+.tieude p {
+  margin-left: 10px;
+  white-space: nowrap;
+  max-width: 50rem;
+  overflow: hidden;
+}
 .name-user {
   color: #fff;
   font-size: 20px;
@@ -1322,7 +1332,7 @@ button.btn:hover {
   color: #ccc;
 }
 
-.preview{
+.preview {
   color: #000000;
 }
 
@@ -1332,10 +1342,7 @@ button.btn:hover {
   position: relative;
 }
 
-
-
-
-.das{
+.das {
   position: relative;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1343,7 +1350,6 @@ button.btn:hover {
   display: flex;
   border-radius: 10px;
 }
-
 
 .user-menu {
   display: flex;
@@ -1363,30 +1369,28 @@ button.btn:hover {
   background-color: #111111;
 }
 
-.dropdown-toggle  {
+.dropdown-toggle {
   position: relative;
   background-color: rgba(67, 66, 65, 0.2) !important;
   color: white !important;
 }
 
-.tro{
+.tro {
   border-radius: 10px !important;
-  width: 15px; 
+  width: 15px;
   height: 35px;
   position: absolute;
 }
 
-.NoPost{
+.NoPost {
   font-size: 50px;
 }
 
-
-.TitleCategory{
+.TitleCategory {
   float: left;
   padding-bottom: 10px;
   font-size: 30px;
 }
-
 
 .contact {
   padding: 130px 0;
@@ -1397,7 +1401,6 @@ button.btn:hover {
   font-weight: 700;
   margin: 0;
   padding: 0;
-
 }
 
 .contact .heading h2 span {
@@ -1465,6 +1468,11 @@ button.btn:hover {
   font-weight: 300;
   color: #999999;
 }
-
-
-
+.titleforyou {
+  width: 300px;
+  height: 40px;
+  white-space: nowrap;
+  max-width: 18.5rem;
+  overflow: hidden;
+}
+----------------------------------------------------------------
