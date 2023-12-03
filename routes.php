@@ -51,6 +51,7 @@ $router->addRoute('/admin/user', UserController::class, 'index');
 $router->addRoute('/admin/user/create', UserController::class, 'createPage');
 $router->addRoute('/admin/user/delete', UserController::class, 'delete');
 $router->addRoute('/admin/user/edit', UserController::class, 'update');
+$router->addRoute('/admin/postRequest', PostController::class,'postRequest');
 
 
 
