@@ -85,7 +85,7 @@
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-person-circle-check"></i></div>
                             Yêu cầu làm tác giả
                         </a>
-                        <a class="nav-link" href="tables.html">
+                        <a class="nav-link" href="/admin/postRequest">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-folder-tree"></i></div>
                             Yêu cầu duyệt bài
                         </a>

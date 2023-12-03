@@ -21,6 +21,16 @@ class PostController extends Controller
         $category = $categories->all();
         $this->renderAdmin('Posts/index', ['posts' => $posts, 'authors' => $authors]);
     }
+    public function postRequest()
+    {
+        $post = new Post();
+        $posts = $post->all();
+        $author = new users();
+        $authors = $author->all();
+        $categories = new Categories();
+        $category = $categories->all();
+        $this->renderAdmin('Posts/postRequest', ['posts' => $posts, 'authors' => $authors]);
+    }
     public function myPost()
     {       
         $post = new Post();
