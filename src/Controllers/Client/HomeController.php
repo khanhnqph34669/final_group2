@@ -34,6 +34,7 @@ class HomeController extends Controller
 
     public function form()
     {
+
         // Kiểm tra xem người dùng đã đăng nhập chưa
         if (!isset($_SESSION['roles'])) {
             header('Location: /');
@@ -82,6 +83,7 @@ class HomeController extends Controller
 
             // Cập nhật dữ liệu
             $data = [
+
                 'Id' => $id,
                 'Name' => $_POST['Name'],
                 'Status' => 2,
@@ -94,9 +96,7 @@ class HomeController extends Controller
             ];
             $condition = [
                 ['Id', '=', $id]
-            ];
-            var_dump($data);
-            // Di chuyển tệp tin
+              ];
             if(move_uploaded_file($tmp_name, $destination)){
                 $user = new users();
                 $user->update($data , $condition);

@@ -1,3 +1,4 @@
+
 <h1 class="reg-author">Đăng ký làm tác giả</h1>
 <div class="container-form">
 	<form action="/client/authorRequest" method="post" enctype="multipart/form-data">
