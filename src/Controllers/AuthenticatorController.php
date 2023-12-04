@@ -38,6 +38,7 @@ class AuthenticatorController extends Controller
                             $_SESSION['roles'] = $result['roles_id'];
                             $_SESSION['Name'] = $result['Name'];
                             $_SESSION['id'] = $result['Id'];
+                            $_SESSION['Status'] = $result['Status'];
                             $this->renderAdmin('index');
                             break;
                         case 2:
@@ -45,6 +46,7 @@ class AuthenticatorController extends Controller
                             $_SESSION['roles'] = $result['roles_id'];
                             $_SESSION['Name'] = $result['Name'];
                             $_SESSION['id'] = $result['Id'];
+                            $_SESSION['Status'] = $result['Status'];
                             $this->renderAuthor('index');
                             break;
                         case 3:
@@ -52,6 +54,7 @@ class AuthenticatorController extends Controller
                             $_SESSION['roles'] = $result['roles_id'];
                             $_SESSION['Name'] = $result['Name'];
                             $_SESSION['id'] = $result['Id'];
+                            $_SESSION['Status'] = $result['Status'];
                             header('Location: /');
                             break;
                     }
