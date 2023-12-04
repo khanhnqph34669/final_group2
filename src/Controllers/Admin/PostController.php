@@ -51,7 +51,7 @@ class PostController extends Controller
                 ['id', '=', $postId],
             ];
     
-            // Kiểm tra nếu có bình luận, xóa bình luận trước
+           
             $comment = new postComments();
             $comments = $comment->findComment($postId);
     
