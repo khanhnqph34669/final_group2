@@ -21,7 +21,6 @@
                                     <thead>
                                         <tr>
                                             <th>Tiêu đề</th>
-                                            <th>Nội dung</th>
                                             <th>Ảnh bìa</th>
                                             <th>Tác giả</th>
                                             <th>Status</th>
@@ -33,7 +32,6 @@
                                         <?php foreach ($posts as $post) : ?>
                                             <tr>
                                                 <td class="we"><?=$post['Title'] ?></td>
-                                                <td><?= $post['Content'] ?></td>
                                                 
                                                 <td><img class="img-thumbnail-cr"src="../<?=$post['ImageUrl']?>" alt=""></td>
                                                 <td><?php 
@@ -83,7 +81,6 @@
                                     <tfoot>
                                         <tr>
                                             <th>Tiêu đề</th>
-                                            <th>Nội dung</th>
                                             <th>Ảnh bìa</th>
                                             <th>Tác giả</th>
                                             <th>Status</th>

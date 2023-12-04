@@ -1469,7 +1469,6 @@ button.btn:hover {
   color: #999999;
 }
 
-}
 .titleforyou {
   width: 300px;
   height: 40px;
@@ -1478,3 +1477,6 @@ button.btn:hover {
   overflow: hidden;
 }
 
+.St-au{
+  color: rgb(12, 88, 65);
+}

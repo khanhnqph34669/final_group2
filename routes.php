@@ -52,6 +52,7 @@ $router->addRoute('/admin/user/create', UserController::class, 'createPage');
 $router->addRoute('/admin/user/delete', UserController::class, 'delete');
 $router->addRoute('/admin/user/edit', UserController::class, 'update');
 $router->addRoute('/admin/postRequest', PostController::class,'postRequest');
+$router->addRoute('/admin/requests/accept', RequestController::class,'accept');
 
 
 
@@ -68,7 +69,6 @@ $router->addRoute('/login', AuthenticatorController::class, 'index');
 $router->addRoute('/login/submit', AuthenticatorController::class, 'login');
 $router->addRoute('/sign-up', AuthenticatorController::class, 'signUp');
 $router->addRoute('/logout', AuthenticatorController::class, 'indexLogout');
-
 
 
 // Xử lý trường hợp không khớp với bất kỳ đường dẫn nào
