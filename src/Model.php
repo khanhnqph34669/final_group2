@@ -340,6 +340,14 @@ class Model
         $stmt->execute();
     }
 
+    public function getOnePost(){
+        $sql = "SELECT * FROM {$this->table} ORDER BY RAND() LIMIT 1";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetch();
+    }
+
 
 
     public function __destruct()

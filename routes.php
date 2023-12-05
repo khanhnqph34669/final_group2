@@ -9,6 +9,7 @@ use Ductong\BaseMvc\Controllers\AuthenticatorController;
 use Ductong\BaseMvc\Controllers\Admin\CategoriesController;
 use Ductong\BaseMvc\Controllers\Admin\RequestController;
 use Ductong\BaseMvc\Controllers\Admin\UserController;
+use Ductong\BaseMvc\Models\Categories;
 use Ductong\BaseMvc\Router;
 
 $router = new Router();
@@ -42,6 +43,7 @@ $router->addRoute('/admin/post/reject', PostController::class, 'decline');
 $router->addRoute('/admin/post/delete', PostController::class, 'delete');
 $router->addRoute('/admin/post/edit', PostController::class, 'update');
 $router->addRoute('/admin/category', AdminController::class, 'category');
+$router->addRoute('/admin/category/edit', CategoriesController::class, 'edit');
 $router->addRoute('/admin/mypost/delete', PostController::class, 'deleteMyPost');
 $router->addRoute('/admin/category/create', CategoriesController::class, 'create');
 $router->addRoute('/admin/category/push', CategoriesController::class, 'createPush');
