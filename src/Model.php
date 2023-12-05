@@ -317,7 +317,6 @@ class Model
     }
 
 
-
     public function __destruct()
     {
         $this->conn = null;
