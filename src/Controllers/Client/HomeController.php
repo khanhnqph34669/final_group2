@@ -14,12 +14,12 @@ class HomeController extends Controller
     {
         $post = new Post();
         $category = new Categories();
-        $users = new users();   
+        $users = new users();
         $newpost = $post->getNewPost();
         $categories = $category->all();
         $randomthreecate = $category->getRandomCategory();
         $randompost = $post->getRandomPost();
-        $this->renderClient('client/index',['posts'=>$post, 'users'=>$users, 'randomthreecate'=>$randomthreecate,'randompost'=>$randompost,'categories'=>$categories,'newpost'=>$newpost]);
+        $this->renderClient('client/index', ['posts' => $post, 'users' => $users, 'randomthreecate' => $randomthreecate, 'randompost' => $randompost, 'categories' => $categories, 'newpost' => $newpost]);
     }
 
     public function chitiet()
@@ -31,21 +31,21 @@ class HomeController extends Controller
     {
         $user = new users();
         $users = $user->findOne($_SESSION['roles']);
-        $this->renderClient('client/form',['users' => $users]);
+        $this->renderClient('client/form', ['users' => $users]);
     }
 
     public function tacgia()
     {
-        if(isset($_POST['submit'])){
+        if (isset($_POST['submit'])) {
             $data = [
-                'Id'=> $_POST['Id'],
-                'Name'=> $_POST['Name'],
-                'Status'=>2,
-                'Email'=> $_POST['Email'],
-                'Phone'=> $_POST['Phone'],
-                'Password'=> $_POST['Password'],
-                'Address'=> $_POST['Address'],
-                'roles_id'=>2,
+                'Id' => $_POST['Id'],
+                'Name' => $_POST['Name'],
+                'Status' => 2,
+                'Email' => $_POST['Email'],
+                'Phone' => $_POST['Phone'],
+                'Password' => $_POST['Password'],
+                'Address' => $_POST['Address'],
+                'roles_id' => 2,
             ];
         }
 
@@ -61,18 +61,19 @@ class HomeController extends Controller
         $author = new users();
         $authors = $author->all();
         $categories = $category->all();
-        
+
         $this->renderClient('client/category', ['posts' => $posts, 'categories' => $categories, 'authors' => $authors]);
     }
 
 
     public function contact()
     {
-        
+
         $this->renderClient('client/contact');
     }
 
-    public function preview(){
+    public function preview()
+    {
         $id = $_GET['id'];
         $post = new Post();
         $posts = $post->findOne($id);
@@ -81,28 +82,28 @@ class HomeController extends Controller
         $comment = new postComments();
         $comments = $comment->getCommentById($id);
         $getRandomPost = $post->getRandomPost();
-        $this->renderClient('client/detailPost', ['posts' => $posts, 'authors' => $authors, 'comments' => $comments,'getRandomPost' => $getRandomPost]);
+        $this->renderClient('client/detailPost', ['posts' => $posts, 'authors' => $authors, 'comments' => $comments, 'getRandomPost' => $getRandomPost]);
     }
 
-    public function comment(){
-       if(isset($_POST['btn-submit'])){
-        $id = $_POST['post_Id'];
-        $user = $_POST['user_Id'];
-        $data = [
-            'PostId' => $id,
-            'UserId' => $user,
-            'Comment' => $_POST['comment'],
-            'CreatedAt' => date("Y-m-d H:i:s"),    
-        ];
-        var_dump($data);
-        $comment = new postComments();
-        $comment->insert($data);
-        header('Location: /client/post/preview?id='.$_POST['post_Id']);
+    public function comment()
+    {
+        if (isset($_POST['btn-submit'])) {
+            $id = $_POST['post_Id'];
+            $user = $_POST['user_Id'];
+            $data = [
+                'PostId' => $id,
+                'UserId' => $user,
+                'Comment' => $_POST['comment'],
+                'CreatedAt' => date("Y-m-d H:i:s"),
+            ];
+            var_dump($data);
+            $comment = new postComments();
+            $comment->insert($data);
+            header('Location: /client/post/preview?id=' . $_POST['post_Id']);
+        }
     }
 
-}
-
-    public function request(){
-        
+    public function request()
+    {
     }
 }
