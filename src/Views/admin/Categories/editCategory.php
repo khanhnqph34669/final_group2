@@ -9,7 +9,7 @@
                </ol>
                <div class="card mb-4">
                     <div class="card-body">
-                         <form action="/admin/category/push" method="post" enctype="multipart/form-data">
+                         <form action="/admin/category/update?id=<?=$category['id']?>" method="post" enctype="multipart/form-data">
                               <div class="form-group">
                                    <label for="title">Tên danh mục</label>
                                    <input type="text" class="form-control" id="title" name="name" value="<?=$category['name']?>" required>

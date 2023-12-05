@@ -285,7 +285,7 @@ class Model
     }  
 
     public function getRandomPost(){
-        $sql = "SELECT * FROM {$this->table} ORDER BY RAND() LIMIT 3";
+        $sql = "SELECT * FROM {$this->table} WHERE Status = 3 ORDER BY RAND() LIMIT 3";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
@@ -295,13 +295,18 @@ class Model
 
     // HÀM LẤY 1 USER THEO SESSION ID
     public function getOneUser($id){
-        $sql = "";
+        $sql = "SELECT * FROM {$this->table} WHERE Id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetch();
     } 
     
 
     //Hàm lấy ra bài viết mới nhất
     public function getNewPost(){
-        $sql = "SELECT * FROM {$this->table} ORDER BY id DESC LIMIT 1";
+        $sql = "SELECT * FROM {$this->table} ORDER BY id DESC LIMIT 5";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
@@ -346,6 +351,27 @@ class Model
         $stmt->execute();
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
         return $stmt->fetch();
+    }
+
+    //Hàm lấy 3 category và 4 bài viết mới nhất của category đó
+    public function getThreeCategory(){
+        $sql = "SELECT * FROM {$this->table} ORDER BY RAND() LIMIT 3";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        $categories = $stmt->fetchAll();
+
+        foreach($categories as &$category){
+            $sql = "SELECT * FROM posts WHERE categoryPost_id = :id ORDER BY id DESC LIMIT 4";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':id', $category['id']);
+            $stmt->execute();
+            $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+            $category['posts'] = $stmt->fetchAll();
+        }
+
+        return $categories;
     }
 
 

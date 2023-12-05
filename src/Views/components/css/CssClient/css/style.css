@@ -1074,13 +1074,13 @@ button.btn:hover {
   overflow: hidden;
   position: absolute;
   /* display: flex; */
-  top: 530px;
+  top: 500px;
   background-color: #00000044;
   left: 2;
   z-index: 100;
   padding: 10px;
   width: 100%;
-  height: 108px;
+  height: 140px;
 }
 
 .inforPost {
@@ -1116,8 +1116,9 @@ button.btn:hover {
 .container_content .bannerphu {
   width: 28%;
 }
-.container_content .bannerphu img {
+.imgSlide{
   width: 100%;
+  max-height: 250px;
 }
 .title-category{
   color: #8031b0 !important;
