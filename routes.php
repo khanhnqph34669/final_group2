@@ -44,6 +44,7 @@ $router->addRoute('/admin/post/delete', PostController::class, 'delete');
 $router->addRoute('/admin/post/edit', PostController::class, 'update');
 $router->addRoute('/admin/category', AdminController::class, 'category');
 $router->addRoute('/admin/category/edit', CategoriesController::class, 'edit');
+$router->addRoute('/admin/category/update', CategoriesController::class, 'update');
 $router->addRoute('/admin/mypost/delete', PostController::class, 'deleteMyPost');
 $router->addRoute('/admin/category/create', CategoriesController::class, 'create');
 $router->addRoute('/admin/category/push', CategoriesController::class, 'createPush');

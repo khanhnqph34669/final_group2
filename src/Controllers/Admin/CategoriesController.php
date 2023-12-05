@@ -9,7 +9,7 @@ use Ductong\BaseMvc\Models\Categories;
 class CategoriesController extends Controller
 {
     // public function deleteCategory() {
-        
+
     //     $condition = [
     //         ['id', '=', $_GET['id']],
     //     ];
@@ -37,15 +37,16 @@ class CategoriesController extends Controller
     //         header('Location: /admin/category');
     //         exit; 
     //     }
-    
+
     //     // Nếu không có id, chuyển hướng về trang quản lý danh mục
     //     header('Location: /admin/category');
     //     exit; // Chắc chắn rằng không có mã PHP khác thực thi sau header
     // }
-    
 
 
-    public function deleteCategory() {
+
+    public function deleteCategory()
+    {
         // Kiểm tra xem có id được truyền qua không
         if (isset($_GET['id'])) {
             $categoryId = $_GET['id'];
@@ -53,26 +54,27 @@ class CategoriesController extends Controller
                 ['id', '=', $categoryId],
             ];
             $category = new Categories();
-            $categoryD= $category->findOne($categoryId);
+            $categoryD = $category->findOne($categoryId);
             $path = $categoryD['Path_File'];
             // Sử dụng urlencode để mã hóa tên file
             $fileToDelete = $path;
             if (file_exists($fileToDelete)) {
                 unlink($fileToDelete);
-            } 
-    
+            }
+
             $category->delete($condition);
             header('Location: /admin/category');
-            exit; 
+            exit;
         }
-    
+
         // Nếu không có id, chuyển hướng về trang quản lý danh mục
         header('Location: /admin/category');
         exit;
     }
-    
 
-    public function create() {
+
+    public function create()
+    {
         if (isset($_POST['submit-category'])) {
             if ($_POST['name'] != null) {
                 $data = [
@@ -89,7 +91,7 @@ class CategoriesController extends Controller
         }
     }
 
-    
+
 
 
 
@@ -97,30 +99,45 @@ class CategoriesController extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Kiểm tra nếu có dữ liệu được gửi qua POST
-    
+
             $data = [
                 'name' => $_POST['name'],
             ];
 
-                (new Categories())->insert($data);
-    
-                header('Location: /admin/category');
-                exit; // Chắc chắn rằng không có mã PHP khác thực thi sau header
-            }
-    
+            (new Categories())->insert($data);
+
+            header('Location: /admin/category');
+            exit; // Chắc chắn rằng không có mã PHP khác thực thi sau header
+        }
+
         // Nếu không có dữ liệu POST hoặc tên danh mục không tồn tại, chuyển hướng về trang tạo danh mục
         header('Location: /admin/category/create');
         exit; // Chắc chắn rằng không có mã PHP khác thực thi sau header
     }
 
-    public function edit() {
+    public function edit()
+    {
         if (isset($_GET['id'])) {
             $categoryId = $_GET['id'];
             $category = new Categories();
-            $categoryD= $category->findOne($categoryId);
+            $categoryD = $category->findOne($categoryId);
             $this->renderAdmin('Categories/editCategory', ['category' => $categoryD]);
         }
     }
 
-
+    public function update()
+    {
+        if (isset($_POST['submit-category'])) {
+            $data = [
+                'id' => $_GET['id'],
+                'name' => $_POST['name'],
+            ];
+            $condition = [
+                ['id', '=', $_GET['id']],
+            ];
+            $category = new Categories();
+            $category->update($data, $condition);
+            header('Location: /admin/category');
+        }
+    }
 }

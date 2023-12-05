@@ -56,7 +56,6 @@ class PostController extends Controller
             $comments = $comment->findComment($postId);
     
             if (!empty($comments)) {
-                // Tạo điều kiện để xóa bình luận
                 $conditionsComment = [
                     ['PostId', '=', $postId],
                 ];
