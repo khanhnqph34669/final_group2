@@ -16,12 +16,13 @@
                                             <th>Danh mục</th>
                                             <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
+                                            <th>Lý do từ chối</th>
                                             <th>Hành động</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach ($posts as $post) : ?>
-                                            <?php if($post['author_Id']==$_SESSION['id']) : ?>
+                                            <?php if($post['author_Id']==$_SESSION['id'] && $post['Status'] == 1 ) : ?>
                                             <tr>
                                                  <td><?= $post['Id'] ?></td>
                                                 <td><?= $post['Title'] ?></td>
@@ -45,6 +46,7 @@
                                                     }
                                                     ?>
                                                 </td>
+                                                <td><?= $post['RejectContent'] ?></td>
                                                 <td>
                                                     <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete(<?= $post['Id'] ?>)">Xoá</button>
                                                     <a href="/author/post/update?id=<?= $post['Id'] ?>"><button type="button" class="btn btn-primary btn-sm">Sửa</button></a>
@@ -62,6 +64,7 @@
                                             <th>Danh mục</th>
                                             <th>Thời gian tạo</th>
                                             <th>Trạng thái</th>
+                                            <th>Lý do từ chối</th>
                                             <th></th>
                                         </tr>
                                     </tfoot>

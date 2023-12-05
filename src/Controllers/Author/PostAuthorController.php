@@ -21,6 +21,15 @@ class PostAuthorController extends Controller
         $authors = $author->findOne($_SESSION['id']);
         $this->renderAuthor('Post/listpost',['posts'=>$posts,'categories'=>$categories,'authors'=>$authors]);
     }
+    public function postReject(){
+        $post = new Post();
+        $posts = $post->all(); 
+        $category = new Categories();
+        $categories = $category->all();
+        $author = new users();
+        $authors = $author->findOne($_SESSION['id']);
+        $this->renderAuthor('Post/postReject',['posts'=>$posts,'categories'=>$categories,'authors'=>$authors]);
+    }
 
 
     public function create(){
