@@ -19,9 +19,15 @@ class HomeController extends Controller
         $categories = $category->all();
         $randomthreecate = $category->getRandomCategory();
         $randompost = $post->getRandomPost();
-        $this->renderClient('client/index', ['posts' => $post, 'users' => $users, 'randomthreecate' => $randomthreecate, 'randompost' => $randompost, 'categories' => $categories, 'newpost' => $newpost]);
+        $getOnePost = $post->getOnePost();
+        $this->renderClient('client/index',['posts'=>$post, 'users'=>$users, 'randomthreecate'=>$randomthreecate,'randompost'=>$randompost,'categories'=>$categories,'newpost'=>$newpost,'getOnePost'=>$getOnePost]);
     }
 
+    public function notfound()
+    {
+        header("HTTP/1.0 404 Not Found");
+        $this->render('client/404');
+    }
     public function chitiet()
     {
         $this->renderClient('client/chitiet');
@@ -29,28 +35,84 @@ class HomeController extends Controller
 
     public function form()
     {
-        $user = new users();
-        $users = $user->findOne($_SESSION['roles']);
-        $this->renderClient('client/form', ['users' => $users]);
+
+        // Kiểm tra xem người dùng đã đăng nhập chưa
+        if (!isset($_SESSION['roles'])) {
+            header('Location: /');
+            exit('<script>alert("Bạn chưa đăng nhập");</script>');
+        }
+    
+        // Kiểm tra roles và Status của người dùng
+        if ($_SESSION['roles'] == 3) {
+            if ($_SESSION['Status'] == 1) {
+                // Nếu Status là 1, hiển thị trang form
+                $this->renderClient('client/form');
+            } else {
+                // Nếu Status không phải 1, chuyển hướng và hiển thị thông báo
+                $err ='<script>alert("Đơn của bạn đã được nhận, vui lòng chờ phản hồi từ chúng tôi!");</script>';
+                header('Location: /');
+                exit;
+            }
+        } elseif ($_SESSION['roles'] == 1 || $_SESSION['roles'] == 2) {
+            // Nếu là roles 1 hoặc 2, chuyển hướng và hiển thị thông báo
+            $err = '<script>alert("Bạn đã là tác giả");</script>';
+            header('Location: /');
+            exit;
+        } else {
+            // Trường hợp khác (roles không phải 1, 2, 3), chuyển hướng và hiển thị thông báo
+            $err = '<script>alert("Bạn chưa đăng nhập");</script>';
+            header('Location: /');
+            exit;
+        }
     }
+    
 
     public function tacgia()
-    {
-        if (isset($_POST['submit'])) {
+{
+    if(isset($_POST['btn-submit'])){
+        $id = $_SESSION['id'];
+        $publicPath = 'public/uploads/';
+
+        if(isset($_FILES['PathPortFolio']['name']) && !empty($_FILES['PathPortFolio']['name'])){
+            $file = $_FILES['PathPortFolio'];
+            $tmp_name = $file['tmp_name'];
+            
+            // Tạo tên mới để tránh trùng lặp
+            $newName = uniqid().'-'.$file['name'];
+            $newName = preg_replace("/[^a-zA-Z0-9_]/", "_", $newName);
+            $destination = $publicPath.$newName;
+
+            // Cập nhật dữ liệu
             $data = [
-                'Id' => $_POST['Id'],
+
+                'Id' => $id,
                 'Name' => $_POST['Name'],
                 'Status' => 2,
                 'Email' => $_POST['Email'],
                 'Phone' => $_POST['Phone'],
-                'Password' => $_POST['Password'],
+                'Password' => md5($_POST['Password']),
                 'Address' => $_POST['Address'],
-                'roles_id' => 2,
+                'roles_id' => 3,
+                'PathPortFolio' => $newName, 
             ];
+            $condition = [
+                ['Id', '=', $id]
+              ];
+            if(move_uploaded_file($tmp_name, $destination)){
+                $user = new users();
+                $user->update($data , $condition);
+                header('Location: /');
+                exit('<script>alert("Đăng ký thành công");</script>');
+            } else {
+                $err = 'Upload file thất bại';
+            }
+        } else {
+            header('Location: /client/form');
+            exit('<script>alert("Bạn chưa chọn file");</script>');
         }
-
-        $this->renderClient('client/index');
     }
+}
+
     public function getAllPostById()
     {
         $id = $_GET['id'];

@@ -2,7 +2,7 @@
             <div id="layoutSidenav_content">
                 <main>
                 <div class="container-fluid px-4">
-               <h1 class="mt-4">Danh sách bài viết </h1>
+               <h1 class="mt-4">Danh sách bài viết chờ duyệt</h1>
                <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
                     <li class="breadcrumb-item active">Danh sách bài viết</li>
@@ -21,17 +21,20 @@
                                     <thead>
                                         <tr>
                                             <th>Tiêu đề</th>
+                                            <th>Nội dung</th>
                                             <th>Ảnh bìa</th>
                                             <th>Tác giả</th>
                                             <th>Status</th>
-                                            <th>Lý do từ chối</th>
+                                            <th>Lượt bình luận</th>
                                             <th>Thao tác</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach ($posts as $post) : ?>
+                                        <?php if($post['Status']==2) : ?>
                                             <tr>
                                                 <td class="we"><?=$post['Title'] ?></td>
+                                                <td><?= $post['Content'] ?></td>
                                                 
                                                 <td><img class="img-thumbnail-cr"src="../<?=$post['ImageUrl']?>" alt=""></td>
                                                 <td><?php 
@@ -53,7 +56,7 @@
                                                     }
                                                     ?>
                                                 </td>
-                                                <td><?=$post['RejectContent']?></td>
+                                                <td></td>
                                                 <td>
                                                 <?php
                                                         if($post['Status']==2){
@@ -75,16 +78,18 @@
                                                 </td>
                                             </tr>
                                             
+                                        <?php endif; ?>
                                         <?php endforeach; ?>
                                        
                                     </tbody>
                                     <tfoot>
                                         <tr>
                                             <th>Tiêu đề</th>
+                                            <th>Nội dung</th>
                                             <th>Ảnh bìa</th>
                                             <th>Tác giả</th>
                                             <th>Status</th>
-                                            <th>Lý do từ chối</th>
+                                            <th>Lượt bình luận</th>
                                             <th>Thao tác</th>
                                         </tr>
                                     </tfoot>

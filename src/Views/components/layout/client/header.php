@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <?php 
-        if(isset($category['name'])){
-            echo '<title>'.$category['name'].'</title>';
-    }else{
-    echo '<title>Blog</title>';
+    <title>TechNews<?php
+    if(isset($category['name'])){
+        echo ' - '.$category['name'];
     }
-    ?>
+
+    ?></title>
+    <link rel="icon" type="image/x-icon" href="../../public/img/favicon.ico">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 
@@ -146,7 +146,11 @@
                                 <div class="dropdown-menu" aria-labelledby="userDropdown">';
                                     echo '<a class="dropdown-item" href="/logout">Logout</a>';
                                     echo '<a class="dropdown-item" href="/client/profile">Profile</a>';
-                                    echo '<a class="dropdown-item" href="/client/form">Đăng ký làm tác giả</a>';
+                                    if($_SESSION['Status']==1){
+                                        echo '<a class="dropdown-item" href="/client/form">Đăng ký làm tác giả</a>';
+                                    } else if($_SESSION['Status']== 2) {
+                                        echo '<a class="dropdown-item"><p class="St-au">Tình trạng đơn:Đợi duyệt</p></a>';
+                                    }
                                     echo '
                                 </div>
                                 ';

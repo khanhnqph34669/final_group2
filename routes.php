@@ -9,6 +9,7 @@ use Ductong\BaseMvc\Controllers\AuthenticatorController;
 use Ductong\BaseMvc\Controllers\Admin\CategoriesController;
 use Ductong\BaseMvc\Controllers\Admin\RequestController;
 use Ductong\BaseMvc\Controllers\Admin\UserController;
+use Ductong\BaseMvc\Models\Categories;
 use Ductong\BaseMvc\Router;
 
 $router = new Router();
@@ -42,6 +43,7 @@ $router->addRoute('/admin/post/reject', PostController::class, 'decline');
 $router->addRoute('/admin/post/delete', PostController::class, 'delete');
 $router->addRoute('/admin/post/edit', PostController::class, 'update');
 $router->addRoute('/admin/category', AdminController::class, 'category');
+$router->addRoute('/admin/category/edit', CategoriesController::class, 'edit');
 $router->addRoute('/admin/mypost/delete', PostController::class, 'deleteMyPost');
 $router->addRoute('/admin/category/create', CategoriesController::class, 'create');
 $router->addRoute('/admin/category/push', CategoriesController::class, 'createPush');
@@ -51,6 +53,8 @@ $router->addRoute('/admin/user', UserController::class, 'index');
 $router->addRoute('/admin/user/create', UserController::class, 'createPage');
 $router->addRoute('/admin/user/delete', UserController::class, 'delete');
 $router->addRoute('/admin/user/edit', UserController::class, 'update');
+$router->addRoute('/admin/postRequest', PostController::class,'postRequest');
+$router->addRoute('/admin/requests/accept', RequestController::class,'accept');
 
 
 
@@ -61,9 +65,15 @@ $router->addRoute('/author/post/create', AuthorController::class,'createPage');
 $router->addRoute('/author/post/create/submit', PostAuthorController::class,'create');
 $router->addRoute('/author/post/delete', PostAuthorController::class,'delete');
 $router->addRoute('/author/post/update', PostAuthorController::class,'update');
+$router->addRoute('/author/postReject', PostAuthorController::class,'postReject');
 
 //Routes for authenticator
 $router->addRoute('/login', AuthenticatorController::class, 'index');
 $router->addRoute('/login/submit', AuthenticatorController::class, 'login');
 $router->addRoute('/sign-up', AuthenticatorController::class, 'signUp');
 $router->addRoute('/logout', AuthenticatorController::class, 'indexLogout');
+
+
+// Xử lý trường hợp không khớp với bất kỳ đường dẫn nào
+
+$router->setFallback(HomeController::class, 'notFound');

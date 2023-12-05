@@ -8,6 +8,8 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard</title>
+        <link rel="icon" type="image/x-icon" href="../../public/img/favicon.ico">
+
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="../../src/Views/components/css/cssAdmin/styles.css" rel="stylesheet"  type="text/css"/>
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -64,6 +66,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="/author/post/list">Danh sách bài viết</a>
                                     <a class="nav-link" href="/author/post/create">Thêm bài viết mớii</a>
+                                    <a class="nav-link" href="/author/postReject">Bài viết bị từ chối</a>
                                 </nav>
                             </div>
                             <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

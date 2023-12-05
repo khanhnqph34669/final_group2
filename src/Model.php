@@ -316,6 +316,38 @@ class Model
         return $stmt->fetchAll();
     }
 
+    public function getAuthorRequest(){
+        $sql = "SELECT * FROM {$this->table} WHERE Status = 2";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetchAll();
+    }
+
+    public function accept($id){
+        //update cột roles_id = 2
+        $sql = "UPDATE {$this->table} SET roles_id = 2 , Status = 1 , PathPortFolio	= '' WHERE Id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+    }
+
+    public function reject($id){
+        $sql = "UPDATE {$this->table} SET Status = 1 WHERE Id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
+
+    public function getOnePost(){
+        $sql = "SELECT * FROM {$this->table} ORDER BY RAND() LIMIT 1";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetch();
+    }
+
 
     public function __destruct()
     {

@@ -4,10 +4,8 @@
             <img class="imagePost" src="../../<?= $newpost['ImageUrl'] ?>" alt="">
             <div class="titlePost">
                 <div class="inforPost">
-                <h2 class="title-link"><?= $newpost['Title'] ?></h2>
-                    <div class="inforauthor">
-                        
-                    </div>
+                    <h2 class="title-link"><?= $newpost['Title'] ?></h2>
+                    <h3></h3>
                     <p><?= $newpost['Content'] ?></p>
                     <!-- <p>Create At</p> -->
                 </div>
@@ -19,11 +17,13 @@
             <div class="nav">
                 <ul>
                     <?php foreach ($randomthreecate as $random) : ?>
-                        <li class="title-category"><a class="title-link" href="client/category?id=<?=$random['id']?>" ><?= $random['name'] ?></a></a></li>
-                        <p>Artile name new post</p>
-
-                    <?php endforeach; ?>
-
+                        <li class="title-category"><a class="title-link" href="client/category?id=<?= $random['id'] ?>"><?= $random['name'] ?></a></li>
+                        <?php foreach ($randompost as $post) : ?>
+                            <?php if ($post['categoryPost_id'] == $random['id']) : ?>
+                                <a href='client/post/preview?id=<?=$post['Id']?>'><?= $post['Title']?></a><br>
+                            <?php endif;?>
+                        <?php endforeach;?>
+                    <?php endforeach;?>
                 </ul>
             </div>
         </div>
@@ -34,7 +34,7 @@
             <?php foreach ($randompost as $post) : ?>
                 <div class="productforyou">
 
-                    <a href="client/post/preview?id=<?=$post['Id']?>">
+                    <a href="client/post/preview?id=<?= $post['Id'] ?>">
                         <figure><img src="../../<?= $post['ImageUrl'] ?>" alt=""></figure>
                     </a>
                     <div class="titleforyou">
@@ -68,56 +68,9 @@
                     <figcaption>Article name</figcaption>
                 </a>
             </div>
-            <div class="productforyou">
-                <a href="">
-                    <figure><img src="src/Views/components/layout/client/img/product1.png" alt=""></figure>
-                    <figcaption>Article name</figcaption>
-                </a>
-            </div>
-            <div class="productforyou">
-                <a href="">
-                    <figure><img src="src/Views/components/layout/client/img/product1.png" alt=""></figure>
-                    <figcaption>Article name</figcaption>
-                </a>
-            </div>
-            <div class="productforyou">
-                <a href="">
-                    <figure><img src="src/Views/components/layout/client/img/product1.png" alt=""></figure>
-                    <figcaption>Article name</figcaption>
-                </a>
-            </div>
         </div>
 
     </div>
-    <div class="category mb30">
-        <h1 class="space20">Category name</h1>
-        <div class="foryou1 flex">
-            <div class="productforyou">
-                <a href="">
-                    <figure><img src="src/Views/components/layout/client/img/product1.png" alt=""></figure>
-                    <figcaption>Article name</figcaption>
-                </a>
-            </div>
-            <div class="productforyou">
-                <a href="">
-                    <figure><img src="src/Views/components/layout/client/img/product1.png" alt=""></figure>
-                    <figcaption>Article name</figcaption>
-                </a>
-            </div>
-            <div class="productforyou">
-                <a href="">
-                    <figure><img src="src/Views/components/layout/client/img/product1.png" alt=""></figure>
-                    <figcaption>Article name</figcaption>
-                </a>
-            </div>
-            <div class="productforyou">
-                <a href="">
-                    <figure><img src="src/Views/components/layout/client/img/product1.png" alt=""></figure>
-                    <figcaption>Article name</figcaption>
-                </a>
-            </div>
-        </div>
 
-    </div>
 
 </div>

@@ -8,17 +8,27 @@ use Ductong\BaseMvc\Models\Post;
 use Ductong\BaseMvc\Models\postStatus;
 use Ductong\BaseMvc\Models\users;
 use Ductong\BaseMvc\Models\Categories;
+use Ductong\BaseMvc\Models\postComments;
 
 class PostAuthorController extends Controller
 {
     public function listpost(){
+        $post = new Post();
+        $posts = $post->findPost($_SESSION['id']);
+        $category = new Categories();
+        $categories = $category->all();
+        $author = new users();
+        $authors = $author->findOne($_SESSION['id']);
+        $this->renderAuthor('Post/listpost',['posts'=>$posts,'categories'=>$categories,'authors'=>$authors]);
+    }
+    public function postReject(){
         $post = new Post();
         $posts = $post->all(); 
         $category = new Categories();
         $categories = $category->all();
         $author = new users();
         $authors = $author->findOne($_SESSION['id']);
-        $this->renderAuthor('Post/listpost',['posts'=>$posts,'categories'=>$categories,'authors'=>$authors]);
+        $this->renderAuthor('Post/postReject',['posts'=>$posts,'categories'=>$categories,'authors'=>$authors]);
     }
 
 
@@ -60,10 +70,21 @@ class PostAuthorController extends Controller
     }
     }
     public function delete() {
+        $postId = $_GET['id'];
         $conditions = [
             ['id', '=', $_GET['id']],
         ];
-
+        $comment = new postComments();
+            $comments = $comment->findComment($postId);
+    
+            if (!empty($comments)) {
+                // Tạo điều kiện để xóa bình luận
+                $conditionsComment = [
+                    ['PostId', '=', $postId],
+                ];
+    
+                $comment->delete($conditionsComment);
+            }
         (new Post())->delete($conditions);
 
         header('Location: /author/post/list');

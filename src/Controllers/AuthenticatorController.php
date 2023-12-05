@@ -26,7 +26,7 @@ class AuthenticatorController extends Controller
         if (isset($_POST['submit'])) {
             $data = [
                 'Email' => $_POST['email'],
-                'Password' => $_POST['password']
+                'Password' => md5($_POST['password'])
             ];
             $result = (new users())->getUserByEmail($data['Email']);
             if (isset($result['Email'])) {
@@ -38,6 +38,7 @@ class AuthenticatorController extends Controller
                             $_SESSION['roles'] = $result['roles_id'];
                             $_SESSION['Name'] = $result['Name'];
                             $_SESSION['id'] = $result['Id'];
+                            $_SESSION['Status'] = $result['Status'];
                             $this->renderAdmin('index');
                             break;
                         case 2:
@@ -45,6 +46,7 @@ class AuthenticatorController extends Controller
                             $_SESSION['roles'] = $result['roles_id'];
                             $_SESSION['Name'] = $result['Name'];
                             $_SESSION['id'] = $result['Id'];
+                            $_SESSION['Status'] = $result['Status'];
                             $this->renderAuthor('index');
                             break;
                         case 3:
@@ -52,6 +54,7 @@ class AuthenticatorController extends Controller
                             $_SESSION['roles'] = $result['roles_id'];
                             $_SESSION['Name'] = $result['Name'];
                             $_SESSION['id'] = $result['Id'];
+                            $_SESSION['Status'] = $result['Status'];
                             header('Location: /');
                             break;
                     }
@@ -81,15 +84,17 @@ class AuthenticatorController extends Controller
     public function signUp(){
         if(isset($_POST['submit'])){
             $data = [
+                'Id'=> 0,
                 'Name'=> $_POST['FullName'],
                 'Email'=> $_POST['Email'],
-                'Password'=> $_POST['Password'],
+                'Password'=> md5($_POST['Password']),
                 'Status'=> 1,
                 'Phone'=> 0,
                 'Address'=> '',
-                'roles_id'=>3
+                'roles_id'=>3,
+                'PathPortFolio'=> '',
             ];
-            if($_POST['Confirmpassword']==$_POST['Password']){
+            if($_POST['Password'] == $_POST['Confirmpassword']){
                 $user = new users();
                 $user->insert($data);
                 header('Location: login');
