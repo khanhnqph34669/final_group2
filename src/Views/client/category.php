@@ -34,7 +34,7 @@
               <p class="fix-content"><?php echo $post['Content']; ?></p><p>...</p>
             </div>
             
-            <button class="btn btn-info"><a class="preview" href="/client/post/preview?id=<?php echo $post['Id']; ?>">Đọc thêm</a></button>
+            <button class="btn2"><a class="preview" href="/client/post/preview?id=<?php echo $post['Id']; ?>">Đọc thêm</a></button>
             <footer class="article-footer">
               <span class="article-author">Tác giả:
                 <?php
@@ -54,3 +54,14 @@
           
     </div>
   </div>
+
+  <style>
+    .btn2{
+      background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+  </style>
