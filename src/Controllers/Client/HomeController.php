@@ -19,7 +19,8 @@ class HomeController extends Controller
         $categories = $category->all();
         $randomthreecate = $category->getRandomCategory();
         $randompost = $post->getRandomPost();
-        $this->renderClient('client/index',['posts'=>$post, 'users'=>$users, 'randomthreecate'=>$randomthreecate,'randompost'=>$randompost,'categories'=>$categories,'newpost'=>$newpost]);
+        $getOnePost = $post->getOnePost();
+        $this->renderClient('client/index',['posts'=>$post, 'users'=>$users, 'randomthreecate'=>$randomthreecate,'randompost'=>$randompost,'categories'=>$categories,'newpost'=>$newpost,'getOnePost'=>$getOnePost]);
     }
 
     public function notfound()
@@ -89,9 +90,9 @@ class HomeController extends Controller
                 'Status' => 2,
                 'Email' => $_POST['Email'],
                 'Phone' => $_POST['Phone'],
-                'Password' => $_POST['Password'],
+                'Password' => md5($_POST['Password']),
                 'Address' => $_POST['Address'],
-                'roles_id' => $_POST['roles_id'],
+                'roles_id' => 3,
                 'PathPortFolio' => $newName, 
             ];
             $condition = [

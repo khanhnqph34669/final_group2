@@ -113,6 +113,14 @@ class CategoriesController extends Controller
         exit; // Chắc chắn rằng không có mã PHP khác thực thi sau header
     }
 
+    public function edit() {
+        if (isset($_GET['id'])) {
+            $categoryId = $_GET['id'];
+            $category = new Categories();
+            $categoryD= $category->findOne($categoryId);
+            $this->renderAdmin('Categories/editCategory', ['category' => $categoryD]);
+        }
+    }
 
 
 }
