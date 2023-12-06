@@ -2,83 +2,90 @@
 
     <div class="left-post">
         <div class="title">
-            <h1><?=$posts['Title']?></h1>
+            <h1><?= $posts['Title'] ?></h1>
         </div>
         <div class="image">
-            <img src="../../<?=$posts['ImageUrl']?>" alt="Đây là ảnh bài viết" class="img-thumbnail">
+            <img src="../../<?= $posts['ImageUrl'] ?>" alt="Đây là ảnh bài viết" class="img-thumbnail">
         </div>
         <div class="content">
-            <p><?=$posts['Content']?></p>
+            <p><?= $posts['Content'] ?></p>
         </div>
         <div class="info">
             <p>Người đăng: <?php
-                             foreach ($authors as $author) {
-                              if($author['Id']==$posts['author_Id']){
-                                  echo $author['Name'];
-                                     }
-                                    }
+                            foreach ($authors as $author) {
+                                if ($author['Id'] == $posts['author_Id']) {
+                                    echo $author['Name'];
+                                }
+                            }
 
-                                 ?></p>
+                            ?></p>
             <p><?php
                 $date = date_create($posts['CreateAt']);
                 echo date_format($date, 'd-m-Y');
 
-            ?></p>
+                ?></p>
         </div>
         <div class="comment-box">
-            <?php  
-                if(isset($_SESSION['user'])){
-                    echo "<div class='input-comment'>
+            <?php
+            if (isset($_SESSION['user'])) {
+                echo "<div class='input-comment'>
                     <h3>Viết bình luận</h3>
-                    <p>".$_SESSION['Name']."</p>
+                    <p>" . $_SESSION['Name'] . "</p>
                     <form action='/client/comment' method='post'>
-                        <input type='number' hidden name='post_Id' value='".$posts['Id']."'>
-                        <input type='number' hidden name='user_Id' value='".$_SESSION['id']."'>
+                        <input type='number' hidden name='post_Id' value='" . $posts['Id'] . "'>
+                        <input type='number' hidden name='user_Id' value='" . $_SESSION['id'] . "'>
                         <input type='text' name='comment' placeholder='Viết bình luận của bạn...'>
                         <button type='submit' name='btn-submit'>Gửi</button>
                     </form>
                 </div>";
-                }
-                else{
-                    echo "<div class='input-comment'>
+            } else {
+                echo "<div class='input-comment'>
                     <h3>Viết bình luận</h3>
                     <form action='/login' method='post'>
-                        <input type='hidden' name='post_Id' value='".$posts['Id']."'>
+                        <input type='hidden' name='post_Id' value='" . $posts['Id'] . "'>
                         <input type='text' name='comment' placeholder='Bạn cần đăng nhập để bình luận...' readonly>
                         <input type='submit' name='submit' value='Đăng nhập'>
                     </form>
                 </div>";
-                }
+            }
             ?>
             <div class="comment-old">
-                <?php
-                foreach ($comments as $comment) {
-                    if($comment['PostId']==$posts['Id']){
-                        echo "<p>".$comment['Comment']."</p>";
-                    }
-                }
-                ?>
+                <?php foreach ($comments as $comment) : ?>
+                    <?php if ($comment['PostId'] == $posts['Id']) : ?>
+                        <?php foreach ($authors as $author) : ?>
+                            <?php if ($author['Id'] == $comment['UserId']) : ?>
+                                <div class="comment-container">
+                                    <p class='comment-text'>
+                                        <span class="author-name"><?= $author['Name'] ?>:</span> <?= $comment['Comment'] ?>
+                                    </p>
+                                    <p class='comment-timestamp'><?= $comment['CreatedAt'] ?></p>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </div>
+
         </div>
     </div>
     <div class="right-post">
         <div class="title">
             <h1>Có thể bạn sẽ quan tâm</h1>
         </div>
-        <?php foreach($getRandomPost as $random):?>
-        <div class="content">
-            <div class="title">
-                <h2><?=$random['Title']?></h2>
+        <?php foreach ($getRandomPost as $random) : ?>
+            <div class="content">
+                <div class="title">
+                    <h2><?= $random['Title'] ?></h2>
+                </div>
+                <div class="image">
+                    <img src="../../<?= $random['ImageUrl'] ?>" alt="Đây là ảnh bài viết" class="img-thumbnail-right">
+                </div>
+                <div class="content-child">
+                    <p class='right-post-re'></p><?= $random['Content'] ?></p>
+                    <button class="btn btn-info"><a class="preview" href="/client/post/preview?id=<?php echo $random['Id']; ?>">Đọc thêm</a></button>
+                </div>
             </div>
-            <div class="image">
-                <img src="../../<?=$random['ImageUrl']?>" alt="Đây là ảnh bài viết" class="img-thumbnail-right">
-            </div>
-            <div class="content-child">
-                <p class='right-post-re'></p><?=$random['Content']?></p>
-                <button class="btn btn-info"><a class="preview" href="/client/post/preview?id=<?php echo $random['Id']; ?>">Đọc thêm</a></button>
-            </div>
-        </div>
-        <?php endforeach?>
+        <?php endforeach ?>
     </div>
 </div>
 
@@ -91,7 +98,7 @@
         padding-bottom: 1550px;
     }
 
-    .title{
+    .title {
         font-family: 'Roboto', sans-serif;
     }
 
@@ -102,15 +109,15 @@
         max-height: fit-content;
     }
 
-    .info{
+    .info {
         margin-right: 10px;
         margin-left: 10px;
     }
 
-    .content-child{
+    .content-child {
         white-space: nowrap;
-  max-width: 50rem;
-  overflow: hidden;
+        max-width: 50rem;
+        overflow: hidden;
     }
 
     .left-post,
@@ -123,22 +130,24 @@
         /* Bạn có thể thêm các quy tắc CSS khác cho .left-post và .right-post nếu cần thiết */
     }
 
-    .right-post .content{
+    .right-post .content {
         border: 0.5px solid #ccc;
         padding: 10px;
-        
+
     }
 
-    
+
 
     .left-post {
-        grid-column: 2; /* Bắt đầu từ cột 1 (60%) */
+        grid-column: 2;
+        /* Bắt đầu từ cột 1 (60%) */
         height: 1500px;
     }
 
     .right-post {
         position: relative;
-        grid-column: 4; /* Bắt đầu từ cột 3 (30%) */
+        grid-column: 4;
+        /* Bắt đầu từ cột 3 (30%) */
         height: 1000px;
         margin-top: -480px;
         margin-bottom: 30px;
@@ -151,7 +160,7 @@
         margin-right: auto;
     }
 
-    .img-thumbnail-right{
+    .img-thumbnail-right {
         max-width: 500px;
         padding: 5px;
     }
@@ -194,17 +203,40 @@
         background-color: #0e5aaf;
     }
 
-    .comment-old p {
-        background-color: #f0f2f5;
-        padding: 10px;
-        border-radius: 8px;
-        margin-bottom: 10px;
-    }
+
 
     /* Thêm các quy tắc CSS khác nếu cần thiết */
 
 
 
+    .comment-old {
+    margin-top: 20px;
+}
 
+.comment-container {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.comment-container:hover {
+    background-color: #e0e0e0;
+}
+
+.comment-text {
+    margin: 0;
+}
+
+.author-name {
+    font-weight: bold;
+}
+
+.comment-timestamp {
+    font-size: 12px;
+    color: #888;
+}
 
 </style>

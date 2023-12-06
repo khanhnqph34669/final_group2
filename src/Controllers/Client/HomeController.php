@@ -20,7 +20,8 @@ class HomeController extends Controller
         $randomthreecate = $category->getRandomCategory();
         $randompost = $post->getRandomPost();
         $getOnePost = $post->getOnePost();
-        $this->renderClient('client/index',['posts'=>$post, 'users'=>$users, 'randomthreecate'=>$randomthreecate,'randompost'=>$randompost,'categories'=>$categories,'newpost'=>$newpost,'getOnePost'=>$getOnePost]);
+        $getDiv = $category->getThreeCategory();
+        $this->renderClient('client/index',['posts'=>$post, 'users'=>$users, 'randomthreecate'=>$randomthreecate,'randompost'=>$randompost,'categories'=>$categories,'newpost'=>$newpost,'getOnePost'=>$getOnePost,'getDiv'=>$getDiv]);
     }
 
     public function notfound()
@@ -35,34 +36,13 @@ class HomeController extends Controller
 
     public function form()
     {
+        if($_SESSION['roles']==3&&$_SESSION['Status']!=3&&$_SESSION['Status']==1){
+            $user = new users();
+            $users = $user->findOne($_SESSION['id']);
+            $this->renderClient('client/form', ['users' => $users]);
 
-        // Kiểm tra xem người dùng đã đăng nhập chưa
-        if (!isset($_SESSION['roles'])) {
+        }else{
             header('Location: /');
-            exit('<script>alert("Bạn chưa đăng nhập");</script>');
-        }
-    
-        // Kiểm tra roles và Status của người dùng
-        if ($_SESSION['roles'] == 3) {
-            if ($_SESSION['Status'] == 1) {
-                // Nếu Status là 1, hiển thị trang form
-                $this->renderClient('client/form');
-            } else {
-                // Nếu Status không phải 1, chuyển hướng và hiển thị thông báo
-                $err ='<script>alert("Đơn của bạn đã được nhận, vui lòng chờ phản hồi từ chúng tôi!");</script>';
-                header('Location: /');
-                exit;
-            }
-        } elseif ($_SESSION['roles'] == 1 || $_SESSION['roles'] == 2) {
-            // Nếu là roles 1 hoặc 2, chuyển hướng và hiển thị thông báo
-            $err = '<script>alert("Bạn đã là tác giả");</script>';
-            header('Location: /');
-            exit;
-        } else {
-            // Trường hợp khác (roles không phải 1, 2, 3), chuyển hướng và hiển thị thông báo
-            $err = '<script>alert("Bạn chưa đăng nhập");</script>';
-            header('Location: /');
-            exit;
         }
     }
     
@@ -90,7 +70,7 @@ class HomeController extends Controller
                 'Status' => 2,
                 'Email' => $_POST['Email'],
                 'Phone' => $_POST['Phone'],
-                'Password' => md5($_POST['Password']),
+                'Password' => $_POST['Password'],
                 'Address' => $_POST['Address'],
                 'roles_id' => 3,
                 'PathPortFolio' => $newName, 
@@ -147,25 +127,21 @@ class HomeController extends Controller
         $this->renderClient('client/detailPost', ['posts' => $posts, 'authors' => $authors, 'comments' => $comments, 'getRandomPost' => $getRandomPost]);
     }
 
-    public function comment()
-    {
-        if (isset($_POST['btn-submit'])) {
-            $id = $_POST['post_Id'];
-            $user = $_POST['user_Id'];
-            $data = [
-                'PostId' => $id,
-                'UserId' => $user,
-                'Comment' => $_POST['comment'],
-                'CreatedAt' => date("Y-m-d H:i:s"),
-            ];
-            var_dump($data);
-            $comment = new postComments();
-            $comment->insert($data);
-            header('Location: /client/post/preview?id=' . $_POST['post_Id']);
-        }
+    public function comment(){
+       if(isset($_POST['btn-submit'])){
+        $id = $_POST['post_Id'];
+        $user = $_POST['user_Id'];
+        $data = [
+            'PostId' => $id,
+            'UserId' => $user,
+            'Comment' => $_POST['comment'],
+            'CreatedAt' => date("Y-m-d H:i:s"),    
+        ];
+        var_dump($data);
+        $comment = new postComments();
+        $comment->insert($data);
+        header('Location: /client/post/preview?id='.$_POST['post_Id']);
     }
 
-    public function request()
-    {
-    }
+}
 }
