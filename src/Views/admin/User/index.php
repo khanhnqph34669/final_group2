@@ -27,6 +27,7 @@
                     </thead>
                     <tbody>
                         <?php foreach ($users as $user) : ?>
+                            <?php if($user['roles_id']!=1):?>
                             <tr>
                                 <td><?= $user['Id'] ?></td>
                                 <td><?= $user['Name'] ?></td>
@@ -35,6 +36,7 @@
                                     <button class="btn btn-sm btn-danger" onclick="confirmDelete(<?= $user['Id'] ?>)">Xoá</button>
                                 </td>
                             </tr>
+                            <?php endif; ?>
                         <?php endforeach; ?>
                     </tbody>
                     <tfoot>

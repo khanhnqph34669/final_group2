@@ -14,14 +14,14 @@ class HomeController extends Controller
     {
         $post = new Post();
         $category = new Categories();
-        $users = new users();   
+        $users = new users();
         $newpost = $post->getNewPost();
         $categories = $category->all();
         $randomthreecate = $category->getRandomCategory();
         $randompost = $post->getRandomPost();
         $getOnePost = $post->getOnePost();
         $getDiv = $category->getThreeCategory();
-        $this->renderClient('client/index',['posts'=>$post, 'users'=>$users, 'randomthreecate'=>$randomthreecate,'randompost'=>$randompost,'categories'=>$categories,'newpost'=>$newpost,'getOnePost'=>$getOnePost,'getDiv'=>$getDiv]);
+        $this->renderClient('client/index', ['posts' => $post, 'users' => $users, 'randomthreecate' => $randomthreecate, 'randompost' => $randompost, 'categories' => $categories, 'newpost' => $newpost, 'getOnePost' => $getOnePost, 'getDiv' => $getDiv]);
     }
 
     public function notfound()
@@ -36,62 +36,61 @@ class HomeController extends Controller
 
     public function form()
     {
-        if($_SESSION['roles']==3&&$_SESSION['Status']!=3&&$_SESSION['Status']==1){
+        if ($_SESSION['roles'] == 3 && $_SESSION['Status'] != 3 && $_SESSION['Status'] == 1) {
             $user = new users();
             $users = $user->findOne($_SESSION['id']);
             $this->renderClient('client/form', ['users' => $users]);
-
-        }else{
+        } else {
             header('Location: /');
         }
     }
-    
+
 
     public function tacgia()
-{
-    if(isset($_POST['btn-submit'])){
-        $id = $_SESSION['id'];
-        $publicPath = 'public/uploads/';
+    {
+        if (isset($_POST['btn-submit'])) {
+            $id = $_SESSION['id'];
+            $publicPath = 'public/uploads/';
 
-        if(isset($_FILES['PathPortFolio']['name']) && !empty($_FILES['PathPortFolio']['name'])){
-            $file = $_FILES['PathPortFolio'];
-            $tmp_name = $file['tmp_name'];
-            
-            // Tạo tên mới để tránh trùng lặp
-            $newName = uniqid().'-'.$file['name'];
-            $newName = preg_replace("/[^a-zA-Z0-9_]/", "_", $newName);
-            $destination = $publicPath.$newName;
+            if (isset($_FILES['PathPortFolio']['name']) && !empty($_FILES['PathPortFolio']['name'])) {
+                $file = $_FILES['PathPortFolio'];
+                $tmp_name = $file['tmp_name'];
 
-            // Cập nhật dữ liệu
-            $data = [
+                // Tạo tên mới để tránh trùng lặp
+                $newName = uniqid() . '-' . $file['name'];
+                $newName = preg_replace("/[^a-zA-Z0-9_]/", "_", $newName);
+                $destination = $publicPath . $newName;
 
-                'Id' => $id,
-                'Name' => $_POST['Name'],
-                'Status' => 2,
-                'Email' => $_POST['Email'],
-                'Phone' => $_POST['Phone'],
-                'Password' => $_POST['Password'],
-                'Address' => $_POST['Address'],
-                'roles_id' => 3,
-                'PathPortFolio' => $newName, 
-            ];
-            $condition = [
-                ['Id', '=', $id]
-              ];
-            if(move_uploaded_file($tmp_name, $destination)){
-                $user = new users();
-                $user->update($data , $condition);
-                header('Location: /');
-                exit('<script>alert("Đăng ký thành công");</script>');
+                // Cập nhật dữ liệu
+                $data = [
+
+                    'Id' => $id,
+                    'Name' => $_POST['Name'],
+                    'Status' => 2,
+                    'Email' => $_POST['Email'],
+                    'Phone' => $_POST['Phone'],
+                    'Password' => $_POST['Password'],
+                    'Address' => $_POST['Address'],
+                    'roles_id' => 3,
+                    'PathPortFolio' => $newName,
+                ];
+                $condition = [
+                    ['Id', '=', $id]
+                ];
+                if (move_uploaded_file($tmp_name, $destination)) {
+                    $user = new users();
+                    $user->update($data, $condition);
+                    header('Location: /');
+                    exit('<script>alert("Đăng ký thành công");</script>');
+                } else {
+                    $err = 'Upload file thất bại';
+                }
             } else {
-                $err = 'Upload file thất bại';
+                header('Location: /client/form');
+                exit('<script>alert("Bạn chưa chọn file");</script>');
             }
-        } else {
-            header('Location: /client/form');
-            exit('<script>alert("Bạn chưa chọn file");</script>');
         }
     }
-}
 
     public function getAllPostById()
     {
@@ -103,18 +102,19 @@ class HomeController extends Controller
         $author = new users();
         $authors = $author->all();
         $categories = $category->all();
-        
+
         $this->renderClient('client/category', ['posts' => $posts, 'categories' => $categories, 'authors' => $authors]);
     }
 
 
     public function contact()
     {
-        
+
         $this->renderClient('client/contact');
     }
 
-    public function preview(){
+    public function preview()
+    {
         $id = $_GET['id'];
         $post = new Post();
         $posts = $post->findOne($id);
@@ -123,24 +123,36 @@ class HomeController extends Controller
         $comment = new postComments();
         $comments = $comment->getCommentById($id);
         $getRandomPost = $post->getRandomPost();
-        $this->renderClient('client/detailPost', ['posts' => $posts, 'authors' => $authors, 'comments' => $comments,'getRandomPost' => $getRandomPost]);
+        $this->renderClient('client/detailPost', ['posts' => $posts, 'authors' => $authors, 'comments' => $comments, 'getRandomPost' => $getRandomPost]);
     }
 
-    public function comment(){
-       if(isset($_POST['btn-submit'])){
-        $id = $_POST['post_Id'];
-        $user = $_POST['user_Id'];
-        $data = [
-            'PostId' => $id,
-            'UserId' => $user,
-            'Comment' => $_POST['comment'],
-            'CreatedAt' => date("Y-m-d H:i:s"),    
-        ];
-        var_dump($data);
-        $comment = new postComments();
-        $comment->insert($data);
-        header('Location: /client/post/preview?id='.$_POST['post_Id']);
+    public function comment()
+    {
+        if (isset($_POST['btn-submit'])) {
+            $id = $_POST['post_Id'];
+            $user = $_POST['user_Id'];
+            $data = [
+                'PostId' => $id,
+                'UserId' => $user,
+                'Comment' => $_POST['comment'],
+                'CreatedAt' => date("Y-m-d H:i:s"),
+            ];
+            var_dump($data);
+            $comment = new postComments();
+            $comment->insert($data);
+            header('Location: /client/post/preview?id=' . $_POST['post_Id']);
+        }
     }
 
-}
+    public function search()
+    {
+        $keyValue = $_POST['keyValue'];
+        $post = new Post();
+        $posts = $post->search($keyValue);
+        $author = new users();
+        $authors = $author->all();
+        $category = new Categories();
+        $categories = $category->all();
+        $this->renderClient('client/search', ['posts' => $posts, 'authors' => $authors, 'categories' => $categories]);
+    }
 }
