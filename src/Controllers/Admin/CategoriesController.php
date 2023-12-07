@@ -101,6 +101,7 @@ class CategoriesController extends Controller
             // Kiểm tra nếu có dữ liệu được gửi qua POST
 
             $data = [
+                'id' => null,
                 'name' => $_POST['name'],
             ];
 

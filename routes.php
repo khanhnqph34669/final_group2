@@ -57,6 +57,8 @@ $router->addRoute('/admin/user/delete', UserController::class, 'delete');
 $router->addRoute('/admin/user/edit', UserController::class, 'update');
 $router->addRoute('/admin/postRequest', PostController::class,'postRequest');
 $router->addRoute('/admin/requests/accept', RequestController::class,'accept');
+$router->addRoute('/admin/requests/reject', RequestController::class,'reject');
+$router->addRoute('/admin/user/push', UserController::class,'create');
 
 
 

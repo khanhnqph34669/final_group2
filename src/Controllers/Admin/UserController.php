@@ -26,7 +26,27 @@ class UserController extends Controller{
         $role = $roles->all();
         $this->renderAdmin('User/createUser',['roles'=>$role]);
     }
-    public function edit(){
-
+    public function create(){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $address = $_POST['address'];
+        $password = $_POST['password'];
+        $roles = $_POST['roles'];
+        $user = new users();
+        $data = [
+            'Id'=>null,
+            'Name'=>$name,
+            'Status'=>1,
+            'Email'=>$email,
+            'Phone'=>$phone,
+            'Password'=>$password,
+            'Address'=>$address,
+            'roles_id'=>$roles,
+            'PathPortFolio'=>'',
+        ];
+        var_dump($data);
+        $user->insert($data);
+        header('Location: /admin/user');
     }
 }

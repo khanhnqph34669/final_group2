@@ -10,26 +10,30 @@
                </ol>
                <div class="card mb-4">
                     <div class="card-body">
-                         <form action="/admin/post/push" method="post" enctype="multipart/form-data">
+                         <form action="/admin/user/push" method="post">
                               <div class="form-group">
                                    <label for="title">Name</label>
-                                   <input type="text" class="form-control" id="title" name="title" placeholder="Nhập tên người dùng" required>
+                                   <input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên người dùng" required>
                               </div>
                               <div class="form-group">
-                                   <label for="title">Email</label>
-                                   <input type="text" class="form-control" id="title" name="title" placeholder="Nhập tên người dùng" required>
+                                   <label for="email">Email</label>
+                                   <input type="text" class="form-control" id="email" name="email" placeholder="Nhập email người dùng" required>
                               </div>
                               <div class="form-group">
-                                   <label for="title">Phone</label>
-                                   <input type="text" class="form-control" id="title" name="title" placeholder="Nhập tên người dùng" required>
+                                   <label for="phone">Phone</label>
+                                   <input type="text" class="form-control" id="phone" name="phone" placeholder="Nhập số điện thoại người dùng" required>
                               </div>
                               <div class="form-group">
-                                   <label for="title">Passwords</label>
-                                   <input type="password" class="form-control" id="title" name="title" placeholder="Nhập tên người dùng" required>
+                                   <label for="">Address</label>
+                                   <input type="text" class="form-control" id="address" name="address" placeholder="Nhập địa chỉ người dùng" required>
+                              </div>
+                              <div class="form-group">
+                                   <label for="password">Passwords</label>
+                                   <input type="password" class="form-control" id="password" name="password" placeholder="Nhập mật khẩu người dùng" required>
                               </div>
                               <div class="form-group">
                             <label for="category">Chỉ định phân quyền</label>
-                            <select class="form-control" id="category" name="category">
+                            <select class="form-control" id="roles" name="roles">
                             <?php foreach($roles as $role): ?>
                                       <option value="<?= $role['Id'] ?>"><?= $role['roles_name'] ?></option>    
                                 <?php endforeach?>
