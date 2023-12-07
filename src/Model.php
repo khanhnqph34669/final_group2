@@ -306,7 +306,7 @@ class Model
 
     //Hàm lấy ra bài viết mới nhất
     public function getNewPost(){
-        $sql = "SELECT * FROM {$this->table} ORDER BY id DESC LIMIT 5";
+        $sql = "SELECT * FROM {$this->table} WHERE status = 3 ORDER BY id DESC LIMIT 1";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);
