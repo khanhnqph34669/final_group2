@@ -339,7 +339,7 @@ class Model
     }
 
     public function reject($id){
-        $sql = "UPDATE {$this->table} SET Status = 1 WHERE Id = :id";
+        $sql = "UPDATE {$this->table} SET Status = 1 , PathPortFolio	= '' WHERE Id = :id";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':id', $id);
         $stmt->execute();
@@ -372,6 +372,16 @@ class Model
         }
 
         return $categories;
+    }
+
+    public function search($keyword){
+        $sql = "SELECT * FROM {$this->table} WHERE Title LIKE :keyword";
+        $stmt = $this->conn->prepare($sql);
+        $keyword = "%{$keyword}%";
+        $stmt->bindParam(':keyword', $keyword);
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+        return $stmt->fetchAll();
     }
 
 
