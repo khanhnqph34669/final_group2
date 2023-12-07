@@ -30,5 +30,6 @@ class RequestController extends Controller
         $id = $_GET['id'];
         $user = new users();
         $user->reject($id);
+        header('Location: /admin/request');
     }
 }

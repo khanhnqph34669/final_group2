@@ -71,7 +71,7 @@
                     </div>
                     <div>
                         <p class="titleforyou"><?= $post['Content'] ?></p>
-                        <p>Create At</p>
+                        <button><a class="tt-home" href="client/post/preview?id=<?= $post['Id'] ?>">Đọc thêm</a></button>
                     </div>
                 </div>
             <?php endforeach; ?>
