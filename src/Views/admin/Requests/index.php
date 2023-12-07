@@ -8,13 +8,13 @@
                     <li class="breadcrumb-item active">Danh sách bài viết</li>
                </ol> 
                       <div class="card-body">
-                             <a href="/admin/post/create" class="btn btn-success">Thêm bài viết mới</a>
+                             <a href="/admin/post/create" class="btn btn-success">Yêu cầu làm tác giả</a>
                       </div>
                       <hr>
                 <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Thống kê bài viết
+                                Yêu cầu làm tác giả
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -33,6 +33,7 @@
                                                 <td>
                                                     <a href="/admin/requests/accept?id=<?=$user['Id']?>" class="btn btn-success">Duyệt</a>
                                                     <a href="/admin/requests/reject?id=<?=$user['Id']?>" class="btn btn-danger">Từ chối</a>
+                                                    <a href="../../public/uploads/<?=$user['PathPortFolio']?>" download>Xem hồ sơ</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
